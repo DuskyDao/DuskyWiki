@@ -151,6 +151,7 @@
   },
   "active": "fd3393ea14f0c64a",
   "lastOpenFiles": [
+    "test222",
     "errors.txt",
     "test111",
     "README.md",
@@ -197,7 +198,6 @@
     "devops/Без названия.canvas",
     "projects/dusky-wiki/devops",
     "dusky-wiki/windows/Без названия",
-    "projects/dusky-wiki/windows",
-    "projects/dusky-wiki/linux/docker/docker-compose"
+    "projects/dusky-wiki/windows"
   ]
 }
