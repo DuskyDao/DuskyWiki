@@ -149,8 +149,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2a7bcd0c7350c30c",
+  "active": "fd3393ea14f0c64a",
   "lastOpenFiles": [
+    "errors.txt",
+    "test111",
     "README.md",
     "index.md",
     "projects/my_wiki/linux/docker/docker-compose/Docker compose.md",
@@ -196,8 +198,6 @@
     "projects/dusky-wiki/devops",
     "dusky-wiki/windows/Без названия",
     "projects/dusky-wiki/windows",
-    "projects/dusky-wiki/linux/docker/docker-compose",
-    "projects/dusky-wiki/linux/docker",
-    "projects/dusky-wiki/python/function/comprehensions.md"
+    "projects/dusky-wiki/linux/docker/docker-compose"
   ]
 }
