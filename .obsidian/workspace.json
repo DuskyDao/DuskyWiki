@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c421c15a0240a674",
+        "id": "7669bffd013152e3",
         "type": "tabs",
         "children": [
           {
-            "id": "2a7bcd0c7350c30c",
+            "id": "44416cca979d4230",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "projects/my_wiki/devops/git/git.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -157,8 +153,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2a7bcd0c7350c30c",
+  "active": "fd3393ea14f0c64a",
   "lastOpenFiles": [
+    "projects/my_wiki/linux/sudo/sudo.md",
     "projects/my_wiki/devops/git/git.md",
     "projects/my_wiki/devops/git",
     "test222",
@@ -203,7 +200,6 @@
     "projects/dusky-wiki/linux/docker/docker-compose/8.png",
     "projects/dusky-wiki/linux/docker/docker-compose/7.png",
     "projects/dusky-wiki/linux/docker/docker-compose/6.png",
-    "projects/dusky-wiki/linux/system_initialization/systemd/python_script_service.md",
     "projects/dusky-wiki/devops/panel",
     "devops/Без названия.canvas",
     "projects/dusky-wiki/devops"
