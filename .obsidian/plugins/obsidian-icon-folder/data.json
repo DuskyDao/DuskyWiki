@@ -80,12 +80,12 @@
     "iconName": "FabWindows",
     "iconColor": "#1166d4"
   },
-  "projects/my_wiki/linux/docker": {
-    "iconName": "TiBrandDocker",
-    "iconColor": "#076cca"
-  },
   "projects": {
     "iconName": "SiNamuwiki",
     "iconColor": "#ebcb00"
+  },
+  "projects/my_wiki/devops/docker": {
+    "iconName": "TiBrandDocker",
+    "iconColor": "#076cca"
   }
 }
