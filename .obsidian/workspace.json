@@ -1,0 +1,203 @@
+{
+  "main": {
+    "id": "63b533bfb6001254",
+    "type": "split",
+    "children": [
+      {
+        "id": "c421c15a0240a674",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a7bcd0c7350c30c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6ccdf6c703576ce9",
+    "type": "split",
+    "children": [
+      {
+        "id": "6dfd3e4adbd3ce56",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c823dcdcd01a180a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "61331d656e335dc3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "fd3393ea14f0c64a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTimeReverse"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 232.5
+  },
+  "right": {
+    "id": "accc9149a39693cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "443d2b7bad5d61c1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ef62255bfc678715",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "28c02bec70ff92b7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "6562b620e5ecdd9a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "638124ce113818d5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "890161027c7aee51",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 289.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "markdown-importer:Импорт Markdown-файлов": false,
+      "graph:Граф": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "2a7bcd0c7350c30c",
+  "lastOpenFiles": [
+    "README.md",
+    "index.md",
+    "projects/my_wiki/linux/docker/docker-compose/Docker compose.md",
+    "projects/my_wiki/linux/docker/docker-compose/files/1.png",
+    "projects/my_wiki/linux/docker/docker-compose/files",
+    "projects/dusky-wiki/linux/docker/docker-compose/Docker compose.md",
+    "projects/dusky-wiki/linux/docker/docker-compose/2.png",
+    "projects/dusky-wiki/linux/docker/docker-compose/1.png",
+    "projects/dusky-wiki/network/mikrotik/cli_mikrotik.md",
+    "projects/dusky-wiki/network/mikrotik/vrrp/vrrp.md",
+    "projects/dusky-wiki/network/mikrotik/vrrp/mikro.png",
+    "projects/dusky-wiki/network/mikrotik/vrrp/VRRP.jpg",
+    "projects/dusky-wiki/devops/panel/Dashy.md",
+    "projects/dusky-wiki/python/files/files.md",
+    "templaits",
+    "days",
+    "projects",
+    "Без названия.canvas",
+    "projects/dusky-wiki/python/variable_types/dictress/dictress.md",
+    "projects/dusky-wiki/python/module/pdb.md",
+    "projects/dusky-wiki/python/module/json.md",
+    "projects/dusky-wiki/python/libraries/logging.md",
+    "projects/dusky-wiki/web/django/install_django/install_django.md",
+    "projects/dusky-wiki/network/iperf/iperf.md",
+    "projects/dusky-wiki/python/class/magic_methods.md",
+    "projects/dusky-wiki/python/class/Home_Work.md",
+    "projects/dusky-wiki/python/class/class.md",
+    "projects/dusky-wiki/python/class/abstract_class.md",
+    "projects/dusky-wiki/web/django/run_apps/run_apps.md",
+    "projects/dusky-wiki/windows/Установка Windows 11 без подключения к Интернету.md",
+    "projects/dusky-wiki/windows/Лицензии.md",
+    "projects/dusky-wiki/linux/system_initialization/systemd/journalctl/journalctl.md",
+    "projects/dusky-wiki/web/links.md",
+    "COMMAND.md",
+    "projects/dusky-wiki/linux/docker/docker-compose/10.png",
+    "projects/dusky-wiki/linux/docker/docker-compose/9.png",
+    "projects/dusky-wiki/linux/docker/docker-compose/8.png",
+    "projects/dusky-wiki/linux/docker/docker-compose/7.png",
+    "projects/dusky-wiki/linux/docker/docker-compose/6.png",
+    "projects/dusky-wiki/linux/system_initialization/systemd/python_script_service.md",
+    "projects/dusky-wiki/devops/panel",
+    "devops/Без названия.canvas",
+    "projects/dusky-wiki/devops",
+    "dusky-wiki/windows/Без названия",
+    "projects/dusky-wiki/windows",
+    "projects/dusky-wiki/linux/docker/docker-compose",
+    "projects/dusky-wiki/linux/docker",
+    "projects/dusky-wiki/python/function/comprehensions.md"
+  ]
+}

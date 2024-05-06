@@ -1,0 +1,14 @@
+{
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "defaultViewMode": "preview",
+  "livePreview": true,
+  "newLinkFormat": "relative",
+  "showUnsupportedFiles": false,
+  "attachmentFolderPath": "./files",
+  "showInlineTitle": false,
+  "foldHeading": true,
+  "newFileLocation": "folder",
+  "useMarkdownLinks": true,
+  "newFileFolderPath": "projects"
+}

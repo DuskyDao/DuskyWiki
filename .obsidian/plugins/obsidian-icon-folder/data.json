@@ -1,0 +1,91 @@
+{
+  "settings": {
+    "migrated": 4,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "twemoji",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "SiNamuwiki",
+      "TiBrandDocker",
+      "FabWindows",
+      "SiWindows11",
+      "TiNetwork",
+      "SiPython",
+      "LiNetwork",
+      "SiLinux",
+      "🦹‍♂️",
+      "CoTriangleWarning",
+      "🌍",
+      "CoCoffee",
+      "CoLink",
+      "🗳",
+      "🚀",
+      "👨‍🚒",
+      "🥸",
+      "🇫🇲",
+      "🪟",
+      "📄",
+      "📜",
+      "👥",
+      "🔂",
+      "🐍",
+      "🐧"
+    ],
+    "recentlyUsedIconsSize": 25,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInFrontmatterEnabled": false,
+    "iconsBackgroundCheckEnabled": true,
+    "iconsInNotesEnabled": true,
+    "iconIdentifier": ":",
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsInLinksEnabled": true,
+    "debugMode": false
+  },
+  "projects/fesukr": {
+    "iconName": "CoCoffee",
+    "iconColor": "#d28f79"
+  },
+  "projects/my_wiki": {
+    "iconName": "CoTriangleWarning",
+    "iconColor": "#00d10e"
+  },
+  "projects/my_wiki/devops": "🦹‍♂️",
+  "projects/my_wiki/linux": {
+    "iconName": "SiLinux",
+    "iconColor": "#4ee010"
+  },
+  "projects/my_wiki/network": {
+    "iconName": "LiNetwork",
+    "iconColor": "#0bb1a6"
+  },
+  "projects/my_wiki/python": {
+    "iconName": "SiPython",
+    "iconColor": "#02b10d"
+  },
+  "projects/my_wiki/web": {
+    "iconName": "TiNetwork",
+    "iconColor": "#9200c7"
+  },
+  "projects/my_wiki/windows": {
+    "iconName": "FabWindows",
+    "iconColor": "#1166d4"
+  },
+  "projects/my_wiki/linux/docker": {
+    "iconName": "TiBrandDocker",
+    "iconColor": "#076cca"
+  },
+  "projects": {
+    "iconName": "SiNamuwiki",
+    "iconColor": "#ebcb00"
+  }
+}
