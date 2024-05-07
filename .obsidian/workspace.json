@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_config.yml.md",
+                "file": "projects/my_wiki/devops/git/git.md",
                 "mode": "preview",
                 "source": true
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_config.yml.md",
+                "file": "projects/my_wiki/devops/git/git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_config.yml.md",
+                "file": "projects/my_wiki/devops/git/git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_config.yml.md"
+                "file": "projects/my_wiki/devops/git/git.md"
               }
             }
           },
@@ -159,8 +159,9 @@
   },
   "active": "337525b89284e04c",
   "lastOpenFiles": [
-    "README.md",
+    "_config.yml",
     "_config.yml.md",
+    "README.md",
     "projects/my_wiki/linux/sudo/sudo.md",
     "projects/my_wiki/linux/system_initialization/systemd/python_script_service.md",
     "projects/my_wiki/linux/sudo/files/install_sudo.png",
@@ -198,7 +199,6 @@
     "projects/dusky-wiki/linux/docker/docker-compose/2.png",
     "projects/dusky-wiki/linux/docker/docker-compose/1.png",
     "projects/dusky-wiki/network/mikrotik/cli_mikrotik.md",
-    "projects/dusky-wiki/network/mikrotik/vrrp/vrrp.md",
     "projects/dusky-wiki/network/mikrotik/vrrp/mikro.png",
     "projects/dusky-wiki/network/mikrotik/vrrp/VRRP.jpg",
     "Без названия.canvas",

@@ -1,0 +1,8 @@
+<<<<<<< HEAD:_config.yml.md
+
+remote_theme: rundocs/jekyll-rtd-theme
+=======
+remote_theme: pages-themes/slate@v0.2.0
+>>>>>>> 51548df012e5eb7a3a1d2fd3a1aabb4e1d7e8445:_config.yml
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
