@@ -2,13 +2,14 @@
   "alwaysUpdateLinks": true,
   "promptDelete": false,
   "defaultViewMode": "preview",
-  "livePreview": true,
+  "livePreview": false,
   "newLinkFormat": "relative",
   "showUnsupportedFiles": false,
   "attachmentFolderPath": "./files",
   "showInlineTitle": false,
   "foldHeading": true,
-  "newFileLocation": "folder",
+  "newFileLocation": "current",
   "useMarkdownLinks": true,
-  "newFileFolderPath": "projects"
+  "newFileFolderPath": "projects",
+  "foldIndent": false
 }

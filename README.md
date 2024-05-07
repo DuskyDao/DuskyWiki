@@ -1,7 +1,7 @@
-# Bookmark for anikenik
+# Bookmark for anykey
 ### Content:
-1. **Devops**
-2. **Linux**
+1. [Docker compose](projects/my_wiki/devops/docker/docker-compose/Docker%20compose.md)
+2. [Linux](/projects/my_wiki/linux/)
 3. **Network**
 4. **Python**
 5. **Web**

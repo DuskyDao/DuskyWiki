@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "7669bffd013152e3",
+        "id": "17edf229c4bbf4f4",
         "type": "tabs",
         "children": [
           {
-            "id": "44416cca979d4230",
+            "id": "a50dfa28ed55172d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/dictress/dictress.md",
+                "file": "README.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               }
             }
           }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/dictress/dictress.md",
+                "file": "README.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/dictress/dictress.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/dictress/dictress.md"
+                "file": "README.md"
               }
             }
           },
@@ -139,11 +139,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 206.5
+    "width": 375.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -157,8 +157,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "44416cca979d4230",
+  "active": "a50dfa28ed55172d",
   "lastOpenFiles": [
+    "index.md",
+    "docs.md",
+    "README.md",
+    "About.md",
+    "projects/my_wiki/devops/docker/docker-compose/Docker compose.md",
+    "project/my_wiki/devops.md",
+    "project/my_wiki",
+    "project",
+    "Devops.md",
+    "projects/my_wiki/python/variable_types/dictress/dictress.md",
     "projects/my_wiki/python/function/default_function.md",
     "projects/dusky-wiki/python/function/default_function.md",
     "projects/my_wiki/python/function/lambda.md",
@@ -179,9 +189,6 @@
     "test222",
     "errors.txt",
     "test111",
-    "README.md",
-    "index.md",
-    "projects/my_wiki/devops/docker/docker-compose/Docker compose.md",
     "projects/my_wiki/devops/docker/docker-compose/files/1.png",
     "projects/my_wiki/devops/docker/docker-compose/files",
     "projects/dusky-wiki/linux/docker/docker-compose/Docker compose.md",
@@ -193,14 +200,7 @@
     "projects/dusky-wiki/network/mikrotik/vrrp/VRRP.jpg",
     "projects/dusky-wiki/devops/panel/Dashy.md",
     "projects/dusky-wiki/python/files/files.md",
-    "templaits",
-    "days",
     "Без названия.canvas",
-    "projects/dusky-wiki/python/variable_types/dictress/dictress.md",
-    "projects/dusky-wiki/python/module/pdb.md",
-    "projects/dusky-wiki/python/module/json.md",
-    "projects/dusky-wiki/python/libraries/logging.md",
-    "projects/dusky-wiki/web/django/install_django/install_django.md",
     "projects/dusky-wiki/linux/docker/docker-compose/10.png",
     "projects/dusky-wiki/linux/docker/docker-compose/9.png",
     "projects/dusky-wiki/linux/docker/docker-compose/8.png",

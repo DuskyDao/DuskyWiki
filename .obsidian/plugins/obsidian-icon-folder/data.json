@@ -6,6 +6,9 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "TiTemplate",
+      "TiCalendarTime",
+      "TiBrandDaysCounter",
       "SiNamuwiki",
       "TiBrandDocker",
       "FabWindows",
@@ -27,10 +30,7 @@
       "🪟",
       "📄",
       "📜",
-      "👥",
-      "🔂",
-      "🐍",
-      "🐧"
+      "👥"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [],
@@ -87,5 +87,13 @@
   "projects/my_wiki/devops/docker": {
     "iconName": "TiBrandDocker",
     "iconColor": "#076cca"
+  },
+  "days": {
+    "iconName": "TiCalendarTime",
+    "iconColor": "#03c1c4"
+  },
+  "templaits": {
+    "iconName": "TiTemplate",
+    "iconColor": "#0400eb"
   }
 }
