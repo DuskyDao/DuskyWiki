@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e502f3f7a8714144",
+        "id": "41660b3216b47dd1",
         "type": "tabs",
         "children": [
           {
-            "id": "c1ad0c5c719067be",
+            "id": "337525b89284e04c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "_config.yml.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -157,14 +157,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c1ad0c5c719067be",
+  "active": "337525b89284e04c",
   "lastOpenFiles": [
+    "README.md",
     "_config.yml.md",
     "projects/my_wiki/linux/sudo/sudo.md",
     "projects/my_wiki/linux/system_initialization/systemd/python_script_service.md",
     "projects/my_wiki/linux/sudo/files/install_sudo.png",
     "projects/my_wiki/linux/sudo/files",
-    "README.md",
     "projects/my_wiki/devops/docker/docker-compose/Docker compose.md",
     "index.md",
     "docs.md",
