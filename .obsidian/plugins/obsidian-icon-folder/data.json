@@ -33,14 +33,21 @@
       "👥"
     ],
     "recentlyUsedIconsSize": 25,
-    "rules": [],
+    "rules": [
+      {
+        "rule": "regex",
+        "icon": "BoBxsFileArchive",
+        "for": "everything",
+        "order": 0
+      }
+    ],
     "extraMargin": {
       "top": 0,
       "right": 4,
       "bottom": 0,
       "left": 0
     },
-    "iconInTabsEnabled": false,
+    "iconInTabsEnabled": true,
     "iconInTitleEnabled": false,
     "iconInFrontmatterEnabled": false,
     "iconsBackgroundCheckEnabled": true,
@@ -95,5 +102,6 @@
   "templaits": {
     "iconName": "TiTemplate",
     "iconColor": "#0400eb"
-  }
+  },
+  "projects/my_wiki/linux/sudo/sudo.md": "📜"
 }

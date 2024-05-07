@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "41660b3216b47dd1",
+        "id": "9d19aa24b0fc45a2",
         "type": "tabs",
         "children": [
           {
-            "id": "337525b89284e04c",
+            "id": "3b2cd0c33684b0b3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/my_wiki/devops/git/git.md",
+                "file": "projects/my_wiki/linux/venv/venv.md",
                 "mode": "preview",
                 "source": true
               }
@@ -70,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 232.5
+    "width": 200
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/my_wiki/devops/git/git.md",
+                "file": "projects/my_wiki/linux/venv/venv.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/my_wiki/devops/git/git.md",
+                "file": "projects/my_wiki/linux/venv/venv.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/my_wiki/devops/git/git.md"
+                "file": "projects/my_wiki/linux/venv/venv.md"
               }
             }
           },
@@ -143,7 +143,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 375.5
+    "width": 375.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -157,19 +158,29 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "337525b89284e04c",
+  "active": "3b2cd0c33684b0b3",
   "lastOpenFiles": [
+    "About.md",
+    "Без названия.canvas",
+    "projects/my_wiki/linux/sudo/sudo.md",
+    "projects/my_wiki/devops/git/git.md",
+    "projects/my_wiki/web/django/install_django/install_django.md",
+    "README.md",
+    "docs.md",
+    "index.md",
+    "Без названия/Drawing 2024-05-07 18.20.05.excalidraw.md",
+    "Без названия",
+    "templaits/new_doc.md",
+    "Excalidraw/Drawing 2024-05-07 18.13.13.excalidraw.md",
+    "projects/my_wiki/devops/docker/docker-compose/Docker compose.md",
+    "Excalidraw",
+    "Без названия.md",
+    "templaits/Без названия.md",
     "_config.yml",
     "_config.yml.md",
-    "README.md",
-    "projects/my_wiki/linux/sudo/sudo.md",
     "projects/my_wiki/linux/system_initialization/systemd/python_script_service.md",
     "projects/my_wiki/linux/sudo/files/install_sudo.png",
     "projects/my_wiki/linux/sudo/files",
-    "projects/my_wiki/devops/docker/docker-compose/Docker compose.md",
-    "index.md",
-    "docs.md",
-    "About.md",
     "project/my_wiki/devops.md",
     "project/my_wiki",
     "project",
@@ -185,23 +196,12 @@
     "projects/my_wiki/python/function/decorators.md",
     "projects/my_wiki/python/files/files.md",
     "projects/my_wiki/python/class/mixin_class.md",
-    "projects/my_wiki/python/class/multiple_inheritance.md",
-    "projects/my_wiki/python/class/polimorf.md",
-    "projects/my_wiki/python/class/static_arguments.md",
-    "projects/my_wiki/python/errors/errors.md",
-    "projects/my_wiki/devops/git/git.md",
     "projects/my_wiki/devops/git",
-    "test222",
-    "errors.txt",
-    "test111",
     "projects/my_wiki/devops/docker/docker-compose/files/1.png",
-    "projects/dusky-wiki/linux/docker/docker-compose/Docker compose.md",
     "projects/dusky-wiki/linux/docker/docker-compose/2.png",
     "projects/dusky-wiki/linux/docker/docker-compose/1.png",
-    "projects/dusky-wiki/network/mikrotik/cli_mikrotik.md",
     "projects/dusky-wiki/network/mikrotik/vrrp/mikro.png",
     "projects/dusky-wiki/network/mikrotik/vrrp/VRRP.jpg",
-    "Без названия.canvas",
     "projects/dusky-wiki/linux/docker/docker-compose/10.png",
     "projects/dusky-wiki/linux/docker/docker-compose/9.png",
     "projects/dusky-wiki/linux/docker/docker-compose/8.png",

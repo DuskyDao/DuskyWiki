@@ -1,5 +1,8 @@
 [
   "table-editor-obsidian",
   "cm-editor-syntax-highlight-obsidian",
-  "obsidian-icon-folder"
+  "obsidian-icon-folder",
+  "obsidian-link-converter",
+  "dataview",
+  "obsidian-file-color"
 ]
