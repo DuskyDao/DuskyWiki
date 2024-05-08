@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/my_wiki/linux/venv/venv.md",
+                "file": "projects/my_wiki/python/variable_types/lists/list.md",
                 "mode": "preview",
                 "source": true
               }
@@ -38,7 +38,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#python",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 250.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/my_wiki/linux/venv/venv.md",
+                "file": "projects/my_wiki/python/variable_types/lists/list.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/my_wiki/linux/venv/venv.md",
+                "file": "projects/my_wiki/python/variable_types/lists/list.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/my_wiki/linux/venv/venv.md"
+                "file": "projects/my_wiki/python/variable_types/lists/list.md"
               }
             }
           },
@@ -143,8 +143,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 375.5,
-    "collapsed": true
+    "width": 375.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -160,16 +159,25 @@
   },
   "active": "3b2cd0c33684b0b3",
   "lastOpenFiles": [
+    "projects/my_wiki/python/variable_types/dictress/dictress.md",
+    "projects/my_wiki/python/libraries/logging.md",
+    "projects/my_wiki/web/Django/1.install_django/install_django.md",
+    "projects/my_wiki/web/Django/2.run_apps/run_apps.md",
+    "projects/my_wiki/python/exe_file.md",
+    "projects/my_wiki/python/module/pdb.md",
+    "projects/my_wiki/web/Django/2.run_apps/files/apps.png",
+    "projects/my_wiki/web/Django/2.run_apps/files/views.png",
+    "projects/my_wiki/web/Django/2.run_apps/files",
+    "Без названия",
+    "projects/my_wiki/linux/venv/venv.md",
     "About.md",
     "Без названия.canvas",
     "projects/my_wiki/linux/sudo/sudo.md",
     "projects/my_wiki/devops/git/git.md",
-    "projects/my_wiki/web/django/install_django/install_django.md",
     "README.md",
     "docs.md",
     "index.md",
     "Без названия/Drawing 2024-05-07 18.20.05.excalidraw.md",
-    "Без названия",
     "templaits/new_doc.md",
     "Excalidraw/Drawing 2024-05-07 18.13.13.excalidraw.md",
     "projects/my_wiki/devops/docker/docker-compose/Docker compose.md",
@@ -185,18 +193,12 @@
     "project/my_wiki",
     "project",
     "Devops.md",
-    "projects/my_wiki/python/variable_types/dictress/dictress.md",
     "projects/my_wiki/python/function/default_function.md",
     "projects/dusky-wiki/python/function/default_function.md",
     "projects/my_wiki/python/function/lambda.md",
     "projects/dusky-wiki/python/function",
     "projects/dusky-wiki/python",
     "projects/dusky-wiki",
-    "projects/my_wiki/python/function/comprehensions.md",
-    "projects/my_wiki/python/function/decorators.md",
-    "projects/my_wiki/python/files/files.md",
-    "projects/my_wiki/python/class/mixin_class.md",
-    "projects/my_wiki/devops/git",
     "projects/my_wiki/devops/docker/docker-compose/files/1.png",
     "projects/dusky-wiki/linux/docker/docker-compose/2.png",
     "projects/dusky-wiki/linux/docker/docker-compose/1.png",
@@ -204,8 +206,6 @@
     "projects/dusky-wiki/network/mikrotik/vrrp/VRRP.jpg",
     "projects/dusky-wiki/linux/docker/docker-compose/10.png",
     "projects/dusky-wiki/linux/docker/docker-compose/9.png",
-    "projects/dusky-wiki/linux/docker/docker-compose/8.png",
-    "projects/dusky-wiki/linux/docker/docker-compose/7.png",
     "devops/Без названия.canvas"
   ]
 }

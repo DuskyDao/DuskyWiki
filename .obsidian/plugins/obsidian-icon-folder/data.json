@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiDjango",
       "TiTemplate",
       "TiCalendarTime",
       "TiBrandDaysCounter",
@@ -29,8 +30,7 @@
       "🇫🇲",
       "🪟",
       "📄",
-      "📜",
-      "👥"
+      "📜"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -103,5 +103,9 @@
     "iconName": "TiTemplate",
     "iconColor": "#0400eb"
   },
-  "projects/my_wiki/linux/sudo/sudo.md": "📜"
+  "projects/my_wiki/linux/sudo/sudo.md": "📜",
+  "projects/my_wiki/web/Django": {
+    "iconName": "SiDjango",
+    "iconColor": "#3dd704"
+  }
 }
