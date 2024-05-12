@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/lists/list.md",
+                "file": "projects/my_wiki/web/Django/3.urls/urls.md",
                 "mode": "preview",
                 "source": true
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/lists/list.md",
+                "file": "projects/my_wiki/web/Django/3.urls/urls.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/lists/list.md",
+                "file": "projects/my_wiki/web/Django/3.urls/urls.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/my_wiki/python/variable_types/lists/list.md"
+                "file": "projects/my_wiki/web/Django/3.urls/urls.md"
               }
             }
           },
@@ -143,7 +143,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 375.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -159,10 +159,13 @@
   },
   "active": "3b2cd0c33684b0b3",
   "lastOpenFiles": [
+    "projects/my_wiki/web/Django/2.run_apps/run_apps.md",
+    "projects/my_wiki/web/Django/3.urls/urls.md",
+    "projects/my_wiki/web/Django/3.urls",
+    "projects/my_wiki/python/variable_types/lists/list.md",
     "projects/my_wiki/python/variable_types/dictress/dictress.md",
     "projects/my_wiki/python/libraries/logging.md",
     "projects/my_wiki/web/Django/1.install_django/install_django.md",
-    "projects/my_wiki/web/Django/2.run_apps/run_apps.md",
     "projects/my_wiki/python/exe_file.md",
     "projects/my_wiki/python/module/pdb.md",
     "projects/my_wiki/web/Django/2.run_apps/files/apps.png",
@@ -194,11 +197,8 @@
     "project",
     "Devops.md",
     "projects/my_wiki/python/function/default_function.md",
-    "projects/dusky-wiki/python/function/default_function.md",
-    "projects/my_wiki/python/function/lambda.md",
     "projects/dusky-wiki/python/function",
     "projects/dusky-wiki/python",
-    "projects/dusky-wiki",
     "projects/my_wiki/devops/docker/docker-compose/files/1.png",
     "projects/dusky-wiki/linux/docker/docker-compose/2.png",
     "projects/dusky-wiki/linux/docker/docker-compose/1.png",
