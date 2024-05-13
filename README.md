@@ -1,6 +1,6 @@
 # Bookmark for anykey
 ### Content:
-1. [Docker compose](projects/my_wiki/devops/docker/docker-compose/Docker%20compose.md)
+1. [Docker compose](projects/devops/docker/docker-compose/Docker%20compose.md)
 2. [Linux](/projects/my_wiki/linux/)
 3. **Network**
 4. **Python**

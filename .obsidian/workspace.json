@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "9d19aa24b0fc45a2",
+        "id": "499aa3c001e8cbb9",
         "type": "tabs",
         "children": [
           {
-            "id": "3b2cd0c33684b0b3",
+            "id": "e5f6c162cc062b7c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/my_wiki/web/Django/3.urls/urls.md",
+                "file": "projects/python/SQLite/sqlite.md",
                 "mode": "preview",
                 "source": true
               }
@@ -70,7 +70,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 250.5
+    "width": 250.5,
+    "collapsed": true
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -86,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/my_wiki/web/Django/3.urls/urls.md",
+                "file": "projects/python/SQLite/sqlite.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/my_wiki/web/Django/3.urls/urls.md",
+                "file": "projects/python/SQLite/sqlite.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/my_wiki/web/Django/3.urls/urls.md"
+                "file": "projects/python/SQLite/sqlite.md"
               }
             }
           },
@@ -139,11 +140,12 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 241.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -157,55 +159,55 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3b2cd0c33684b0b3",
+  "active": "e5f6c162cc062b7c",
   "lastOpenFiles": [
-    "projects/my_wiki/web/Django/2.run_apps/run_apps.md",
-    "projects/my_wiki/web/Django/3.urls/urls.md",
-    "projects/my_wiki/web/Django/3.urls",
-    "projects/my_wiki/python/variable_types/lists/list.md",
-    "projects/my_wiki/python/variable_types/dictress/dictress.md",
-    "projects/my_wiki/python/libraries/logging.md",
-    "projects/my_wiki/web/Django/1.install_django/install_django.md",
-    "projects/my_wiki/python/exe_file.md",
-    "projects/my_wiki/python/module/pdb.md",
-    "projects/my_wiki/web/Django/2.run_apps/files/apps.png",
-    "projects/my_wiki/web/Django/2.run_apps/files/views.png",
-    "projects/my_wiki/web/Django/2.run_apps/files",
+    "projects/python/Django/5.Redirect/Redirect.md",
+    "projects/python/SQLite/sqlite.md",
+    "projects/python/SQLite",
+    "projects/python/Django/4.Debug and Error/debug.md",
+    "projects/python/Django/3.Urls/urls.md",
+    "projects/python/Django/2.run_apps/run_apps.md",
+    "projects/python/Django/1.install_django/install_django.md",
+    "projects/devops/lxc/LXC.md",
+    "projects/devops/lxc",
+    "projects/python/Django/5.Redirect",
+    "projects/python/Django/4.Debug and Error/files/debug_off.png",
+    "projects/python/Django/4.Debug and Error/files",
+    "projects/my_wiki/python/Django/4.Debug and Error/Новая папка",
+    "projects/my_wiki/linux.md",
+    "projects/web/css/no_js_only_css.md",
+    "projects/python/exe_file.md",
+    "projects/python/lessons/function/decorators.md",
+    "projects/web/links.md",
+    "projects/python/lessons",
+    "projects/python/Django/4.Debug and Error",
+    "projects/python/Django/3.Urls",
+    "projects/python/lessons/variable_types/lists/list.md",
+    "projects/python/lessons/variable_types/dictress/dictress.md",
+    "projects/python/lessons/libraries/logging.md",
+    "projects/python/lessons/module/pdb.md",
+    "projects/python/Django/2.run_apps/files/apps.png",
+    "projects/python/Django/2.run_apps/files/views.png",
+    "projects/python/Django/2.run_apps/files",
     "Без названия",
-    "projects/my_wiki/linux/venv/venv.md",
+    "projects/linux/venv/venv.md",
     "About.md",
     "Без названия.canvas",
-    "projects/my_wiki/linux/sudo/sudo.md",
-    "projects/my_wiki/devops/git/git.md",
+    "projects/linux/sudo/sudo.md",
+    "projects/devops/git/git.md",
     "README.md",
     "docs.md",
     "index.md",
     "Без названия/Drawing 2024-05-07 18.20.05.excalidraw.md",
     "templaits/new_doc.md",
     "Excalidraw/Drawing 2024-05-07 18.13.13.excalidraw.md",
-    "projects/my_wiki/devops/docker/docker-compose/Docker compose.md",
-    "Excalidraw",
-    "Без названия.md",
-    "templaits/Без названия.md",
-    "_config.yml",
-    "_config.yml.md",
-    "projects/my_wiki/linux/system_initialization/systemd/python_script_service.md",
-    "projects/my_wiki/linux/sudo/files/install_sudo.png",
-    "projects/my_wiki/linux/sudo/files",
-    "project/my_wiki/devops.md",
-    "project/my_wiki",
-    "project",
-    "Devops.md",
-    "projects/my_wiki/python/function/default_function.md",
-    "projects/dusky-wiki/python/function",
-    "projects/dusky-wiki/python",
-    "projects/my_wiki/devops/docker/docker-compose/files/1.png",
+    "projects/linux/sudo/files/install_sudo.png",
+    "projects/devops/docker/docker-compose/files/1.png",
     "projects/dusky-wiki/linux/docker/docker-compose/2.png",
     "projects/dusky-wiki/linux/docker/docker-compose/1.png",
     "projects/dusky-wiki/network/mikrotik/vrrp/mikro.png",
     "projects/dusky-wiki/network/mikrotik/vrrp/VRRP.jpg",
     "projects/dusky-wiki/linux/docker/docker-compose/10.png",
-    "projects/dusky-wiki/linux/docker/docker-compose/9.png",
     "devops/Без названия.canvas"
   ]
 }

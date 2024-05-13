@@ -1,11 +1,17 @@
 {
   "settings": {
-    "migrated": 4,
+    "migrated": 5,
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasDatabase",
+      "SiSqlite",
+      "LiScrollText",
+      "SiPythonanywhere",
+      "SiGit",
+      "SiLinuxcontainers",
       "SiDjango",
       "TiTemplate",
       "TiCalendarTime",
@@ -24,13 +30,7 @@
       "CoCoffee",
       "CoLink",
       "🗳",
-      "🚀",
-      "👨‍🚒",
-      "🥸",
-      "🇫🇲",
-      "🪟",
-      "📄",
-      "📜"
+      "🚀"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -56,44 +56,12 @@
     "iconInFrontmatterFieldName": "icon",
     "iconColorInFrontmatterFieldName": "iconColor",
     "iconsInLinksEnabled": true,
-    "debugMode": false
-  },
-  "projects/fesukr": {
-    "iconName": "CoCoffee",
-    "iconColor": "#d28f79"
-  },
-  "projects/my_wiki": {
-    "iconName": "CoTriangleWarning",
-    "iconColor": "#00d10e"
-  },
-  "projects/my_wiki/devops": "🦹‍♂️",
-  "projects/my_wiki/linux": {
-    "iconName": "SiLinux",
-    "iconColor": "#4ee010"
-  },
-  "projects/my_wiki/network": {
-    "iconName": "LiNetwork",
-    "iconColor": "#0bb1a6"
-  },
-  "projects/my_wiki/python": {
-    "iconName": "SiPython",
-    "iconColor": "#02b10d"
-  },
-  "projects/my_wiki/web": {
-    "iconName": "TiNetwork",
-    "iconColor": "#9200c7"
-  },
-  "projects/my_wiki/windows": {
-    "iconName": "FabWindows",
-    "iconColor": "#1166d4"
+    "debugMode": false,
+    "iconInTitlePosition": "above"
   },
   "projects": {
     "iconName": "SiNamuwiki",
     "iconColor": "#ebcb00"
-  },
-  "projects/my_wiki/devops/docker": {
-    "iconName": "TiBrandDocker",
-    "iconColor": "#076cca"
   },
   "days": {
     "iconName": "TiCalendarTime",
@@ -103,9 +71,50 @@
     "iconName": "TiTemplate",
     "iconColor": "#0400eb"
   },
-  "projects/my_wiki/linux/sudo/sudo.md": "📜",
-  "projects/my_wiki/web/Django": {
+  "projects/windows": {
+    "iconName": "FabWindows",
+    "iconColor": "#1166d4"
+  },
+  "projects/web": {
+    "iconName": "TiNetwork",
+    "iconColor": "#9200c7"
+  },
+  "projects/python": {
+    "iconName": "SiPython",
+    "iconColor": "#02b10d"
+  },
+  "projects/python/Django": {
     "iconName": "SiDjango",
     "iconColor": "#3dd704"
+  },
+  "projects/python/lessons": {
+    "iconName": "LiScrollText",
+    "iconColor": "#fffa6b"
+  },
+  "projects/network": {
+    "iconName": "LiNetwork",
+    "iconColor": "#0bb1a6"
+  },
+  "projects/linux": {
+    "iconName": "SiLinux",
+    "iconColor": "#4ee010"
+  },
+  "projects/linux/sudo/sudo.md": "📜",
+  "projects/devops": "🦹‍♂️",
+  "projects/devops/docker": {
+    "iconName": "TiBrandDocker",
+    "iconColor": "#076cca"
+  },
+  "projects/devops/git": {
+    "iconName": "SiGit",
+    "iconColor": "#f96d3e"
+  },
+  "projects/devops/lxc": {
+    "iconName": "SiLinuxcontainers",
+    "iconColor": "#f4af1a"
+  },
+  "projects/python/SQLite": {
+    "iconName": "FasDatabase",
+    "iconColor": "#24ffc8"
   }
 }
