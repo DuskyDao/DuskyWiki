@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "499aa3c001e8cbb9",
+        "id": "de86871f89b9eab8",
         "type": "tabs",
         "children": [
           {
-            "id": "e5f6c162cc062b7c",
+            "id": "ddbda38de1192946",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "projects/python/SQLite/sqlite.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -70,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 250.5,
+    "width": 231.5,
     "collapsed": true
   },
   "right": {
@@ -159,10 +159,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e5f6c162cc062b7c",
+  "active": "ddbda38de1192946",
   "lastOpenFiles": [
-    "projects/python/Django/5.Redirect/Redirect.md",
+    "projects/python/Streamlit/maine.md",
     "projects/python/SQLite/sqlite.md",
+    "projects/python/Streamlit",
+    "projects/web/heroku",
+    "projects/python/Django/5.Redirect/Redirect.md",
     "projects/python/SQLite",
     "projects/python/Django/4.Debug and Error/debug.md",
     "projects/python/Django/3.Urls/urls.md",
@@ -188,8 +191,6 @@
     "projects/python/lessons/module/pdb.md",
     "projects/python/Django/2.run_apps/files/apps.png",
     "projects/python/Django/2.run_apps/files/views.png",
-    "projects/python/Django/2.run_apps/files",
-    "Без названия",
     "projects/linux/venv/venv.md",
     "About.md",
     "Без названия.canvas",
@@ -200,7 +201,6 @@
     "index.md",
     "Без названия/Drawing 2024-05-07 18.20.05.excalidraw.md",
     "templaits/new_doc.md",
-    "Excalidraw/Drawing 2024-05-07 18.13.13.excalidraw.md",
     "projects/linux/sudo/files/install_sudo.png",
     "projects/devops/docker/docker-compose/files/1.png",
     "projects/dusky-wiki/linux/docker/docker-compose/2.png",

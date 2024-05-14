@@ -6,6 +6,8 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiStreamlit",
+      "SiHeroku",
       "FasDatabase",
       "SiSqlite",
       "LiScrollText",
@@ -28,9 +30,7 @@
       "CoTriangleWarning",
       "🌍",
       "CoCoffee",
-      "CoLink",
-      "🗳",
-      "🚀"
+      "CoLink"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -116,5 +116,13 @@
   "projects/python/SQLite": {
     "iconName": "FasDatabase",
     "iconColor": "#24ffc8"
+  },
+  "projects/web/heroku": {
+    "iconName": "SiHeroku",
+    "iconColor": "#6200a3"
+  },
+  "projects/python/Streamlit": {
+    "iconName": "SiStreamlit",
+    "iconColor": "#cc0505"
   }
 }
