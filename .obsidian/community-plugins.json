@@ -4,5 +4,7 @@
   "obsidian-icon-folder",
   "obsidian-link-converter",
   "dataview",
-  "waypoint"
+  "waypoint",
+  "highlightr-plugin",
+  "execute-code"
 ]

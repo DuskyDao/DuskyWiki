@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/SQLite/sqlite.md",
-                "mode": "source",
+                "file": "projects/windows/Activation win10.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -38,7 +38,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#python",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,8 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 231.5,
-    "collapsed": true
+    "width": 231.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -87,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/python/SQLite/sqlite.md",
+                "file": "projects/windows/Activation win10.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/python/SQLite/sqlite.md",
+                "file": "projects/windows/Activation win10.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -127,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/SQLite/sqlite.md"
+                "file": "projects/windows/Activation win10.md"
               }
             }
           },
@@ -159,10 +158,31 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ddbda38de1192946",
+  "active": "fd3393ea14f0c64a",
   "lastOpenFiles": [
-    "projects/python/Streamlit/maine.md",
+    "projects/windows/RDP Wrapper.md",
+    "projects/windows/Лицензии.md",
+    "projects/windows/Activation win10.md",
+    "projects/windows/RDP Wrapper",
+    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
     "projects/python/SQLite/sqlite.md",
+    "projects/python/SQLite/files/Pasted image 20240516233321.png",
+    "projects/python/SQLite/files/Pasted image 20240516233229.png",
+    "projects/python/SQLite/files/Pasted image 20240516231100.png",
+    "projects/python/SQLite/files/2table.png",
+    "projects/linux/venv/venv.md",
+    "projects/network/mikrotik/vlans/vlans.md",
+    "projects/python/exe_file.md",
+    "projects/network/mikrotik/cli_mikrotik.md",
+    "projects/network/mikrotik/vlans/Без названия",
+    "projects/network/mikrotik/vlans",
+    "projects/network/mikrotik/vrrp/vrrp.md",
+    "projects/network/mikrotik/vrrp/files",
+    "projects/python/SQLite/files/table select.png",
+    "projects/python/SQLite/files/table select 1.png",
+    "projects/python/SQLite/files/table.png",
+    "projects/python/SQLite/files",
+    "projects/python/Streamlit/maine.md",
     "projects/python/Streamlit",
     "projects/web/heroku",
     "projects/python/Django/5.Redirect/Redirect.md",
@@ -175,39 +195,18 @@
     "projects/devops/lxc",
     "projects/python/Django/5.Redirect",
     "projects/python/Django/4.Debug and Error/files/debug_off.png",
-    "projects/python/Django/4.Debug and Error/files",
-    "projects/my_wiki/python/Django/4.Debug and Error/Новая папка",
     "projects/my_wiki/linux.md",
     "projects/web/css/no_js_only_css.md",
-    "projects/python/exe_file.md",
     "projects/python/lessons/function/decorators.md",
     "projects/web/links.md",
-    "projects/python/lessons",
-    "projects/python/Django/4.Debug and Error",
-    "projects/python/Django/3.Urls",
     "projects/python/lessons/variable_types/lists/list.md",
     "projects/python/lessons/variable_types/dictress/dictress.md",
     "projects/python/lessons/libraries/logging.md",
     "projects/python/lessons/module/pdb.md",
     "projects/python/Django/2.run_apps/files/apps.png",
     "projects/python/Django/2.run_apps/files/views.png",
-    "projects/linux/venv/venv.md",
     "About.md",
     "Без названия.canvas",
-    "projects/linux/sudo/sudo.md",
-    "projects/devops/git/git.md",
-    "README.md",
-    "docs.md",
-    "index.md",
-    "Без названия/Drawing 2024-05-07 18.20.05.excalidraw.md",
-    "templaits/new_doc.md",
-    "projects/linux/sudo/files/install_sudo.png",
-    "projects/devops/docker/docker-compose/files/1.png",
-    "projects/dusky-wiki/linux/docker/docker-compose/2.png",
-    "projects/dusky-wiki/linux/docker/docker-compose/1.png",
-    "projects/dusky-wiki/network/mikrotik/vrrp/mikro.png",
-    "projects/dusky-wiki/network/mikrotik/vrrp/VRRP.jpg",
-    "projects/dusky-wiki/linux/docker/docker-compose/10.png",
     "devops/Без названия.canvas"
   ]
 }

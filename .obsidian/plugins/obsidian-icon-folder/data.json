@@ -6,6 +6,12 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "🎁",
+      "TiHexagonLetterE",
+      "SiSpeedtest",
+      "SiZazzle",
+      "SiOpnsense",
+      "SiMikrotik",
       "SiStreamlit",
       "SiHeroku",
       "FasDatabase",
@@ -24,13 +30,7 @@
       "SiWindows11",
       "TiNetwork",
       "SiPython",
-      "LiNetwork",
-      "SiLinux",
-      "🦹‍♂️",
-      "CoTriangleWarning",
-      "🌍",
-      "CoCoffee",
-      "CoLink"
+      "LiNetwork"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -124,5 +124,26 @@
   "projects/python/Streamlit": {
     "iconName": "SiStreamlit",
     "iconColor": "#cc0505"
-  }
+  },
+  "projects/network/mikrotik": {
+    "iconName": "SiMikrotik",
+    "iconColor": "#77a5ee"
+  },
+  "projects/network/opnsense": {
+    "iconName": "SiOpnsense",
+    "iconColor": "#ff781f"
+  },
+  "projects/network/zabbix": {
+    "iconName": "SiZazzle",
+    "iconColor": "#f70808"
+  },
+  "projects/network/iperf": {
+    "iconName": "SiSpeedtest",
+    "iconColor": "#9dff5c"
+  },
+  "projects/python/exe_file.md": {
+    "iconName": "TiHexagonLetterE",
+    "iconColor": "#60cb52"
+  },
+  "projects/windows/RDP Wrapper.md": "🎁"
 }

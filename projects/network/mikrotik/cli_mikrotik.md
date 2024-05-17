@@ -33,12 +33,14 @@ file         mpls       radius      tool           import  undo
 ```
 Пример доступных путей и команд из раздела /ip:
 
+```
 [admin@MikroTik] /ip >
 address      dhcp-server  kid-control  route     ssh           export
 arp          dns          neighbor     service   tftp          
 cloud        firewall     packing      settings  traffic-flow  
 dhcp-client  hotspot      pool         smb       upnp          
-dhcp-relay   ipsec        proxy        socks     vrf           
+dhcp-relay   ipsec        proxy        socks     vrf  
+```         
 
 Пример доступных путей и команд из раздела /ip/address:
 

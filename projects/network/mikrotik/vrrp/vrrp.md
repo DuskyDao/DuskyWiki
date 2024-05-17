@@ -1,8 +1,3 @@
-+++
-title = 'Vrrp'
-date = 2024-01-29T11:15:45+02:00
-draft = false
-+++
 #mikrotik #vrrp 
 ### Как развернуть и настроить отказоустойчивую локальную сеть на MikroTik и Cisco с помощью VRRP
 взято с [blog.sedicomm.com](https://blog.sedicomm.com/2020/07/31/kak-razvernut-i-nastroit-otkazoustojchivuyu-lokalnuyu-set-na-mikrotik-i-cisco-s-pomoshhyu-vrrp/#4)\
@@ -15,7 +10,7 @@ draft = false
 5. **[Выводы](#выводы)**
 ### Топология
 Схема топологии следующая:\
-![схема](/network/mikrotik/vrrp/VRRP.jpg)
+![схема](files/VRRP.jpg)
 ### Задачи
 Наша задача — настроить VRRP в мультивендорной среде (MikroTik + Cisco в связке).
 #### Настройка интерфейса и VRRP на Cisco
@@ -50,7 +45,7 @@ Router(config-if)#vrrp 25 timers advertise 2
 [admin@MikroTik] /ip address> add address=192.168.88.254 interface=vrrp1 network=192.168.88.0
 ```
 **Проверяем что получилось:**\
-![mikrotik](/network/mikrotik/vrrp/mikro.png)
+![mikrotik](files/mikro.png)
 Вот и все, далее поверяем как работает VRRP. Для этого выключаем один из маршрутизаторов и наблюдаем, что пакеты начинают идти через другой.
 ### Выводы
 Спасибо за уделенное время на прочтение статьи. Теперь вы больше знаете о том, как настроить резервирование на первом переходе (шлюз по умолчанию) на маршрутизаторах MikroTik и Cisco с помощью протокола VRRP и развернуть отказоустойчивую локальную сеть.

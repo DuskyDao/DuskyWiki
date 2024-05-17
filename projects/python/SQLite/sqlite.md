@@ -164,3 +164,52 @@ UPDATE users SET score = score + 200 WHERE name LIKE 'Miha'
 ```sql
 UPDATE users SET score = 100, old = 45 WHERE old = 44
 ```
+#### Агрегирующие функции
+* *count()* - подсчет числа записей
+* *sum()* - подсчет суммы указанного поля по всем записям выборки
+* *avr()*- вычисление среднего арифметического указанного поля
+* *min()* - нахождение минимального значения для указания поля
+* *max()* - нахождение максимального значения для указанного поля
+
+Находим количество строчек где user_id = 1 с прописыванием псевдонима для вывода "*kolichestvo 3*"
+```sql
+SELECT count(user_id) as kolichestvo FROM games WHERE user_id = 1
+```
+Выводим количество уникальных строк с user_id
+```sql
+SELECT count(DISTINCT user_id) as kolichestvo FROM games
+```
+Выводим уникальные строки с user_id
+```sql
+SELECT DISTINCT user_id as kolichestvo FROM games
+```
+Считаем сумму всех очков user_id = 1 c псевдонимом "summa 5000"
+```sql
+SELECT sum(score) as summa FROM games WHERE user_id = 1
+```
+#### Группировка запросов
+**GROUP BY**
+вывести 2столбца sex, score подсчитав сумму очков сгрупировав по sex (все муж и жен)
+```sql
+SELECT sex, sum(score) as summa FROM users GROUP BY sex
+```
+![](files/table.png) ![](files/table%20select%201.png)
+#### Создание сводных отчетов (JOIN ... ON)
+**SELECT <поля> FROM <таблица1> JOIN <таблица2> JOIN <таблица3> ... JOIN <таблица N> ON <условие связывания>**
+Свяжем таблицу *games* и *users* по полям в таблице games - *user_id* и таблице users - *ROWID*
+![](files/2table.png)
+```sql
+SELECT name, sex, games.score FROM games
+JOIN users ON games.user_id = users.ROWID
+```
+Результат:
+![](files/Pasted%20image%2020240516231100.png)
+> **LEFT JOIN** - будет сопоставлять ячейки которые отсутствуют в 2й таблице
+#### UNION - объединение таблиц
+имеем 2 таблици:
+![](files/Pasted%20image%2020240516233229.png)
+объединяем вывод
+```sql
+SELECT score, `from` FROM tab1 UNION SELECT val, type FROM tab2
+```
+![](files/Pasted%20image%2020240516233321.png)
