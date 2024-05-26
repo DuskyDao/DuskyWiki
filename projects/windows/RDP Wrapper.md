@@ -15,3 +15,15 @@ Windows 10 LTSC 1809 здесь https://t.me/rdpwrap/41015
 
 После выполнения данной инструкции нужно заново установить RDP Wrapper.
 > Обновить \*.ini файл можно [тут](https://raw.githubusercontent.com/sebaxakerhtc/rdpwrap.ini/master/rdpwrap.ini)
+> Download [sebaxakerhtc](https://github.com/sebaxakerhtc/rdpwrap/releases)
+#### правильная установка
+1. Download RDP Wrapper 1.6.2 and extract this to any directory.
+2. Place `rdpwrap.ini` in the same directory.
+3. Open CMD as administrator
+4. Execute this commands
+```
+cd C:\path\to\directory\
+rdpwinst -u -k
+rdpwinst -i
+```
+5. Enjoy!

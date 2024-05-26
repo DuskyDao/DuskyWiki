@@ -7,6 +7,10 @@ irm https://massgrave.dev/get | iex
 ```
 Далее откроется окно, следуйте инструкциям.  
 Или скачайте файл activation_metod_2.cmd по [ссылке](https://t.me/sommov95/3) и запустите его.
+Note - On older Windows builds you may need to run the below command before,  
+```powershell
+[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12
+```
 #### Пауза обновлений
 Нажмите Win+R, в поле выполнить напишите regedit, пройдите по пути
 ```powershell
@@ -21,9 +25,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
   
 Введите команду:
 
-**Код:**
-
+```shell
 wsreset.exe -i
+```
 
 Подождите пока Microsoft Store установится.  
   

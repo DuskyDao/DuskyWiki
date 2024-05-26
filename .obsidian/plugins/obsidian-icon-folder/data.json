@@ -6,6 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiMicropython",
+      "RiInformation2Fill",
+      "IbDashboardOneIsFilled",
+      "RiDashboard3Fill",
+      "LiDatabaseBackup",
       "🎁",
       "TiHexagonLetterE",
       "SiSpeedtest",
@@ -25,12 +30,7 @@
       "TiCalendarTime",
       "TiBrandDaysCounter",
       "SiNamuwiki",
-      "TiBrandDocker",
-      "FabWindows",
-      "SiWindows11",
-      "TiNetwork",
-      "SiPython",
-      "LiNetwork"
+      "TiBrandDocker"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -105,14 +105,6 @@
     "iconName": "TiBrandDocker",
     "iconColor": "#076cca"
   },
-  "projects/devops/git": {
-    "iconName": "SiGit",
-    "iconColor": "#f96d3e"
-  },
-  "projects/devops/lxc": {
-    "iconName": "SiLinuxcontainers",
-    "iconColor": "#f4af1a"
-  },
   "projects/python/SQLite": {
     "iconName": "FasDatabase",
     "iconColor": "#24ffc8"
@@ -145,5 +137,29 @@
     "iconName": "TiHexagonLetterE",
     "iconColor": "#60cb52"
   },
-  "projects/windows/RDP Wrapper.md": "🎁"
+  "projects/windows/RDP Wrapper.md": "🎁",
+  "projects/devops/git.md": {
+    "iconName": "SiGit",
+    "iconColor": "#ff6905"
+  },
+  "projects/devops/restic.md": {
+    "iconName": "LiDatabaseBackup",
+    "iconColor": "#f4b915"
+  },
+  "projects/devops/LXC.md": {
+    "iconName": "SiLinuxcontainers",
+    "iconColor": "#f5aa42"
+  },
+  "projects/devops/panels": {
+    "iconName": "IbDashboardOneIsFilled",
+    "iconColor": "#963fee"
+  },
+  "projects/python/SQLite/sqlite.md": {
+    "iconName": "RiInformation2Fill",
+    "iconColor": "#5a80f2"
+  },
+  "projects/python/SQLite/methods sqlite3.md": {
+    "iconName": "SiSqlite",
+    "iconColor": "#e14dff"
+  }
 }

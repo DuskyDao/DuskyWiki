@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "de86871f89b9eab8",
+        "id": "4508183225ddf4f0",
         "type": "tabs",
         "children": [
           {
-            "id": "ddbda38de1192946",
+            "id": "02f339580c883feb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/windows/Activation win10.md",
+                "file": "projects/python/Streamlit/maine.md",
                 "mode": "preview",
                 "source": true
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/windows/Activation win10.md",
+                "file": "projects/python/Streamlit/maine.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/windows/Activation win10.md",
+                "file": "projects/python/Streamlit/maine.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/windows/Activation win10.md"
+                "file": "projects/python/Streamlit/maine.md"
               }
             }
           },
@@ -158,14 +158,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fd3393ea14f0c64a",
+  "active": "02f339580c883feb",
   "lastOpenFiles": [
+    "projects/python/SQLite/methods sqlite3.md",
+    "projects/python/SQLite/sqlite.md",
+    "projects/windows/Activation win10.md",
+    "projects/web/css/magnetic mousemove effect.md",
+    "projects/python/SQLite/files/Pasted image 20240522223200.png",
+    "projects/python/SQLite/files/Pasted image 20240522223108.png",
+    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
+    "projects/devops/restic.md",
+    "projects/devops/git.md",
+    "projects/devops/LXC.md",
     "projects/windows/RDP Wrapper.md",
     "projects/windows/Лицензии.md",
-    "projects/windows/Activation win10.md",
     "projects/windows/RDP Wrapper",
-    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
-    "projects/python/SQLite/sqlite.md",
     "projects/python/SQLite/files/Pasted image 20240516233321.png",
     "projects/python/SQLite/files/Pasted image 20240516233229.png",
     "projects/python/SQLite/files/Pasted image 20240516231100.png",
@@ -191,7 +198,6 @@
     "projects/python/Django/3.Urls/urls.md",
     "projects/python/Django/2.run_apps/run_apps.md",
     "projects/python/Django/1.install_django/install_django.md",
-    "projects/devops/lxc/LXC.md",
     "projects/devops/lxc",
     "projects/python/Django/5.Redirect",
     "projects/python/Django/4.Debug and Error/files/debug_off.png",
@@ -200,12 +206,6 @@
     "projects/python/lessons/function/decorators.md",
     "projects/web/links.md",
     "projects/python/lessons/variable_types/lists/list.md",
-    "projects/python/lessons/variable_types/dictress/dictress.md",
-    "projects/python/lessons/libraries/logging.md",
-    "projects/python/lessons/module/pdb.md",
-    "projects/python/Django/2.run_apps/files/apps.png",
-    "projects/python/Django/2.run_apps/files/views.png",
-    "About.md",
     "Без названия.canvas",
     "devops/Без названия.canvas"
   ]

@@ -213,3 +213,46 @@ JOIN users ON games.user_id = users.ROWID
 SELECT score, `from` FROM tab1 UNION SELECT val, type FROM tab2
 ```
 ![](files/Pasted%20image%2020240516233321.png)
+
+#### Вложенные запросы
+##### Пример №1
+есть 2 таблицы, вытянем из них оценки по языку "Си" которые выше чем у "Маши" 
+Можно сделать за 2 запроса, в 1м узнав оценку Маши (3), во 2м отобрать все оценки по "Си" выше 3 
+![](files/Pasted%20image%2020240522223200.png)
+```sql
+SELECT subject, mark FROM marks WHERE id = 2 AND subject LIKE 'Си'
+
+SELECT subject, mark, name FROM marks
+JOIN students ON marks.id = students.ROWID
+WHERE mark > 3 AND subject LIKE 'Си'
+```
+Теперь делаем через вложенный запрос
+```sql
+SELECT name, subject, mark FROM marks
+JOIN students ON marks.id = students.ROWID
+WHERE mark > (SELECT mark FROM marks WHERE id = 2)
+AND subject LIKE 'Си'
+```
+Получим
+![](files/Pasted%20image%2020240522223108.png)
+##### Пример №2
+используем вложенный запрос для импорта данных в новую таблицу "female". Выберем всех женских студентов
+```sql
+CREATE TABLE "female" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"sex"	INTEGER,
+	"old"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+INSERT INTO female
+SELECT NULL, name, sex, old FROM students WHERE sex = 2
+```
+> NULL пишем для игнорирования 1го поля, так как оно заполняется автоматически
+##### Пример №3
+Обновим в таблице  marks поля найменьших оценок на 0, пользователя с id = 1
+```sql
+UPDATE marks SET mark = 0
+WHERE mark <= (SELECT min(mark) FROM marks WHERE id = 1)
+```
