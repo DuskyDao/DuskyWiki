@@ -6,6 +6,10 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiGnubash",
+      "OcContainer16",
+      "TiBrandDocker",
+      "SiDocker",
       "SiMicropython",
       "RiInformation2Fill",
       "IbDashboardOneIsFilled",
@@ -26,11 +30,7 @@
       "SiGit",
       "SiLinuxcontainers",
       "SiDjango",
-      "TiTemplate",
-      "TiCalendarTime",
-      "TiBrandDaysCounter",
-      "SiNamuwiki",
-      "TiBrandDocker"
+      "TiTemplate"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -161,5 +161,21 @@
   "projects/python/SQLite/methods sqlite3.md": {
     "iconName": "SiSqlite",
     "iconColor": "#e14dff"
+  },
+  "projects/devops/docker/docker.md": {
+    "iconName": "SiDocker",
+    "iconColor": "#75caff"
+  },
+  "projects/devops/docker/docker compose.md": {
+    "iconName": "TiBrandDocker",
+    "iconColor": "#52ff9d"
+  },
+  "projects/devops/docker/containers template.md": {
+    "iconName": "OcContainer16",
+    "iconColor": "#fcff38"
+  },
+  "projects/devops/bash.md": {
+    "iconName": "SiGnubash",
+    "iconColor": "#d0aff8"
   }
 }

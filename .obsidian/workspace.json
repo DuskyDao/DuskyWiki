@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4508183225ddf4f0",
+        "id": "6af15e924eee5849",
         "type": "tabs",
         "children": [
           {
-            "id": "02f339580c883feb",
+            "id": "94b13302ab206602",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Streamlit/maine.md",
+                "file": "projects/devops/bash.md",
                 "mode": "preview",
                 "source": true
               }
@@ -64,13 +64,21 @@
                 "sortOrder": "byModifiedTimeReverse"
               }
             }
+          },
+          {
+            "id": "7507f9de19e7262a",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {}
+            }
           }
         ],
         "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 231.5
+    "width": 210.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -86,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/python/Streamlit/maine.md",
+                "file": "projects/devops/bash.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/python/Streamlit/maine.md",
+                "file": "projects/devops/bash.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Streamlit/maine.md"
+                "file": "projects/devops/bash.md"
               }
             }
           },
@@ -158,8 +166,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "02f339580c883feb",
+  "active": "94b13302ab206602",
   "lastOpenFiles": [
+    "projects/devops/docker/docker.md",
+    "projects/devops/docker/containers template.md",
+    "projects/devops/docker/docker compose.md",
+    "projects/devops/bash.md",
+    "projects/devops/docker/docker-compose/docker.md",
+    "projects/python/Django/1.install_django.md",
+    "projects/python/Django/2.run_apps/run_apps.md",
+    "README.md",
+    "About.md",
+    "index.md",
+    "docs.md",
+    "projects/devops/git.md",
+    "Tags",
+    "projects/python/Django/5.Redirect/Redirect.md",
+    "projects/python/lessons/errors/errors.md",
+    "projects/python/Django/3.Urls/urls.md",
+    "projects/python/Streamlit/maine.md",
     "projects/python/SQLite/methods sqlite3.md",
     "projects/python/SQLite/sqlite.md",
     "projects/windows/Activation win10.md",
@@ -168,7 +193,6 @@
     "projects/python/SQLite/files/Pasted image 20240522223108.png",
     "projects/windows/Установка Windows 11 без подключения к Интернету.md",
     "projects/devops/restic.md",
-    "projects/devops/git.md",
     "projects/devops/LXC.md",
     "projects/windows/RDP Wrapper.md",
     "projects/windows/Лицензии.md",
@@ -178,34 +202,18 @@
     "projects/python/SQLite/files/Pasted image 20240516231100.png",
     "projects/python/SQLite/files/2table.png",
     "projects/linux/venv/venv.md",
-    "projects/network/mikrotik/vlans/vlans.md",
-    "projects/python/exe_file.md",
-    "projects/network/mikrotik/cli_mikrotik.md",
     "projects/network/mikrotik/vlans/Без названия",
     "projects/network/mikrotik/vlans",
-    "projects/network/mikrotik/vrrp/vrrp.md",
     "projects/network/mikrotik/vrrp/files",
     "projects/python/SQLite/files/table select.png",
     "projects/python/SQLite/files/table select 1.png",
     "projects/python/SQLite/files/table.png",
     "projects/python/SQLite/files",
-    "projects/python/Streamlit/maine.md",
     "projects/python/Streamlit",
     "projects/web/heroku",
-    "projects/python/Django/5.Redirect/Redirect.md",
     "projects/python/SQLite",
-    "projects/python/Django/4.Debug and Error/debug.md",
-    "projects/python/Django/3.Urls/urls.md",
-    "projects/python/Django/2.run_apps/run_apps.md",
-    "projects/python/Django/1.install_django/install_django.md",
     "projects/devops/lxc",
-    "projects/python/Django/5.Redirect",
     "projects/python/Django/4.Debug and Error/files/debug_off.png",
-    "projects/my_wiki/linux.md",
-    "projects/web/css/no_js_only_css.md",
-    "projects/python/lessons/function/decorators.md",
-    "projects/web/links.md",
-    "projects/python/lessons/variable_types/lists/list.md",
     "Без названия.canvas",
     "devops/Без названия.canvas"
   ]
