@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/devops/bash.md",
+                "file": "projects/devops/docker/docker_pdf.md",
                 "mode": "preview",
                 "source": true
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/devops/bash.md",
+                "file": "projects/devops/docker/docker_pdf.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/devops/bash.md",
+                "file": "projects/devops/docker/docker_pdf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/devops/bash.md"
+                "file": "projects/devops/docker/docker_pdf.md"
               }
             }
           },
@@ -169,8 +169,11 @@
   "active": "94b13302ab206602",
   "lastOpenFiles": [
     "projects/devops/docker/docker.md",
-    "projects/devops/docker/containers template.md",
-    "projects/devops/docker/docker compose.md",
+    "projects/devops/docker/containers.md",
+    "projects/devops/docker/compose.md",
+    "projects/devops/docker/docker_pdf.md",
+    "projects/devops/docker/files/Docker.pdf",
+    "projects/devops/git.md",
     "projects/devops/bash.md",
     "projects/devops/docker/docker-compose/docker.md",
     "projects/python/Django/1.install_django.md",
@@ -179,7 +182,6 @@
     "About.md",
     "index.md",
     "docs.md",
-    "projects/devops/git.md",
     "Tags",
     "projects/python/Django/5.Redirect/Redirect.md",
     "projects/python/lessons/errors/errors.md",
@@ -195,13 +197,11 @@
     "projects/devops/restic.md",
     "projects/devops/LXC.md",
     "projects/windows/RDP Wrapper.md",
-    "projects/windows/Лицензии.md",
     "projects/windows/RDP Wrapper",
     "projects/python/SQLite/files/Pasted image 20240516233321.png",
     "projects/python/SQLite/files/Pasted image 20240516233229.png",
     "projects/python/SQLite/files/Pasted image 20240516231100.png",
     "projects/python/SQLite/files/2table.png",
-    "projects/linux/venv/venv.md",
     "projects/network/mikrotik/vlans/Без названия",
     "projects/network/mikrotik/vlans",
     "projects/network/mikrotik/vrrp/files",
@@ -212,7 +212,6 @@
     "projects/python/Streamlit",
     "projects/web/heroku",
     "projects/python/SQLite",
-    "projects/devops/lxc",
     "projects/python/Django/4.Debug and Error/files/debug_off.png",
     "Без названия.canvas",
     "devops/Без названия.canvas"

@@ -6,6 +6,8 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "RiFilePdf2Fill",
+      "FarFilePdf",
       "SiGnubash",
       "OcContainer16",
       "TiBrandDocker",
@@ -28,9 +30,7 @@
       "LiScrollText",
       "SiPythonanywhere",
       "SiGit",
-      "SiLinuxcontainers",
-      "SiDjango",
-      "TiTemplate"
+      "SiLinuxcontainers"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -166,16 +166,20 @@
     "iconName": "SiDocker",
     "iconColor": "#75caff"
   },
-  "projects/devops/docker/docker compose.md": {
-    "iconName": "TiBrandDocker",
-    "iconColor": "#52ff9d"
-  },
-  "projects/devops/docker/containers template.md": {
-    "iconName": "OcContainer16",
-    "iconColor": "#fcff38"
-  },
   "projects/devops/bash.md": {
     "iconName": "SiGnubash",
     "iconColor": "#d0aff8"
+  },
+  "projects/devops/docker/docker_pdf.md": {
+    "iconName": "RiFilePdf2Fill",
+    "iconColor": "#d10000"
+  },
+  "projects/devops/docker/containers.md": {
+    "iconName": "OcContainer16",
+    "iconColor": "#fcff38"
+  },
+  "projects/devops/docker/compose.md": {
+    "iconName": "TiBrandDocker",
+    "iconColor": "#52ff9d"
   }
 }
