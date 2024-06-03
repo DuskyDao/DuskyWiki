@@ -6,6 +6,8 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiVagrant",
+      "SiNginx",
       "RiFilePdf2Fill",
       "FarFilePdf",
       "SiGnubash",
@@ -28,9 +30,7 @@
       "FasDatabase",
       "SiSqlite",
       "LiScrollText",
-      "SiPythonanywhere",
-      "SiGit",
-      "SiLinuxcontainers"
+      "SiPythonanywhere"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -181,5 +181,13 @@
   "projects/devops/docker/compose.md": {
     "iconName": "TiBrandDocker",
     "iconColor": "#52ff9d"
+  },
+  "projects/web/nginx": {
+    "iconName": "SiNginx",
+    "iconColor": "#49d936"
+  },
+  "projects/devops/vagrant": {
+    "iconName": "SiVagrant",
+    "iconColor": "#4d88ff"
   }
 }

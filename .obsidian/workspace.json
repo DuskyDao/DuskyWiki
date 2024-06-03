@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6af15e924eee5849",
+        "id": "f06e851ba6c76518",
         "type": "tabs",
         "children": [
           {
-            "id": "94b13302ab206602",
+            "id": "0f05be4b0560d950",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/devops/docker/docker_pdf.md",
-                "mode": "preview",
+                "file": "projects/web/nginx/main.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210.5
+    "width": 210.5,
+    "collapsed": true
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/devops/docker/docker_pdf.md",
+                "file": "projects/web/nginx/main.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -111,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/devops/docker/docker_pdf.md",
+                "file": "projects/web/nginx/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -134,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/devops/docker/docker_pdf.md"
+                "file": "projects/web/nginx/main.md"
               }
             }
           },
@@ -151,8 +152,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -166,15 +166,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "94b13302ab206602",
+  "active": "0f05be4b0560d950",
   "lastOpenFiles": [
-    "projects/devops/docker/docker.md",
-    "projects/devops/docker/containers.md",
-    "projects/devops/docker/compose.md",
-    "projects/devops/docker/docker_pdf.md",
-    "projects/devops/docker/files/Docker.pdf",
-    "projects/devops/git.md",
     "projects/devops/bash.md",
+    "projects/web/links.md",
+    "projects/web/nginx/main.md",
+    "projects/devops/vagrant",
+    "projects/devops/docker/docker.md",
+    "projects/web/nginx",
+    "projects/devops/restic.md",
+    "projects/devops/docker/containers.md",
+    "projects/devops/LXC.md",
+    "projects/devops/git.md",
+    "projects/network/iperf/iperf.md",
+    "projects/network/iperf/Jperf.jpg",
+    "projects/network/mikrotik/cli_mikrotik.md",
+    "projects/network/mikrotik/vlans/vlans.md",
+    "projects/devops/docker/docker_pdf.md",
+    "projects/devops/docker/compose.md",
+    "projects/devops/docker/files/Docker.pdf",
     "projects/devops/docker/docker-compose/docker.md",
     "projects/python/Django/1.install_django.md",
     "projects/python/Django/2.run_apps/run_apps.md",
@@ -188,15 +198,8 @@
     "projects/python/Django/3.Urls/urls.md",
     "projects/python/Streamlit/maine.md",
     "projects/python/SQLite/methods sqlite3.md",
-    "projects/python/SQLite/sqlite.md",
-    "projects/windows/Activation win10.md",
-    "projects/web/css/magnetic mousemove effect.md",
     "projects/python/SQLite/files/Pasted image 20240522223200.png",
     "projects/python/SQLite/files/Pasted image 20240522223108.png",
-    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
-    "projects/devops/restic.md",
-    "projects/devops/LXC.md",
-    "projects/windows/RDP Wrapper.md",
     "projects/windows/RDP Wrapper",
     "projects/python/SQLite/files/Pasted image 20240516233321.png",
     "projects/python/SQLite/files/Pasted image 20240516233229.png",
@@ -210,9 +213,6 @@
     "projects/python/SQLite/files/table.png",
     "projects/python/SQLite/files",
     "projects/python/Streamlit",
-    "projects/web/heroku",
-    "projects/python/SQLite",
-    "projects/python/Django/4.Debug and Error/files/debug_off.png",
     "Без названия.canvas",
     "devops/Без названия.canvas"
   ]
