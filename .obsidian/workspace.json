@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f06e851ba6c76518",
+        "id": "5b0b9668eedc71fd",
         "type": "tabs",
         "children": [
           {
-            "id": "0f05be4b0560d950",
+            "id": "3aa9254b567a117c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/web/nginx/main.md",
-                "mode": "source",
+                "file": "projects/network/mikrotik/firewall/GeoIP.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210.5,
-    "collapsed": true
+    "width": 253.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/web/nginx/main.md",
+                "file": "projects/network/mikrotik/firewall/GeoIP.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/web/nginx/main.md",
+                "file": "projects/network/mikrotik/firewall/GeoIP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/web/nginx/main.md"
+                "file": "projects/network/mikrotik/firewall/GeoIP.md"
               }
             }
           },
@@ -166,53 +165,54 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0f05be4b0560d950",
+  "active": "3aa9254b567a117c",
   "lastOpenFiles": [
-    "projects/devops/bash.md",
-    "projects/web/links.md",
-    "projects/web/nginx/main.md",
-    "projects/devops/vagrant",
-    "projects/devops/docker/docker.md",
-    "projects/web/nginx",
-    "projects/devops/restic.md",
+    "projects/network/mikrotik/firewall/files/Pasted image 20240625000157.png",
+    "projects/network/mikrotik/firewall/files/Pasted image 20240624233526.png",
+    "projects/network/mikrotik/firewall/files/Pasted image 20240624233110.png",
+    "projects/network/mikrotik/firewall/files/Pasted image 20240624232845.png",
+    "projects/network/mikrotik/firewall/files",
+    "projects/network/mikrotik/firewall/files/Pasted image 20240624232653.png",
+    "projects/network/mikrotik/firewall/файрвол.md",
+    "projects/network/mikrotik/firewall/GeoIP.md",
+    "projects/network/mikrotik/firewall",
+    "projects/web/certbot.md",
+    "projects/web/nginx/пример.md",
     "projects/devops/docker/containers.md",
-    "projects/devops/LXC.md",
-    "projects/devops/git.md",
-    "projects/network/iperf/iperf.md",
-    "projects/network/iperf/Jperf.jpg",
+    "projects/web/nginx/main.md",
+    "projects/devops/proxmox/mikrotik vm.md",
+    "projects/devops/proxmox/Без названия.md",
+    "projects/devops/docker/docker.md",
+    "projects/python/SQLite/sqlite.md",
+    "projects/python/SQLite/methods sqlite3.md",
+    "projects/devops/docker/compose.md",
+    "projects/web/links.md",
+    "projects/linux/system_initialization/systemd/journalctl/journalctl.md",
+    "projects/sequrity/ping attack.md",
+    "projects/sequrity",
+    "projects/network/mikrotik/files/Pfd1.png",
+    "projects/network/mikrotik/files",
+    "projects/devops/proxmox/files/Pasted image 20240613230036.png",
+    "projects/devops/proxmox/files/Pasted image 20240613225651.png",
+    "projects/devops/proxmox/files/Pasted image 20240613225540.png",
+    "projects/devops/proxmox/files/Pasted image 20240613224031.png",
+    "projects/devops/proxmox/files/Pasted image 20240613223723.png",
+    "projects/devops/proxmox/files",
+    "projects/network/IPv6/Disable IPv6.md",
+    "projects/linux/ssh/ssh.md",
+    "projects/linux/firewall/ufw.md",
+    "projects/linux/firewall/ApacheNginx.md",
+    "projects/linux/bash.md",
+    "projects/network/IPv6/files",
+    "projects/network/IPv6",
+    "projects/linux/network",
+    "projects/linux/venv/venv.md",
+    "projects/linux/ssh/files",
+    "projects/linux/ssh",
     "projects/network/mikrotik/cli_mikrotik.md",
     "projects/network/mikrotik/vlans/vlans.md",
-    "projects/devops/docker/docker_pdf.md",
-    "projects/devops/docker/compose.md",
-    "projects/devops/docker/files/Docker.pdf",
-    "projects/devops/docker/docker-compose/docker.md",
-    "projects/python/Django/1.install_django.md",
-    "projects/python/Django/2.run_apps/run_apps.md",
-    "README.md",
-    "About.md",
-    "index.md",
-    "docs.md",
-    "Tags",
-    "projects/python/Django/5.Redirect/Redirect.md",
-    "projects/python/lessons/errors/errors.md",
-    "projects/python/Django/3.Urls/urls.md",
-    "projects/python/Streamlit/maine.md",
-    "projects/python/SQLite/methods sqlite3.md",
-    "projects/python/SQLite/files/Pasted image 20240522223200.png",
-    "projects/python/SQLite/files/Pasted image 20240522223108.png",
-    "projects/windows/RDP Wrapper",
-    "projects/python/SQLite/files/Pasted image 20240516233321.png",
-    "projects/python/SQLite/files/Pasted image 20240516233229.png",
-    "projects/python/SQLite/files/Pasted image 20240516231100.png",
-    "projects/python/SQLite/files/2table.png",
-    "projects/network/mikrotik/vlans/Без названия",
-    "projects/network/mikrotik/vlans",
-    "projects/network/mikrotik/vrrp/files",
-    "projects/python/SQLite/files/table select.png",
-    "projects/python/SQLite/files/table select 1.png",
-    "projects/python/SQLite/files/table.png",
-    "projects/python/SQLite/files",
-    "projects/python/Streamlit",
+    "projects/network/openwrt/install.md",
+    "projects/windows/Activation win10.md",
     "Без названия.canvas",
     "devops/Без названия.canvas"
   ]

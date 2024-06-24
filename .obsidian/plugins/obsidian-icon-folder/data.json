@@ -6,6 +6,16 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasFire",
+      "LiShieldQuestion",
+      "TiArrowAutofitDown",
+      "TiNetworkOff",
+      "TiUserShield",
+      "SiOpenwrt",
+      "RaFireShield",
+      "SiProxmox",
+      "SiLinuxcontainers",
+      "🧘‍♂️",
       "SiVagrant",
       "SiNginx",
       "RiFilePdf2Fill",
@@ -20,17 +30,7 @@
       "RiDashboard3Fill",
       "LiDatabaseBackup",
       "🎁",
-      "TiHexagonLetterE",
-      "SiSpeedtest",
-      "SiZazzle",
-      "SiOpnsense",
-      "SiMikrotik",
-      "SiStreamlit",
-      "SiHeroku",
-      "FasDatabase",
-      "SiSqlite",
-      "LiScrollText",
-      "SiPythonanywhere"
+      "TiHexagonLetterE"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -146,10 +146,6 @@
     "iconName": "LiDatabaseBackup",
     "iconColor": "#f4b915"
   },
-  "projects/devops/LXC.md": {
-    "iconName": "SiLinuxcontainers",
-    "iconColor": "#f5aa42"
-  },
   "projects/devops/panels": {
     "iconName": "IbDashboardOneIsFilled",
     "iconColor": "#963fee"
@@ -165,10 +161,6 @@
   "projects/devops/docker/docker.md": {
     "iconName": "SiDocker",
     "iconColor": "#75caff"
-  },
-  "projects/devops/bash.md": {
-    "iconName": "SiGnubash",
-    "iconColor": "#d0aff8"
   },
   "projects/devops/docker/docker_pdf.md": {
     "iconName": "RiFilePdf2Fill",
@@ -189,5 +181,46 @@
   "projects/devops/vagrant": {
     "iconName": "SiVagrant",
     "iconColor": "#4d88ff"
+  },
+  "health": "🧘‍♂️",
+  "projects/devops/lxc": {
+    "iconName": "SiLinuxcontainers",
+    "iconColor": "#fbae41"
+  },
+  "projects/linux/bash.md": {
+    "iconName": "SiGnubash",
+    "iconColor": "#d0aff8"
+  },
+  "projects/devops/proxmox": {
+    "iconName": "SiProxmox",
+    "iconColor": "#cc6d00"
+  },
+  "projects/linux/firewall": {
+    "iconName": "RaFireShield",
+    "iconColor": "#ee5a1b"
+  },
+  "projects/network/openwrt": {
+    "iconName": "SiOpenwrt",
+    "iconColor": "#2590f4"
+  },
+  "projects/linux/ssh": {
+    "iconName": "TiUserShield",
+    "iconColor": "#d10000"
+  },
+  "projects/network/IPv6": {
+    "iconName": "TiNetworkOff",
+    "iconColor": "#f42525"
+  },
+  "projects/linux/firewall/ufw.md": {
+    "iconName": "TiArrowAutofitDown",
+    "iconColor": "#2df41f"
+  },
+  "projects/sequrity": {
+    "iconName": "LiShieldQuestion",
+    "iconColor": "#ff811a"
+  },
+  "projects/network/mikrotik/firewall": {
+    "iconName": "FasFire",
+    "iconColor": "#984a01"
   }
 }

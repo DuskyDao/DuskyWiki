@@ -89,7 +89,10 @@ find . -type d -exec chmod 755 {} +
 gninx -t
 ```
 ### Блоки **location**
+[Ссылка на вики](http://nginx.org/ru/docs/http/ngx_http_core_module.html#location)
+
 В конфигурации Nginx блоки `location` используются для определения правил обработки запросов к различным URL-адресам. Блоки `location` могут использовать разные типы префиксов для определения, какие запросы соответствуют определённым правилам. Вот краткое описание различных типов префиксов и их использование:
+
 **Типы префиксов в `location`:**
 ##### Префикс с обычным совпадением (без символа)
 Этот префикс используется для обычного (префиксного) совпадения с началом URI. 
@@ -232,6 +235,279 @@ http {
 }
 ```
 
+### Наследование контекствов и директив
+#### Типы директив:
+* **стандартные (standart)** - определяются один раз и наследуется всеми элементами которые идут после неё. Обычно, в нужных местах, при необходимости, её отключают.
+* **массивов (array)** - работают так же как и стандартные директивы, но их можно переопределять по нескольку раз в любом контексте.
+* **действия(action)** - выполняют действия при нажатии. Например переадресация или вызов определенного ответа. Не наследуются и не переопределяются нигде.
+* **переменные** - как пример `try_files` при вызове перебирает по очередности варианты возможных выводов, по приоритету. В примере ниже указывает на возможность обращения по указанной в запросе ссылки - если файла по данному пути не существует, то выдается 404ошибка. [Все переменные.](http://nginx.org/ru/docs/varindex.html)
+
+Пример:
+```nginx
+worker processes 1;
+
+event {}
+
+#Array type directive
+access_log logs/access.log;
+access_log logs/access_notice.log notice;
+
+http {
+	include mime.types;
+	#Standart directive
+	gzip on;
+
+	server {
+		listen 80;
+		server_name localhost;
+		acces_log logs/host.access.log main;
+		location / {
+			root html;
+			index index.html index.htm;
+		}
+		location /home {
+			#Action directive
+			rewtite ^ /index.html; #при вызове перезаписывает index.html
+		}
+		location /downloads {
+			#Standart directive
+			gzip off;
+			#Array type directive
+			access_log logs/access_downloads.log main;
+			#Try files directyve
+			try_files $uri =404;
+		}
+	}
+}
+
+```
+### Воркеры (не доделаны)
+```nginx
+user www-data www-data;
+
+#Указывает количество задействованных физических ядер процессора
+worker_processes auto; # по умолчанию 1, если не указать
+
+worker_rlimit_nofile 1035;
+pid /var/run/nginx.pid;
+
+events {
+	worker_connections 1024; #количество сооединений на 1но ядро физ процессора. 
+	multi_accept on; #позволяет одновременно принимать все новые подключения.
+	use epoll;
+}
+http {
+	#Basic Settings
+	charset utf-8;
+	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay off;
+	types_hash_max_size 2048;
+
+	#Enable open file cache (если на сервере происходит много записей и считывания файлов)
+	open_file_cache max=1000 inactive=20c;
+	open_file_cache_valid 30s;
+	open_file_cache_min_uses 2;
+	open_file_cache_errors on;
+
+	#Configure buffer sizes
+	client_body_buffer_size 16k; #размер буфера POST запросов
+	client_header_buffer_size 1k;  #размер буфера заголовков
+	client_max_body_size 8m;  #размер тела запроса
+	large_client_header_buffers 2 1k; #для определения количества и размера буферов, которые используются для чтения больших заголовков клиента.
+	
+	#Configure Timeouts. 
+	client_body_timeout 12;
+	client_header_timeout 12;
+	# используются для настройки тайм-аутов ожидания тела запроса и заголовков запроса клиента соответственно. Эти директивы помогают контролировать время, в течение которого сервер будет ожидать завершения передачи данных от клиента.
+
+	#use a higher keepalive time to reduce the need for repeated handshakes
+	keepalive_timeout 300;
+	send_timeout 10;
+
+	#Mime Types
+	include /etc/nginx/mime.types;
+	#Add extra mime types
+	types {
+		application/x-httpd-php.html;
+	}
+	default_type application/octet-stream;
+
+	#access_log /var/log/nginx/access.log
+	access_log off;
+	error_log /var/log/nginx/error.log;
+
+	# Gzip Settings
+	gzip on;
+	gzip_disable "msie6";
+	gzip_vary on;
+	gzip_proxied any;
+	gzip_comp_level 2;
+	gzip_min_length 256;
+	gzip_buffers 4 16k;
+	gzip_http_version 1.1;
+
+	#Turn on gzip for all content types that should benefit from it
+	gzip_types application/ecmascript;
+}
+
+```
+> Посмотреть количество поддерживаемых соединений процессором можно командой `ulimit -n`
+
+### Динамические модули
+#### Установка
+На большинстве современных дистрибутивов Linux можно установить Nginx и его модули через пакетный менеджер. Например, на Ubuntu:
+```bash
+sudo apt update sudo apt install nginx nginx-module-image-filter`
+```
+#### Подключение динамического модуля
+После установки модуля, его нужно подключить в конфигурационном файле Nginx.
+
+Откройте основной конфигурационный файл Nginx (обычно `/etc/nginx/nginx.conf`) и добавьте следующую строку в начало файла:
+```nginx
+load_module modules/ngx_http_image_filter_module.so;
+```
+Это пример подключения модуля `ngx_http_image_filter_module`.
+#### Использование динамического модуля
+Теперь можно использовать директивы и функции, предоставляемые модулем. Например, для модуля `ngx_http_image_filter_module`:
+```nginx
+http {
+	server {
+		listen 80;
+		server_name example.com;
+		location /images/ {
+			image_filter resize 100 100;
+			image_filter_buffer 10M;
+		}
+	}
+}
+```
+В этом примере Nginx будет изменять размер изображений до 100x100 пикселей для всех запросов, направленных к `/images/`.
+#### Пример подключения и использования модуля GeoIP
+##### Шаг 1: Установка модуля
+На Ubuntu:
+```bash
+sudo apt install nginx-module-geoip
+```
+##### Шаг 2: Подключение модуля
+Добавьте следующую строку в конфигурационный файл Nginx:
+```nginx
+load_module modules/ngx_http_geoip_module.so;
+```
+##### Шаг 3: Настройка модуля
+Добавьте директивы для работы с GeoIP в блок `http` или `server`:
+```nginx
+http {
+	geoip_country /usr/share/GeoIP/GeoIP.dat;
+	geoip_city /usr/share/GeoIP/GeoIPCity.dat;
+	server {
+		listen 80;
+		server_name example.com;
+		location / {
+			default_type text/plain;
+			return 200 "Country: $geoip_country_name\nCity: $geoip_city\n";
+		}
+	}
+}
+```
+В этом примере Nginx будет использовать базы данных GeoIP для определения страны и города посетителя и возвращать эту информацию в ответе.
+### Кеш (модуль ngx_http_headers_module)
+|   |
+|---|
+|[Пример конфигурации](http://nginx.org/ru/docs/http/ngx_http_headers_module.html#example)  <br>[Директивы](http://nginx.org/ru/docs/http/ngx_http_headers_module.html#directives)  <br>     [add_header](http://nginx.org/ru/docs/http/ngx_http_headers_module.html#add_header)  <br>     [add_trailer](http://nginx.org/ru/docs/http/ngx_http_headers_module.html#add_trailer)  <br>     [expires](http://nginx.org/ru/docs/http/ngx_http_headers_module.html#expires)|
+
+Модуль `ngx_http_headers_module` позволяет выдавать поля заголовка “Expires” и “Cache-Control”, а также добавлять произвольные поля в заголовок ответа.
+
+#### Пример конфигурации
+```nginx
+> expires    24h;
+> expires    modified +24h;
+> expires    @24h;
+> expires    0;
+> expires    -1;
+> expires    epoch;
+> expires    $expires;
+> add_header Cache-Control private;
+```
+#### Директивы
+
+|   |   |
+|---|---|
+|Синтаксис:|``**add_header** `_имя_` `_значение_` [`always`];``|
+|Умолчание:|—|
+|Контекст:|`http`, `server`, `location`, `if в location`|
+
+Добавляет указанное поле в заголовок ответа при условии, что код ответа равен 200, 201 (1.3.10), 204, 206, 301, 302, 303, 304, 307 (1.1.16, 1.0.13) или 308 (1.13.0). В значении параметра можно использовать переменные.
+
+Директив `add_header` может быть несколько. Директивы наследуются с предыдущего уровня конфигурации при условии, что на данном уровне не описаны свои директивы `add_header`.
+
+Если указан параметр `always` (1.7.5), то поле заголовка будет добавлено независимо от кода ответа.
+
+|   |   |
+|---|---|
+|Синтаксис:|``**add_trailer** `_имя_` `_значение_` [`always`];``|
+|Умолчание:|—|
+|Контекст:|`http`, `server`, `location`, `if в location`|
+
+Эта директива появилась в версии 1.13.2.
+
+Добавляет указанное поле в конец ответа при условии, что код ответа равен 200, 201, 206, 301, 302, 303, 307 или 308. В значении можно использовать переменные.
+
+Директив `add_trailer` может быть несколько. Директивы наследуются с предыдущего уровня конфигурации при условии, что на данном уровне не описаны свои директивы `add_trailer`.
+
+Если указан параметр `always`, то указанное поле будет добавлено независимо от кода ответа.
+
+|   |   |
+|---|---|
+|Синтаксис:|``**expires** [`modified`] `_время_`;``  <br>``**expires** `epoch` \| `max` \| `off`;``|
+|Умолчание:|expires off;|
+|Контекст:|`http`, `server`, `location`, `if в location`|
+
+Разрешает или запрещает добавлять или менять поля “Expires” и “Cache-Control” в заголовке ответа при условии, что код ответа равен 200, 201 (1.3.10), 204, 206, 301, 302, 303, 304, 307 (1.1.16, 1.0.13) или 308 (1.13.0). В качестве параметра можно задать положительное или отрицательное [время](http://nginx.org/ru/docs/syntax.html).
+
+Время в поле “Expires” получается как сумма текущего времени и времени, заданного в директиве. Если используется параметр `modified` (0.7.0, 0.6.32), то время получается как сумма времени модификации файла и времени, заданного в директиве.
+
+Кроме того, с помощью префикса “`@`” можно задать время суток (0.7.9, 0.6.34):
+
+```nginx
+expires @15h30m;
+```
+
+Содержимое поля “Cache-Control” зависит от знака заданного времени:
+
+- отрицательное время — “Cache-Control: no-cache”.
+- положительное или равное нулю время — “Cache-Control: max-age=`_t_`”, где `_t_` это время в секундах, заданное в директиве.
+
+Параметр `epoch` задаёт время “`Thu, 01 Jan 1970 00:00:01 GMT`” (1 января 1970 00:00:01 GMT) для поля “Expires” и “`no-cache`” для поля “Cache-Control”.
+
+Параметр `max` задаёт время “`Thu, 31 Dec 2037 23:55:55 GMT`” (31 декабря 2037 23:55:55 GMT) для поля “Expires” и 10 лет для поля “Cache-Control”.
+
+Параметр `off` запрещает добавлять или менять поля “Expires” и “Cache-Control” в заголовке ответа.
+
+В значении последнего параметра можно использовать переменные (1.7.9):
+```nginx
+map $sent_http_content_type $expires {
+    default         off;
+    application/pdf 42d;
+    ~image/         max;
+}
+
+expires $expires;
+```
+##### Пример ещё
+```nginx
+http {
+	server {
+		location ~* \.(css|js|jpg|png|gif)$ {
+			access_log off; #
+			expires 1M; # период хранения кеша
+			add_header Pragma public; # для старых браузеров - кешировать любым способом
+			add_header Cache-Control public; # кешировать любым способом
+			add_header Vary Accept-Encoding; #
+		}
+	}
+}
+```
 ### Материалы взяты:
 1. [Официальная документация](https://nginx.org/ru/docs/)
 2. ChatGPT

@@ -1,0 +1,1 @@
+[взято тут](https://kiberlis.ru/proxmox-openwrt/)
