@@ -1,30 +1,21 @@
-+++
-title = 'ESXI (подключение Zabbix)'
-date = 2024-03-11T11:57:38+02:00
-draft = false
-+++
 #esxi #zabbix
-#### **Содержание:**
-1. **[[#Подготовка ESXI]]**
-2. **[[#Настаиваем zabbix]]**
-3. **[[#Готовые к использованию шаблоны]]**
-#### Подготовка ESXI
+### Подготовка ESXI
 Для начала нам нужно создать пользователя для мониторинга забиксом и дать ему права только для чтения.
 * Переходим в **Manage>Users>Add user** и создаем нового пользователя
-![new_user](projects/dusky-wiki/network/zabbix/esxi/new_user.png)
+![new_user](new_user.png)
 * Создаем группу доступа для нашего пользователя **Manage>Roles>Add role** и даем ему соответствующие права
-![new_role](projects/dusky-wiki/network/zabbix/esxi/new_role.png)
+![new_role](new_role.png)
 * Привязываем созданную роль к нашему пользователю **Host>контекстное меню>permissions>Add user**
-![user_role](projects/dusky-wiki/network/zabbix/esxi/user_role.png)
-##### Cмотрим uuid
-**Через веб:**  
+![user_role](user_role.png)
+#### Cмотрим uuid
+##### Через веб:
 * Переходим по адресу **https://serv_ip/host/esx.conf** и смотрим строку:
 `/system/uuid = "55eea86c-44da-7d05-4440-2c44fd828re8"`
 * Или подставляем в ссылку вместо host адрес вашего хоста:
 **https://host/mob/?moid=ha-host&doPath=hardware.systemInfo**
 > Если встретили ошибку 503, то в ESXi необходимо запустить сервис под названием: `Config.HostAgent.plugins.solo.enableMob`  
 
-**С помощью SSH:**
+##### C помощью SSH:
 * Запускаем службу SSH, если отключена.
 * Подключаемся любым удобным вам способом, я использую PuTTY.
 * После ввода log/pass запускаем следующую команду:
@@ -36,12 +27,12 @@ vim-cmd hostsvc/hostsummary | grep uuid
 [root@esxifesukr42:/etc/vmware] vim-cmd hostsvc/hostsummary | grep uuid
       uuid = "35444636-3335-5a43-3233-45683147354d",
 ```
-#### Настаиваем zabbix 
+### Настаиваем zabbix 
 * Создаем новый узел сети и вносим данные как на скриншоте. 
-![[projects/dusky-wiki/network/zabbix/esxi/new_template.png]]
+![[new_template.png]]
 * Водим в макросах данные раннее созданного пользователя в ESXI и [[#Cмотрим uuid | uuid]]
-![[projects/dusky-wiki/network/zabbix/esxi/macros.png]]
-#### Готовые к использованию шаблоны
+![[macros.png]]
+### Готовые к использованию шаблоны
 
 Поставляемый с Zabbix начальный набор данных предлагает несколько готовых к использованию шаблонов для мониторинга VMware vCenter и мониторинга напрямую ESX гипервизоров. Эти шаблоны содержат преднастроенные правила низкоуровневого обнаружения, а также некоторое количество встроенных проверок для мониторинга виртуальных инсталляций.
 

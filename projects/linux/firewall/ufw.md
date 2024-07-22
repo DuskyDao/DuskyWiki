@@ -185,3 +185,7 @@ ls /var/log/ufw*
 ```
 #### Источники:
 1. [selectel.ru](https://selectel.ru/blog/tutorials/how-to-configure-firewall-with-ufw-on-ubuntu-20/)
+
+=== "222"
+=== "333"
+=== "444"

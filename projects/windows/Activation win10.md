@@ -1,4 +1,4 @@
-
+#windows #activation
 #### Процедура лечения
 Откройте PowerShell от имени Администратора (пуск -> введите в поиск "PowerShell" без ковычек -> нажмите правой кнопкой мыши на выданный поиском вариант -> выберете "Открыть от имени Администратора").  
 Введите команду:
@@ -19,6 +19,28 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
 Создайте ключ **DWORD 32** (несмотря, что система 64bit, создаем именно DWORD 32), Название **FlightSettingsMaxPauseDays** выбираем чекбокс **Decimal**, пишем значение **36500**   
 Или скачайте файл **PauseUpdate100Years.reg** по [ссылке](https://t.me/sommov95/17) и запустите его.
 Далее перейдите в "Настройки" > "Обновление и безопасность" > Нажмите "Приостановить обновления на 7 дн." > Перейдите в "Дополнительные параметры" > Прокрутите "Приостановить до" до нужной вам даты, я выбираю последнюю.
+#### Полезные твики и утилиты [winutil](https://github.com/ChrisTitusTech/winutil?tab=readme-ov-file)
+
+##### Команда запуска
+**Команда запуска**
+```powershell
+irm "https://christitus.com/win" | iex
+```
+Если этот сайт недоступен из вашей страны, попробуйте запустить его напрямую с GitHub..
+```powershell
+irm "https://github.com/ChrisTitusTech/winutil/releases/latest/download/winutil.ps1" | iex
+```
+##### Автоматизация
+1. На вкладке «Установка» нажмите «Установить», чтобы получить все установленные приложения. **поддерживается Winutil** в системе [![Получить установку](https://github.com/ChrisTitusTech/winutil/raw/main/wiki/Get-Installed.png)](https://github.com/ChrisTitusTech/winutil/blob/main/wiki/Get-Installed.png)
+2. Нажмите на шестеренку «Настройки» в правом верхнем углу и выберите «Экспорт», выберите файл и местоположение. Это приведет к экспорту файла настроек.. [![НастройкиЭкспорт](https://github.com/ChrisTitusTech/winutil/raw/main/wiki/Settings-Export.png)](https://github.com/ChrisTitusTech/winutil/blob/main/wiki/Settings-Export.png)
+3. Скопируйте этот файл на USB-накопитель или в другое место, которое вы сможете использовать после установки Windows..
+4. Используйте вкладку Microwin для создания собственного образа Windows..
+5. Установите образ Windows.
+6. В новой Windows откройте PowerShell в режиме администратора и запустите команду для автоматического применения настроек и установки приложений из файла конфигурации..
+```powershell
+iex "& { $(irm christitus.com/win) } -Config [path-to-your-config] -Run"
+```
+7. Выпить чашечку кофе! Вернись, когда все будет готово.
 #### Нужен Microsoft Store?
 
 Откройте PowerShell от имени Администратора (пуск -> введите в поиск "PowerShell" без ковычек -> нажмите правой кнопкой мыши на выданный поиском вариант -> выберете "Открыть от имени Администратора").  

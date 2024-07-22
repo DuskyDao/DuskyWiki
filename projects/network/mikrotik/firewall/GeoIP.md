@@ -14,8 +14,7 @@ import file-name=IP-Firewall-Address-List.rsc
 ### Добавим блокирующие правила
 Запретим доступ со всех стран, кроме отмеченной в первом пункте (в нашем случае - Украины). Для разгрузки процессора добавим его в цепочку RAW
 ```
-ip/firewall/raw
-;;; GeoIP Block
-      chain=prerouting action=drop in-interface-list=WAN log=no log-prefix="" src-address-list=!CountryIPBlocks 
+/ip firewall raw
+add action=drop in-interface-list=WAN log=no log-prefix="" src-address-list=!CountryIPBlocks comment="GeoIP Block" chain=prerouting disabled=yes
 ```
 ![](files/Pasted%20image%2020240625000157.png)

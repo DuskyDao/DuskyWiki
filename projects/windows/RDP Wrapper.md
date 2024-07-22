@@ -1,3 +1,4 @@
+#windows #rdp-wrapper
 #### RDP Wrapper удалён антивирусом.
 Нужно восстановить стандартный DLL в реестре с помощью одной команды от администратора:
 reg add HKLM\SYSTEM\CurrentControlSet\Services\TermService\Parameters /v ServiceDll /t REG_EXPAND_SZ /d "%SystemRoot%\system32\termsrv.dll" /f

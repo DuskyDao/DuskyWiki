@@ -6,31 +6,31 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiSpeedtest",
+      "BoBxlPostgresql",
+      "SiPostgresql",
+      "FasServer",
+      "FasDatabase",
+      "FasUserAstronaut",
+      "SiSqlite",
+      "SiMongodb",
+      "LiSquareChevronLeft",
+      "TiBox",
+      "RiBox2Line",
+      "SiSuperuser",
+      "RiInfinityLine",
+      "FabPython",
+      "TiLink",
+      "RiLink",
+      "RiTimeZoneFill",
+      "TiLogs",
+      "TiBadgeSd",
+      "FiCodesandbox",
       "FasFire",
       "LiShieldQuestion",
       "TiArrowAutofitDown",
       "TiNetworkOff",
-      "TiUserShield",
-      "SiOpenwrt",
-      "RaFireShield",
-      "SiProxmox",
-      "SiLinuxcontainers",
-      "🧘‍♂️",
-      "SiVagrant",
-      "SiNginx",
-      "RiFilePdf2Fill",
-      "FarFilePdf",
-      "SiGnubash",
-      "OcContainer16",
-      "TiBrandDocker",
-      "SiDocker",
-      "SiMicropython",
-      "RiInformation2Fill",
-      "IbDashboardOneIsFilled",
-      "RiDashboard3Fill",
-      "LiDatabaseBackup",
-      "🎁",
-      "TiHexagonLetterE"
+      "TiUserShield"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -105,10 +105,6 @@
     "iconName": "TiBrandDocker",
     "iconColor": "#076cca"
   },
-  "projects/python/SQLite": {
-    "iconName": "FasDatabase",
-    "iconColor": "#24ffc8"
-  },
   "projects/web/heroku": {
     "iconName": "SiHeroku",
     "iconColor": "#6200a3"
@@ -129,10 +125,6 @@
     "iconName": "SiZazzle",
     "iconColor": "#f70808"
   },
-  "projects/network/iperf": {
-    "iconName": "SiSpeedtest",
-    "iconColor": "#9dff5c"
-  },
   "projects/python/exe_file.md": {
     "iconName": "TiHexagonLetterE",
     "iconColor": "#60cb52"
@@ -143,20 +135,8 @@
     "iconColor": "#ff6905"
   },
   "projects/devops/restic.md": {
-    "iconName": "LiDatabaseBackup",
-    "iconColor": "#f4b915"
-  },
-  "projects/devops/panels": {
-    "iconName": "IbDashboardOneIsFilled",
-    "iconColor": "#963fee"
-  },
-  "projects/python/SQLite/sqlite.md": {
-    "iconName": "RiInformation2Fill",
-    "iconColor": "#5a80f2"
-  },
-  "projects/python/SQLite/methods sqlite3.md": {
-    "iconName": "SiSqlite",
-    "iconColor": "#e14dff"
+    "iconName": "FasServer",
+    "iconColor": "#53eee4"
   },
   "projects/devops/docker/docker.md": {
     "iconName": "SiDocker",
@@ -174,10 +154,6 @@
     "iconName": "TiBrandDocker",
     "iconColor": "#52ff9d"
   },
-  "projects/web/nginx": {
-    "iconName": "SiNginx",
-    "iconColor": "#49d936"
-  },
   "projects/devops/vagrant": {
     "iconName": "SiVagrant",
     "iconColor": "#4d88ff"
@@ -188,8 +164,8 @@
     "iconColor": "#fbae41"
   },
   "projects/linux/bash.md": {
-    "iconName": "SiGnubash",
-    "iconColor": "#d0aff8"
+    "iconName": "LiSquareChevronLeft",
+    "iconColor": "#bf2ff4"
   },
   "projects/devops/proxmox": {
     "iconName": "SiProxmox",
@@ -222,5 +198,71 @@
   "projects/network/mikrotik/firewall": {
     "iconName": "FasFire",
     "iconColor": "#984a01"
+  },
+  "projects/network/zabbix/esxi.md": {
+    "iconName": "FiCodesandbox",
+    "iconColor": "#33ddff"
+  },
+  "projects/linux/system_initialization/systemd": {
+    "iconName": "TiBadgeSd",
+    "iconColor": "#83f736"
+  },
+  "projects/linux/system_initialization/systemd/journalctl.md": {
+    "iconName": "TiLogs",
+    "iconColor": "#ff2424"
+  },
+  "projects/linux/system_initialization/systemd/timedatectl.md": {
+    "iconName": "RiTimeZoneFill",
+    "iconColor": "#1cf22b"
+  },
+  "links.md": {
+    "iconName": "TiLink",
+    "iconColor": "#751aff"
+  },
+  "projects/linux/system_initialization/systemd/python_script_service.md": {
+    "iconName": "FabPython",
+    "iconColor": "#57ee20"
+  },
+  "projects/linux/system_initialization": "RiInfinityLine",
+  "projects/linux/sudo": {
+    "iconName": "SiSuperuser",
+    "iconColor": "#a92deb"
+  },
+  "projects/linux/venv": {
+    "iconName": "TiBox",
+    "iconColor": "#f2ec36"
+  },
+  "projects/devops/nginx": {
+    "iconName": "SiNginx",
+    "iconColor": "#49d936"
+  },
+  "projects/devops/sql/SQLite": {
+    "iconName": "SiSqlite",
+    "iconColor": "#8c65e6"
+  },
+  "projects/devops/sql/SQLite/methods sqlite3.md": {
+    "iconName": "SiSqlite",
+    "iconColor": "#e14dff"
+  },
+  "projects/devops/sql/SQLite/sqlite.md": {
+    "iconName": "RiInformation2Fill",
+    "iconColor": "#5a80f2"
+  },
+  "projects/devops/sql/MongoDB": {
+    "iconName": "SiMongodb",
+    "iconColor": "#40d46c"
+  },
+  "projects/devops/sql/MongoDB/main.md": "FasUserAstronaut",
+  "projects/devops/sql": {
+    "iconName": "FasDatabase",
+    "iconColor": "#d742f5"
+  },
+  "projects/devops/sql/Postgresql": {
+    "iconName": "BoBxlPostgresql",
+    "iconColor": "#2acaea"
+  },
+  "projects/network/tools/iperf.md": {
+    "iconName": "SiSpeedtest",
+    "iconColor": "#24ff32"
   }
 }

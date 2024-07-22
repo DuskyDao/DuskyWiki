@@ -1,8 +1,4 @@
-+++
-title = 'Default_function'
-date = 2024-02-14T21:31:23+02:00
-draft = false
-+++
+#python #function 
 ### Квадрат числа
 ```python
 import function

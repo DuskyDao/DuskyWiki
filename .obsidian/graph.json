@@ -11,7 +11,7 @@
       "query": "linux",
       "color": {
         "a": 1,
-        "rgb": 5474396
+        "rgb": 4581472
       }
     },
     {
@@ -25,34 +25,27 @@
       "query": "python",
       "color": {
         "a": 1,
-        "rgb": 1373505
+        "rgb": 14419157
       }
     },
     {
-      "query": "web",
+      "query": "mikrotik",
       "color": {
         "a": 1,
-        "rgb": 14500027
-      }
-    },
-    {
-      "query": "",
-      "color": {
-        "a": 1,
-        "rgb": 16061460
+        "rgb": 3341303
       }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.2484375,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.380208333333333,
-  "repelStrength": 11.25,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.2588386562181661,
+  "textFadeMultiplier": -3,
+  "nodeSizeMultiplier": 1.74609375,
+  "lineSizeMultiplier": 1.31223958333333,
+  "collapse-forces": false,
+  "centerStrength": 0.455729166666667,
+  "repelStrength": 13.1770833333333,
+  "linkStrength": 0.861979166666667,
+  "linkDistance": 127,
+  "scale": 0.36288736930121746,
   "close": false
 }

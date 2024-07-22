@@ -1,3 +1,4 @@
+#linux #container #docker
 ![certbot](https://raw.githubusercontent.com/EFForg/design/master/logos/eff-certbot-lockup.png)
 [certbot](https://eff-certbot.readthedocs.io/en/latest/install.html#running-with-docker) - Certbot является частью усилий EFF по шифрованию всего Интернета. Безопасная связь через Интернет основана на протоколе HTTPS, который требует использования цифрового сертификата, позволяющего браузерам проверять подлинность веб-серверов (например, действительно ли это google.com?). Веб-серверы получают свои сертификаты от доверенных третьих сторон, называемых центрами сертификации (ЦС). 
 

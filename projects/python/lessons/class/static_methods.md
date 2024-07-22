@@ -1,8 +1,4 @@
-+++
-title = 'Static Methods'
-date = 2024-01-16T15:44:49+02:00
-draft = false
-+++
+#python #class
 ### **Статические методы** 
 Концепции **@classmethod** и **@staticmethod** в Python связаны с определением методов внутри классов, но их использование и поведение отличаются:
 #### @classmethod:

@@ -1,3 +1,4 @@
+#linux #container #docker
 **посмотреть запущенные контейнеры**
 ```shell
 docker ps

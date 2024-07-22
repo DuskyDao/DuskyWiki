@@ -1,4 +1,4 @@
-#rectic
+#linux #rectic
 #### Установка
 1. Ставим **scoop** для установки **restica**
 ```powershell

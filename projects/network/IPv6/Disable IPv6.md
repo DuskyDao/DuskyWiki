@@ -1,3 +1,4 @@
+#linux #network #ipv6
 ### Как навсегда отключить IPv6 в Ubuntu
 По умолчанию IPv6 включен и используется параллельно с IPv4.
 Чтобы отключить IPv6 в вашей системе Ubuntu, [откройте терминал](https://www.makeuseof.com/tag/5-easier-command-line-linux/) , нажав **Ctrl + Alt + T** , и [с помощью редактора nano](https://www.makeuseof.com/install-and-use-gnu-nano-in-linux/) откройте файл конфигурации sysctl:

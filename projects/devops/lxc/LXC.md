@@ -1,3 +1,4 @@
+#linux #container #lxc
 ### Контейнер LXC для веб-разработки как альтернатива Docker
 Разработкой [LXC](https://linuxcontainers.org/lxc/introduction/) занимается компания Canonical, последняя версия LXC 4.0.10 вышла совсем недавно в _июле 2021_, а началась в 2008.
 

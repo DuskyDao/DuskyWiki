@@ -1,3 +1,4 @@
+#linux #bash
 выучить
 ss -tunlp
 Параметры:

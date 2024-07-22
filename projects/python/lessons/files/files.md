@@ -1,8 +1,4 @@
-+++
-title = 'Files'
-date = 2024-02-20T15:47:31+02:00
-draft = false
-+++
+
 #python #file #os #path #pathlib
 ### Содержание:
 1. **[[#Модуль os.path]]**

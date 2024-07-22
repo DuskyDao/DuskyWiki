@@ -1,4 +1,4 @@
-#windows 
+#windows #install
 # Как установить и настроить Windows 11 без подключения к Интернету и без аккаунта Microsoft
 
 2022-09-20 405154 [комментарии](https://www.comss.ru/disqus/page.php?id=10226)
