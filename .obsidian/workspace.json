@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "44e146e9dc5561ef",
+        "id": "78f909bfc43bedb1",
         "type": "tabs",
         "children": [
           {
-            "id": "e4ad2aa4fdd05636",
+            "id": "fb22278bf3eb737b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/network/openwrt/install.md",
+                "file": "projects/devops/zabbix/triggers.md",
                 "mode": "preview",
                 "source": true
               }
@@ -38,7 +38,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#journalctl",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +61,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTimeReverse"
+                "sortOrder": "byCreatedTime"
               }
             }
           }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/network/openwrt/install.md",
+                "file": "projects/devops/zabbix/triggers.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/network/openwrt/install.md",
+                "file": "projects/devops/zabbix/triggers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/network/openwrt/install.md"
+                "file": "projects/devops/zabbix/triggers.md"
               }
             }
           },
@@ -149,63 +149,64 @@
     "hiddenItems": {
       "switcher:Меню быстрого перехода": false,
       "canvas:Создать новый холст": false,
-      "daily-notes:Сегодняшняя заметка": false,
-      "templates:Вставить шаблон": false,
-      "command-palette:Открыть палитру команд": false,
-      "markdown-importer:Импорт Markdown-файлов": false,
+      "daily-notes:Сегодняшняя заметка": true,
+      "templates:Вставить шаблон": true,
+      "command-palette:Открыть палитру команд": true,
+      "markdown-importer:Импорт Markdown-файлов": true,
       "graph:Граф": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": true
     }
   },
-  "active": "e4ad2aa4fdd05636",
+  "active": "fb22278bf3eb737b",
   "lastOpenFiles": [
-    "projects/linux/system_initialization/systemd/journalctl.md",
-    "projects/linux/system_initialization/systemd/python_script_service.md",
-    "projects/python/lessons/module/json.md",
-    "projects/python/lessons/module/pdb.md",
-    "projects/python/lessons/libraries/logging.md",
-    "projects/python/lessons/function/decorators.md",
-    "projects/python/lessons/function/default_function.md",
-    "projects/python/lessons/function/comprehensions.md",
-    "projects/python/lessons/files/files.md",
-    "projects/python/lessons/class/multiple_inheritance.md",
-    "projects/python/lessons/class/static_methods.md",
-    "projects/python/lessons/class/static_arguments.md",
-    "projects/python/lessons/class/mixin_class.md",
-    "projects/python/lessons/class/polimorf.md",
-    "projects/python/lessons/class/magic_methods.md",
-    "projects/python/lessons/class/class.md",
-    "projects/python/lessons/class/abstract_class.md",
-    "projects/python/lessons/class/Home_Work.md",
-    "projects/python/lessons/errors/errors.md",
-    "projects/python/lessons/function/lambda.md",
-    "projects/windows/RDP Wrapper.md",
-    "projects/windows/Лицензии.md",
-    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
-    "projects/windows/Activation win10.md",
-    "projects/web/certbot.md",
-    "projects/sequrity/ping attack.md",
-    "projects/network/tools",
-    "projects/network/iperf/Jperf.jpg",
+    "projects/devops/zabbix/files/Pasted image 20240822142828.png",
+    "projects/devops/zabbix/files/Pasted image 20240822142644.png",
+    "projects/devops/zabbix/files/Pasted image 20240822141535.png",
+    "projects/devops/zabbix/triggers.md",
+    "projects/devops/zabbix/files/Pasted image 20240822141238.png",
+    "projects/devops/zabbix/files/Pasted image 20240822141044.png",
+    "projects/devops/zabbix/files/Pasted image 20240822140858.png",
     "Без названия.canvas",
-    "projects/devops/sql/Postgresql",
-    "projects/devops/sql/MongoDB",
-    "projects/devops/sql",
-    "links",
-    "projects/network/mikrotik/ip",
-    "projects/network/zabbix/files/macros.png",
-    "projects/network/zabbix/files",
-    "projects/network/mikrotik/firewall/files/Pasted image 20240625000157.png",
-    "projects/network/mikrotik/firewall/files/Pasted image 20240624233526.png",
-    "projects/network/mikrotik/firewall/files/Pasted image 20240624233110.png",
-    "projects/network/mikrotik/firewall/files/Pasted image 20240624232845.png",
-    "projects/network/mikrotik/firewall/files",
-    "projects/network/mikrotik/firewall/files/Pasted image 20240624232653.png",
-    "projects/network/mikrotik/firewall",
-    "projects/sequrity",
-    "projects/network/mikrotik/files/Pfd1.png",
-    "projects/devops/proxmox/files/Pasted image 20240613230036.png",
-    "projects/devops/proxmox/files/Pasted image 20240613225651.png",
+    "Без названия 1.canvas",
+    "index.md",
+    "docs.md",
+    "About.md",
+    "links.md",
+    "projects/linux/bash.md",
+    "projects/linux/system_initialization/systemd/journalctl.md",
+    "projects/linux/system_initialization/systemd/timedatectl.md",
+    "projects/linux/ssh/ssh.md",
+    "projects/python/lessons/function/default_function.md",
+    "projects/python/lessons/function/decorators.md",
+    "projects/python/lessons/function/lambda.md",
+    "projects/network/Zyxel/vlans.md",
+    "projects/devops/zabbix/backup -.md",
+    "projects/linux/system_initialization/systemd/files/Pasted image 20240821165348.png",
+    "projects/network/mikrotik/cli_mikrotik.md",
+    "projects/network/mikrotik/чек лист по настройке.md",
+    "projects/windows/NetBIOS и LLMNR.md",
+    "projects/python/lessons/errors/errors.md",
+    "projects/windows/Activation win10.md",
+    "projects/devops/ESXI/NICs.md",
+    "projects/devops/ESXI/VLANS.md",
+    "projects/devops/ESXI/files/6.jpg",
+    "projects/devops/ESXI/files/5.jpg",
+    "projects/devops/ESXI/files/4.jpg",
+    "projects/devops/ESXI/files/3.jpg",
+    "projects/devops/zabbix/esxi.md",
+    "projects/devops/ESXI/files",
+    "projects/devops/ESXI",
+    "projects/devops/docker/compose.md",
+    "projects/network/mikrotik/interface/bonding.md",
+    "projects/devops/proxmox/mikrotik vm.md",
+    "projects/network/Zyxel/files",
+    "projects/network/Zyxel/Новая папка",
+    "projects/network/Zyxel",
+    "projects/network/mikrotik/interface",
+    "projects/network/mikrotik/routing",
+    "projects/network/mikrotik/tools",
+    "projects/devops/node",
+    "projects/network/tools",
     "devops/Без названия.canvas"
   ]
 }

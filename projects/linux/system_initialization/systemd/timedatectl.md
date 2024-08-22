@@ -93,3 +93,26 @@ $ timedatectl list-timezones
 > **Совет:** Можно найти и выбрать нужный часовой пояс с помощью интерактивного помощника _tzselect_.
 
 Смотрите [timedatectl(1)](https://man.archlinux.org/man/timedatectl.1) и [localtime(5)](https://man.archlinux.org/man/localtime.5) для более подробной информации.
+### NTP syns
+Проверяем статус синхронизации
+![](files/Pasted%20image%2020240821165348.png)
+если **NTP service: inactive**, то включаем
+```bash
+timedatectl set-ntp true
+```
+Для примера будем использовать сервер с адресом `192.168.5.1`. 
+Редактируем  `/etc/systemd/timesyncd.conf` для синхронизации времени с NTP-сервером с IP-адресом `192.168.5.1`:
+```bash
+# Раскомментируем
+[Time]
+NTP=192.168.5.1
+FallbackNTP=
+```
+Перезапускаем службу синхронизации времени
+```bash
+systemctl restart systemd-timesyncd.service
+```
+Проверить статус службы
+```bash
+systemctl status systemd-timesyncd.service
+```

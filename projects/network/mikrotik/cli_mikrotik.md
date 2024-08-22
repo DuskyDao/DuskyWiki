@@ -55,3 +55,7 @@ add  comment  disable  edit  enable  export  find  print  remove  reset  set
 ```
 В обоих приведенных выше примерах до знака > указан путь, а после команда. Поэтому различается только левая часть, которая содержит в себе запись пути.  
 Далее в этой статье примеры будут приводиться в формате записи для RouterOS v7. Но любая информация из статьи применима и для консоли RouteroOS v6. 
+### Добавить `ether` интерфейсы в бридж кроме `ether49`
+```r
+ :foreach i in=[/interface find where (name~"^ether" && name!="ether49")] do={/interface bridge port add interface=$i bridge=bridge.ceha}
+```

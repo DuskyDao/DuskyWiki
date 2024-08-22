@@ -11,5 +11,6 @@
   "newFileLocation": "current",
   "useMarkdownLinks": true,
   "newFileFolderPath": "projects",
-  "foldIndent": false
+  "foldIndent": false,
+  "showRibbon": true
 }

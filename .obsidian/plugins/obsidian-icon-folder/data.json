@@ -1,11 +1,18 @@
 {
   "settings": {
-    "migrated": 5,
+    "migrated": 6,
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiGnubash",
+      "FabCreativeCommonsShare",
+      "SiVmware",
+      "RiLinkedinFill",
+      "FasNetworkWired",
+      "SiZulip",
+      "FabNodeJs",
       "SiSpeedtest",
       "BoBxlPostgresql",
       "SiPostgresql",
@@ -23,14 +30,7 @@
       "TiLink",
       "RiLink",
       "RiTimeZoneFill",
-      "TiLogs",
-      "TiBadgeSd",
-      "FiCodesandbox",
-      "FasFire",
-      "LiShieldQuestion",
-      "TiArrowAutofitDown",
-      "TiNetworkOff",
-      "TiUserShield"
+      "TiLogs"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -57,7 +57,8 @@
     "iconColorInFrontmatterFieldName": "iconColor",
     "iconsInLinksEnabled": true,
     "debugMode": false,
-    "iconInTitlePosition": "above"
+    "iconInTitlePosition": "above",
+    "lucideIconPackType": "native"
   },
   "projects": {
     "iconName": "SiNamuwiki",
@@ -121,10 +122,6 @@
     "iconName": "SiOpnsense",
     "iconColor": "#ff781f"
   },
-  "projects/network/zabbix": {
-    "iconName": "SiZazzle",
-    "iconColor": "#f70808"
-  },
   "projects/python/exe_file.md": {
     "iconName": "TiHexagonLetterE",
     "iconColor": "#60cb52"
@@ -164,8 +161,8 @@
     "iconColor": "#fbae41"
   },
   "projects/linux/bash.md": {
-    "iconName": "LiSquareChevronLeft",
-    "iconColor": "#bf2ff4"
+    "iconName": "SiGnubash",
+    "iconColor": "#a384db"
   },
   "projects/devops/proxmox": {
     "iconName": "SiProxmox",
@@ -197,11 +194,7 @@
   },
   "projects/network/mikrotik/firewall": {
     "iconName": "FasFire",
-    "iconColor": "#984a01"
-  },
-  "projects/network/zabbix/esxi.md": {
-    "iconName": "FiCodesandbox",
-    "iconColor": "#33ddff"
+    "iconColor": "#f67f4c"
   },
   "projects/linux/system_initialization/systemd": {
     "iconName": "TiBadgeSd",
@@ -264,5 +257,33 @@
   "projects/network/tools/iperf.md": {
     "iconName": "SiSpeedtest",
     "iconColor": "#24ff32"
+  },
+  "projects/devops/node": {
+    "iconName": "FabNodeJs",
+    "iconColor": "#5bb6fb"
+  },
+  "projects/network/Zyxel": {
+    "iconName": "SiZulip",
+    "iconColor": "#3ef226"
+  },
+  "projects/network/Zyxel/vlans.md": {
+    "iconName": "FasNetworkWired",
+    "iconColor": "#4ee5f9"
+  },
+  "projects/network/mikrotik/interface": {
+    "iconName": "RiLinkedinFill",
+    "iconColor": "#38fffc"
+  },
+  "projects/devops/ESXI": {
+    "iconName": "FabCreativeCommonsShare",
+    "iconColor": "#245feb"
+  },
+  "projects/devops/zabbix": {
+    "iconName": "SiZazzle",
+    "iconColor": "#f70808"
+  },
+  "projects/devops/zabbix/esxi.md": {
+    "iconName": "FiCodesandbox",
+    "iconColor": "#33ddff"
   }
 }

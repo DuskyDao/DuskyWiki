@@ -1,0 +1,22 @@
+{
+  "minimal-style@@minimal-code-scroll": false,
+  "minimal-style@@h1-color@@dark": "#FF7417",
+  "minimal-style@@h1-style": "italic",
+  "minimal-style@@h1-l": true,
+  "minimal-style@@h1-variant": "normal",
+  "minimal-style@@h2-color@@dark": "#FAAF23",
+  "minimal-style@@h2-style": "italic",
+  "minimal-style@@h2-l": true,
+  "minimal-style@@h3-color@@dark": "#DBCB40",
+  "minimal-style@@h3-l": true,
+  "minimal-style@@h3-style": "italic",
+  "minimal-style@@h4-color@@dark": "#32F9E7",
+  "minimal-style@@h4-style": "italic",
+  "minimal-style@@h4-l": true,
+  "minimal-style@@h5-color@@dark": "#61ADF6",
+  "minimal-style@@h5-style": "italic",
+  "minimal-style@@h5-l": true,
+  "minimal-style@@h6-color@@dark": "#2C6AF7",
+  "minimal-style@@h6-style": "italic",
+  "minimal-style@@h6-l": true
+}
