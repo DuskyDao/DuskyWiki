@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "78f909bfc43bedb1",
+        "id": "d840fa68c8a95ed2",
         "type": "tabs",
         "children": [
           {
-            "id": "fb22278bf3eb737b",
+            "id": "5f19d083d564022c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/devops/zabbix/triggers.md",
+                "file": "projects/devops/git.md",
                 "mode": "preview",
                 "source": true
-              }
+              },
+              "icon": "lucide-file",
+              "title": "git"
             }
           }
         ]
@@ -38,13 +40,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "git",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
             }
           },
           {
@@ -52,7 +56,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
             }
           },
           {
@@ -62,15 +68,16 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "byCreatedTime"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 253.5
+    "width": 272.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -86,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/devops/zabbix/triggers.md",
+                "file": "projects/devops/git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -94,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для git"
             }
           },
           {
@@ -103,10 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/devops/zabbix/triggers.md",
+                "file": "projects/devops/git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из git"
             }
           },
           {
@@ -116,8 +127,10 @@
               "type": "tag",
               "state": {
                 "sortOrder": "alphabetical",
-                "useHierarchy": false
-              }
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
             }
           },
           {
@@ -126,8 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/devops/zabbix/triggers.md"
-              }
+                "file": "projects/devops/git.md"
+              },
+              "icon": "lucide-list",
+              "title": "Структура git"
             }
           },
           {
@@ -135,15 +150,28 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          },
+          {
+            "id": "2bcbd288b04661f0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 241.5
+    "width": 241.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,59 +182,61 @@
       "command-palette:Открыть палитру команд": true,
       "markdown-importer:Импорт Markdown-файлов": true,
       "graph:Граф": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": true
+      "table-editor-obsidian:Advanced Tables Toolbar": true,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fb22278bf3eb737b",
+  "active": "5f19d083d564022c",
   "lastOpenFiles": [
-    "projects/devops/zabbix/files/Pasted image 20240822142828.png",
-    "projects/devops/zabbix/files/Pasted image 20240822142644.png",
-    "projects/devops/zabbix/files/Pasted image 20240822141535.png",
-    "projects/devops/zabbix/triggers.md",
-    "projects/devops/zabbix/files/Pasted image 20240822141238.png",
-    "projects/devops/zabbix/files/Pasted image 20240822141044.png",
-    "projects/devops/zabbix/files/Pasted image 20240822140858.png",
+    "projects/devops/node/app-service.md",
+    "projects/windows/Activation win10.md",
+    "Excalidraw/Drawing 2024-09-06 16.41.42.excalidraw.md",
+    "health/стимуляторы/Неотропный комплекс.md",
+    "health/стимуляторы/files/d23f5e1ea04e0e1f2a5d6.jpg",
+    "health/стимуляторы/files/7f46d9e2f58dce1372ef6.jpg",
+    "health/стимуляторы/files/235abd5b5953bac60f2ef.jpg",
+    "health/стимуляторы/files/ead8f56fbc9eed7a2ab99.jpg",
+    "health/стимуляторы/files/8c49cf1a96981c4e17ed2.jpg",
+    "health/стимуляторы/files/348fb79d390167dd3c511.jpg",
+    "Excalidraw/Drawing 2024-10-24 20.57.48.excalidraw.md",
+    "projects/devops/proxmox/mikrotik vm.md",
+    "projects/network/mikrotik/tools/Romon.md",
+    "projects/network/mikrotik/template firewall.md",
+    "projects/network/mikrotik/чек лист по настройке.md",
+    "projects/network/mikrotik/cli_mikrotik.md",
+    "projects/network/mikrotik/firewall/файрвол.md",
+    "projects/network/mikrotik/firewall/GeoIP.md",
+    "projects/network/mikrotik/interface/bonding.md",
+    "projects/network/openwrt/install.md",
+    "projects/devops/proxmox/Без названия.md",
+    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
+    "projects/windows/files/Pasted image 20241009091425.png",
+    "projects/windows/files",
+    "projects/windows/Лицензии.md",
+    "projects/linux/venv/venv.md",
+    "projects/web/certbot.md",
+    "projects/Без названия",
+    "projects/devops/ESXI/VLANS.md",
+    "projects/devops/zabbix/esxi.md",
+    "projects/python/Django/templates.md",
+    "plans/fesukr/Без названия.md",
+    "projects/python/Django/files/tags_block_extends_include.png",
+    "projects/python/Django/files/base_template.png",
+    "projects/python/lessons/variable_types/lists/list.md",
+    "templaits/new_doc.md",
+    "projects/network/Zyxel/vlans.md",
+    "projects/python/Django/files/url_templates.png",
+    "projects/devops/zabbix/Templates",
+    "Excalidraw/files",
+    "Excalidraw",
+    "plans/life",
+    "plans/fesukr",
+    "plans",
+    "projects/python/Django/file",
     "Без названия.canvas",
     "Без названия 1.canvas",
-    "index.md",
-    "docs.md",
-    "About.md",
-    "links.md",
-    "projects/linux/bash.md",
-    "projects/linux/system_initialization/systemd/journalctl.md",
-    "projects/linux/system_initialization/systemd/timedatectl.md",
-    "projects/linux/ssh/ssh.md",
-    "projects/python/lessons/function/default_function.md",
-    "projects/python/lessons/function/decorators.md",
-    "projects/python/lessons/function/lambda.md",
-    "projects/network/Zyxel/vlans.md",
-    "projects/devops/zabbix/backup -.md",
-    "projects/linux/system_initialization/systemd/files/Pasted image 20240821165348.png",
-    "projects/network/mikrotik/cli_mikrotik.md",
-    "projects/network/mikrotik/чек лист по настройке.md",
-    "projects/windows/NetBIOS и LLMNR.md",
-    "projects/python/lessons/errors/errors.md",
-    "projects/windows/Activation win10.md",
-    "projects/devops/ESXI/NICs.md",
-    "projects/devops/ESXI/VLANS.md",
-    "projects/devops/ESXI/files/6.jpg",
-    "projects/devops/ESXI/files/5.jpg",
-    "projects/devops/ESXI/files/4.jpg",
-    "projects/devops/ESXI/files/3.jpg",
-    "projects/devops/zabbix/esxi.md",
     "projects/devops/ESXI/files",
-    "projects/devops/ESXI",
-    "projects/devops/docker/compose.md",
-    "projects/network/mikrotik/interface/bonding.md",
-    "projects/devops/proxmox/mikrotik vm.md",
-    "projects/network/Zyxel/files",
-    "projects/network/Zyxel/Новая папка",
-    "projects/network/Zyxel",
-    "projects/network/mikrotik/interface",
-    "projects/network/mikrotik/routing",
-    "projects/network/mikrotik/tools",
-    "projects/devops/node",
-    "projects/network/tools",
     "devops/Без названия.canvas"
   ]
 }

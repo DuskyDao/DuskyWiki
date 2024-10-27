@@ -2,10 +2,11 @@
   "accentColor": "",
   "theme": "obsidian",
   "translucency": false,
-  "baseFontSize": 15,
+  "baseFontSize": 13,
   "cssTheme": "Things",
   "baseFontSizeAction": true,
   "showViewHeader": true,
   "nativeMenus": false,
-  "interfaceFontFamily": "Alef"
+  "interfaceFontFamily": "Alef",
+  "enabledCssSnippets": []
 }

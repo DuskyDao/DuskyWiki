@@ -6,6 +6,13 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "IbStackHorizontal",
+      "OcRepoTemplate24",
+      "FasHatCowboy",
+      "BoBxRun",
+      "RiBuilding4Line",
+      "FasRightFromBracket",
+      "SiSimpleanalytics",
       "SiGnubash",
       "FabCreativeCommonsShare",
       "SiVmware",
@@ -23,14 +30,7 @@
       "SiMongodb",
       "LiSquareChevronLeft",
       "TiBox",
-      "RiBox2Line",
-      "SiSuperuser",
-      "RiInfinityLine",
-      "FabPython",
-      "TiLink",
-      "RiLink",
-      "RiTimeZoneFill",
-      "TiLogs"
+      "RiBox2Line"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -285,5 +285,17 @@
   "projects/devops/zabbix/esxi.md": {
     "iconName": "FiCodesandbox",
     "iconColor": "#33ddff"
+  },
+  "projects/python/Django/django основы.md": {
+    "iconName": "FasHatCowboy",
+    "iconColor": "#87480d"
+  },
+  "projects/devops/zabbix/Templates": {
+    "iconName": "OcRepoTemplate24",
+    "iconColor": "#d0c43e"
+  },
+  "projects/python/Django/templates.md": {
+    "iconName": "IbStackHorizontal",
+    "iconColor": "#9b19d7"
   }
 }

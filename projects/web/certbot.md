@@ -75,10 +75,65 @@ If you like Certbot, please consider supporting our work by:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
 ### Обновить сертификаты:
+Для обновления сертификатов сервер должен быть доступен по 80 порту из мира (отключаем все геопы). Как вариант проверить доступность по HTTP можно на сайте https://check-host.net
 ```shell
 certbot renew
 ```
 ### Изменить сертификаты без изменения файлов конфигурации nginx:
 ```shell
 certbot --nginx certonly
+```
+### Отладка
+##### Иммитация получения сертификатов (для отладки)
+```shell
+certbot renew --dry-run
+```
+##### .well-known/acme-challenge/ 
+
+
+Создайте тестовый файл:
+```shell
+sudo mkdir -p /var/www/html/.well-known/acme-challenge/
+echo "test" | sudo tee /var/www/html/.well-known/acme-challenge/test
+```
+**Проверьте права на директории и файлы**: Убедитесь, что Nginx имеет доступ к директории и файлам. Задайте правильные права доступа:
+```shell
+sudo chown -R www-data:www-data /var/www/html/.well-known/
+sudo chmod -R 755 /var/www/html/.well-known/
+```
+Убедитесь, что в конфигурации Nginx настроен блок для обработки запросов в директорию `.well-known/acme-challenge/`. Проверьте, что запросы к файлам этой директории обрабатываются правильно.
+
+Пример блока в конфигурации:
+```shell
+server {
+    listen 80;
+    server_name mssg.fesukr.com.ua www.mssg.fesukr.com.ua;
+
+    location /.well-known/acme-challenge/ {
+        alias /var/www/html/.well-known/acme-challenge/;
+        try_files $uri =404;
+    }
+}
+
+```
+После внесения изменений перезапустите Nginx:
+```shell
+sudo systemctl restart nginx
+```
+
+
+Проверьте доступ к этому файлу через браузер или `curl`:
+```shell
+curl http://mssg.fesukr.com.ua/.well-known/acme-challenge/test
+```
+
+##### Проверяем днс запись
+```shell
+dig A mssg.fesukr.com.ua
+dig A www.mssg.fesukr.com.ua`
+```
+Вы должны получить ответ с IP-адресом вашего сервера, например:
+```shell
+mssg.fesukr.com.ua. 300 IN A 199.189.49.52  
+www.mssg.fesukr.com.ua. 300 IN A  199.189.49.52
 ```

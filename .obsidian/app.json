@@ -12,5 +12,7 @@
   "useMarkdownLinks": true,
   "newFileFolderPath": "projects",
   "foldIndent": false,
-  "showRibbon": true
+  "showRibbon": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false
 }
