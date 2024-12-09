@@ -6,6 +6,9 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiAdobefonts",
+      "RiToolsFill",
+      "SiWindowsxp",
       "IbStackHorizontal",
       "OcRepoTemplate24",
       "FasHatCowboy",
@@ -27,10 +30,7 @@
       "FasDatabase",
       "FasUserAstronaut",
       "SiSqlite",
-      "SiMongodb",
-      "LiSquareChevronLeft",
-      "TiBox",
-      "RiBox2Line"
+      "SiMongodb"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -188,10 +188,6 @@
     "iconName": "TiArrowAutofitDown",
     "iconColor": "#2df41f"
   },
-  "projects/sequrity": {
-    "iconName": "LiShieldQuestion",
-    "iconColor": "#ff811a"
-  },
   "projects/network/mikrotik/firewall": {
     "iconName": "FasFire",
     "iconColor": "#f67f4c"
@@ -216,7 +212,10 @@
     "iconName": "FabPython",
     "iconColor": "#57ee20"
   },
-  "projects/linux/system_initialization": "RiInfinityLine",
+  "projects/linux/system_initialization": {
+    "iconName": "RiInfinityLine",
+    "iconColor": "#36e239"
+  },
   "projects/linux/sudo": {
     "iconName": "SiSuperuser",
     "iconColor": "#a92deb"
@@ -297,5 +296,21 @@
   "projects/python/Django/templates.md": {
     "iconName": "IbStackHorizontal",
     "iconColor": "#9b19d7"
+  },
+  "projects/linux/system_initialization/systemd/mount.md": {
+    "iconName": "SiWindowsxp",
+    "iconColor": "#1340f6"
+  },
+  "projects/windows/tools": {
+    "iconName": "RiToolsFill",
+    "iconColor": "#9e30f8"
+  },
+  "projects/web/css/fonts.md": {
+    "iconName": "SiAdobefonts",
+    "iconColor": "#c9f792"
+  },
+  "projects/security": {
+    "iconName": "LiShieldQuestion",
+    "iconColor": "#ff811a"
   }
 }

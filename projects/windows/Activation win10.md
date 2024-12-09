@@ -1,12 +1,12 @@
 #windows #activation
 #### Процедура лечения
-Откройте PowerShell от имени Администратора (пуск -> введите в поиск "PowerShell" без ковычек -> нажмите правой кнопкой мыши на выданный поиском вариант -> выберете "Открыть от имени Администратора").  
+##### Откройте PowerShell от имени Администратора (пуск -> введите в поиск "PowerShell" без ковычек -> нажмите правой кнопкой мыши на выданный поиском вариант -> выберете "Открыть от имени Администратора").  
 Введите команду:
 ```powershell
 irm https://massgrave.dev/get | iex
 ```
-Далее откроется окно, следуйте инструкциям.  
-Или скачайте файл activation_metod_2.cmd по [ссылке](https://t.me/sommov95/3) и запустите его.
+> Далее откроется окно, следуйте инструкциям.  
+##### Или скачайте файл activation_metod_2.cmd по [ссылке](https://t.me/sommov95/3) и запустите его.
 Note - On older Windows builds you may need to run the below command before,  
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12

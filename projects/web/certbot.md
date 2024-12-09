@@ -1,4 +1,6 @@
 #web #certbot
+
+![certbot](https://www.eff.org/files/2016/05/12/certbot-logo-7.png)
 Плагин [certbot-nginx](https://archlinux.org/packages/?name=certbot-nginx) предоставляет автоматическую настройку [Nginx (Русский)](https://wiki.archlinux.org/title/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nginx (Русский)"). Он пытается найти конфигурацию каждого домена, а также добавляет рекомендованные для безопасности параметры, настройки использования сертификатов и пути к сертификатам Certbot. 
 
 ### Первоначальная настройка:

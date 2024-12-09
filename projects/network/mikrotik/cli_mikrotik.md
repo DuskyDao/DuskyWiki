@@ -59,3 +59,5 @@ add  comment  disable  edit  enable  export  find  print  remove  reset  set
 ```r
  :foreach i in=[/interface find where (name~"^ether" && name!="ether49")] do={/interface bridge port add interface=$i bridge=bridge.ceha}
 ```
+
+:foreach i in=[/interface find where (name~"^ether")] do={/interface bridge port add interface=$i bridge=bridge.cold}
