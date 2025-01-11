@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9e6e801fa3f3cc40",
+        "id": "10f69a3715c707d9",
         "type": "tabs",
         "children": [
           {
-            "id": "415c168c1222e5e4",
+            "id": "314ee7e5121e6466",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/windows/tools/ping.md",
-                "mode": "preview",
+                "file": "projects/python/Django/templates.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "ping"
+              "title": "templates"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -140,10 +141,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/windows/tools/ping.md"
+                "file": "projects/python/Django/templates.md"
               },
               "icon": "lucide-list",
-              "title": "Структура ping"
+              "title": "Структура templates"
             }
           },
           {
@@ -188,19 +189,24 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "415c168c1222e5e4",
+  "active": "314ee7e5121e6466",
   "lastOpenFiles": [
+    "projects/python/Django/django основы.md",
+    "projects/python/Django/templates.md",
+    "projects/web/img.md",
+    "projects/web/css/no_js_only_css.md",
+    "projects/web/css/Нормализация стилей.md",
+    "projects/windows/Activation win10.md",
+    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
+    "projects/windows/Лицензии.md",
+    "projects/network/mikrotik/чек лист по настройке.md",
+    "projects/network/mikrotik/cli_mikrotik.md",
+    "projects/windows/rdp tcp only.md",
+    "projects/windows/tools/ping.md",
     "projects/linux/bash.md",
     "projects/devops/ESXI/VLANS.md",
-    "projects/network/mikrotik/cli_mikrotik.md",
-    "projects/windows/tools/ping.md",
     "projects/web/css/fonts.md",
-    "projects/windows/Activation win10.md",
     "projects/windows/NetBIOS и LLMNR.md",
-    "projects/windows/Лицензии.md",
-    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
-    "projects/web/css/Нормализация стилей.md",
-    "projects/web/css/no_js_only_css.md",
     "projects/web/certbot.md",
     "projects/devops/sql/SQLite/methods sqlite3.md",
     "projects/windows/tools",
@@ -212,11 +218,6 @@
     "projects/network/mikrotik/interface/bonding.md",
     "projects/network/IPv6/Disable IPv6.md",
     "projects/linux/system_initialization/systemd/mount.md",
-    "projects/linux/system_initialization/systemd/timedatectl.md",
-    "projects/linux/system_initialization/systemd/journalctl.md",
-    "projects/linux/system_initialization/systemd/python_script_service.md",
-    "projects/linux/Без названия.md",
-    "projects/linux/sudo/sudo.md",
     "health/стимуляторы/files/d23f5e1ea04e0e1f2a5d6.jpg",
     "health/стимуляторы/files/7f46d9e2f58dce1372ef6.jpg",
     "health/стимуляторы/files/235abd5b5953bac60f2ef.jpg",

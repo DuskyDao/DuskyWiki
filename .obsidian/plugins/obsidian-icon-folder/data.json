@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasImage",
       "SiAdobefonts",
       "RiToolsFill",
       "SiWindowsxp",
@@ -29,8 +30,7 @@
       "FasServer",
       "FasDatabase",
       "FasUserAstronaut",
-      "SiSqlite",
-      "SiMongodb"
+      "SiSqlite"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -312,5 +312,9 @@
   "projects/security": {
     "iconName": "LiShieldQuestion",
     "iconColor": "#ff811a"
+  },
+  "projects/web/img.md": {
+    "iconName": "FasImage",
+    "iconColor": "#9a1ad5"
   }
 }

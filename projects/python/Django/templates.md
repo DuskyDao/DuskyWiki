@@ -416,10 +416,10 @@ def page_not_found(request, exception):
 Вывод:
 ![](files/url_templates.png)
 #### Наследование базовых шаблонов
-Базовые шаблоны создаются на уровне приложения sitewomen/**templates**/base.html
-Что б его видел движок джанго, в `sitewomen/settings.py`  в списке `TEMPLATES` в его подсписке `BASE_DIR [] `нужно указать путь к папке этих шаблонов
+Базовые шаблоны(повтояремые) создаются на уровне приложения, в нашем случае -  sitewomen/**templates**/base.html
+Что б его видел движок джанго, в `sitewomen/settings.py`  в списке `TEMPLATES` в его подсписке `BASE_DIR [] `нужно указать путь к папке этих шаблонов (нестандартный путь, так как по умолчанию все шаблоны джижек ищет в папке приложений)
 ![](files/base_template.png)
-Теперь мы будем использовать для одинакового контента типа футера и html шапки базовый/общий шаблон `sitewomen/templates/base.html`, а шаблоны страниц будут использоваться для уникального контента каждой.
+Теперь мы будем использовать для одинакового контента типа футера/хеадера/нав блоков базовый/общий шаблон `sitewomen/templates/base.html`, а шаблоны страниц будут использоваться для уникального контента каждой.
 ##### Синтаксис: **block**
 ```django
 {% block content %}
@@ -487,7 +487,7 @@ def page_not_found(request, exception):
 ```
 `index.html`
 ```django
-{% extends "base.html" %}
+{% extends "base.html" %}  %%  %%
 {% block content %}
 <h1>{{ title }}</h1>
 <ul>
@@ -503,7 +503,8 @@ def page_not_found(request, exception):
             </li>    
         {% endif %}
     {% endfor %}
-    {% include "women/includes/nav.html" %}
+</ul>
+{% include "women/includes/nav.html" %}
 {% endblock content%}
 ```
 `about.html`
