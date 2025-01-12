@@ -6,6 +6,9 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "TiLayoutSidebarRightCollapse",
+      "CoFiles",
+      "OcFileSymlinkFile24",
       "FasImage",
       "SiAdobefonts",
       "RiToolsFill",
@@ -27,10 +30,7 @@
       "SiSpeedtest",
       "BoBxlPostgresql",
       "SiPostgresql",
-      "FasServer",
-      "FasDatabase",
-      "FasUserAstronaut",
-      "SiSqlite"
+      "FasServer"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -316,5 +316,13 @@
   "projects/web/img.md": {
     "iconName": "FasImage",
     "iconColor": "#9a1ad5"
+  },
+  "projects/python/Django/Static files.md": {
+    "iconName": "CoFiles",
+    "iconColor": "#0ba81d"
+  },
+  "projects/python/Django/tags.md": {
+    "iconName": "TiLayoutSidebarRightCollapse",
+    "iconColor": "#eecc20"
   }
 }

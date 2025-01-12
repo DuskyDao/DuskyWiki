@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "10f69a3715c707d9",
+        "id": "9f85a436aff45445",
         "type": "tabs",
         "children": [
           {
-            "id": "314ee7e5121e6466",
+            "id": "28599f34b6fe02bb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Django/templates.md",
+                "file": "projects/python/Django/tags.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "templates"
+              "title": "tags"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -141,10 +140,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Django/templates.md"
+                "file": "projects/python/Django/tags.md"
               },
               "icon": "lucide-list",
-              "title": "Структура templates"
+              "title": "Структура tags"
             }
           },
           {
@@ -172,8 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5,
-    "collapsed": true
+    "width": 388.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,10 +187,23 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "314ee7e5121e6466",
+  "active": "28599f34b6fe02bb",
   "lastOpenFiles": [
-    "projects/python/Django/django основы.md",
+    "projects/python/Django/files/customtag3.png",
+    "projects/python/Django/files/Screenshot 2025-01-12 191952.png",
+    "projects/python/Django/files/customcats2.png",
+    "projects/python/Django/files/Screenshot 2025-01-11 223719.png",
+    "projects/python/Django/files/customtags.png",
+    "projects/python/Django/files/Screenshot 2025-01-11 222601.png",
     "projects/python/Django/templates.md",
+    "projects/python/Django/Static files.md",
+    "projects/python/Django/tags.md",
+    "projects/python/Django/files/static3.png",
+    "projects/python/Django/files/Screenshot 2025-01-11 201205.png",
+    "projects/python/Django/files/static2.png",
+    "projects/python/Django/files/Screenshot 2025-01-11 200004.png",
+    "projects/python/Django/files/static.png",
+    "projects/python/Django/django основы.md",
     "projects/web/img.md",
     "projects/web/css/no_js_only_css.md",
     "projects/web/css/Нормализация стилей.md",
@@ -215,21 +226,8 @@
     "projects/devops/sql/MongoDB/main.md",
     "projects/devops/proxmox/install.md",
     "projects/network/mikrotik/firewall/GeoIP.md",
-    "projects/network/mikrotik/interface/bonding.md",
-    "projects/network/IPv6/Disable IPv6.md",
-    "projects/linux/system_initialization/systemd/mount.md",
-    "health/стимуляторы/files/d23f5e1ea04e0e1f2a5d6.jpg",
-    "health/стимуляторы/files/7f46d9e2f58dce1372ef6.jpg",
-    "health/стимуляторы/files/235abd5b5953bac60f2ef.jpg",
-    "health/стимуляторы/files/ead8f56fbc9eed7a2ab99.jpg",
-    "health/стимуляторы/files/8c49cf1a96981c4e17ed2.jpg",
-    "health/стимуляторы/files/348fb79d390167dd3c511.jpg",
-    "projects/windows/files/Pasted image 20241009091425.png",
     "projects/windows/files",
     "projects/Без названия",
-    "projects/python/Django/files/tags_block_extends_include.png",
-    "projects/python/Django/files/base_template.png",
-    "projects/python/Django/files/url_templates.png",
     "projects/devops/zabbix/Templates",
     "Excalidraw/files",
     "Excalidraw",
