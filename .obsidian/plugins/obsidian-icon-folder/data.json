@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "RiTable3",
       "TiLayoutSidebarRightCollapse",
       "CoFiles",
       "OcFileSymlinkFile24",
@@ -29,8 +30,7 @@
       "FabNodeJs",
       "SiSpeedtest",
       "BoBxlPostgresql",
-      "SiPostgresql",
-      "FasServer"
+      "SiPostgresql"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -324,5 +324,9 @@
   "projects/python/Django/tags.md": {
     "iconName": "TiLayoutSidebarRightCollapse",
     "iconColor": "#eecc20"
+  },
+  "projects/python/Django/migrations.md": {
+    "iconName": "RiTable3",
+    "iconColor": "#63e0e9"
   }
 }

@@ -3,49 +3,20 @@
   "search": "",
   "showTags": true,
   "showAttachments": false,
-  "hideUnresolved": false,
+  "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "linux",
-      "color": {
-        "a": 1,
-        "rgb": 4581472
-      }
-    },
-    {
-      "query": "windows",
-      "color": {
-        "a": 1,
-        "rgb": 13311
-      }
-    },
-    {
-      "query": "python",
-      "color": {
-        "a": 1,
-        "rgb": 14419157
-      }
-    },
-    {
-      "query": "mikrotik",
-      "color": {
-        "a": 1,
-        "rgb": 3341303
-      }
-    }
-  ],
+  "colorGroups": [],
   "collapse-display": false,
   "showArrow": false,
-  "textFadeMultiplier": -3,
-  "nodeSizeMultiplier": 1.74609375,
-  "lineSizeMultiplier": 1.31223958333333,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.12083333333333,
+  "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.455729166666667,
-  "repelStrength": 13.1770833333333,
-  "linkStrength": 0.861979166666667,
-  "linkDistance": 127,
-  "scale": 0.13168724279835642,
-  "close": true
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.13168724279835667,
+  "close": false
 }
