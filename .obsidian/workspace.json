@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Django/migrations.md",
-                "mode": "source",
+                "file": "projects/python/Django/sql.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "migrations"
+              "title": "sql"
+            }
+          },
+          {
+            "id": "05db6ec9e1fdd0f2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "projects/python/Django/sql.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "sql"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -140,10 +155,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Django/migrations.md"
+                "file": "projects/python/Django/sql.md"
               },
               "icon": "lucide-list",
-              "title": "Структура migrations"
+              "title": "Структура sql"
             }
           },
           {
@@ -171,8 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5,
-    "collapsed": true
+    "width": 388.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,18 +197,28 @@
       "command-palette:Открыть палитру команд": true,
       "markdown-importer:Импорт Markdown-файлов": true,
       "graph:Граф": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": true,
+      "publish:Публикация изменений": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:Создать новый чертеж": false,
-      "publish:Публикация изменений": false
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "b92987b4252b166b",
+  "active": "2bcbd288b04661f0",
   "lastOpenFiles": [
+    "цілі 2024.md",
+    "projects/python/Django/sql.md",
+    "projects/security/ping attack.md",
+    "projects/python/Django/templates.md",
+    "projects/python/Streamlit/maine.md",
+    "templaits/new_doc.md",
+    "projects/network/mikrotik/firewall/файрвол.md",
+    "projects/python/exe_file.md",
+    "projects/sequrity/ping attack.md",
+    "projects/web/certbot.md",
+    "projects/web/img.md",
     "projects/python/Django/files/Pasted image 20250112221143.png",
     "projects/python/Django/files/table.png",
     "projects/python/Django/files/Screenshot 2025-01-12 205018.png",
-    "projects/python/Django/migrations.md",
     "projects/linux/system_initialization/systemd/journalctl.md",
     "projects/python/Django/tags.md",
     "projects/python/Django/files/customtag3.png",
@@ -203,12 +227,9 @@
     "projects/python/Django/files/Screenshot 2025-01-11 223719.png",
     "projects/python/Django/files/customtags.png",
     "projects/python/Django/files/Screenshot 2025-01-11 222601.png",
-    "projects/python/Django/templates.md",
     "projects/python/Django/Static files.md",
     "projects/python/Django/files/static3.png",
-    "projects/python/Django/files/Screenshot 2025-01-11 201205.png",
     "projects/python/Django/django основы.md",
-    "projects/web/img.md",
     "projects/web/css/no_js_only_css.md",
     "projects/web/css/Нормализация стилей.md",
     "projects/windows/Activation win10.md",
@@ -220,14 +241,7 @@
     "projects/windows/tools/ping.md",
     "projects/linux/bash.md",
     "projects/devops/ESXI/VLANS.md",
-    "projects/web/css/fonts.md",
-    "projects/windows/NetBIOS и LLMNR.md",
-    "projects/web/certbot.md",
-    "projects/devops/sql/SQLite/methods sqlite3.md",
     "projects/windows/tools",
-    "projects/devops/sql/SQLite/sqlite.md",
-    "projects/devops/sql/Postgresql/upgrade.md",
-    "projects/devops/sql/MongoDB/main.md",
     "projects/windows/files",
     "projects/Без названия",
     "projects/devops/zabbix/Templates",

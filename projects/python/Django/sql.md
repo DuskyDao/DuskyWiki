@@ -184,3 +184,77 @@ datetime.datetime(2025, 1, 12, 20, 59, 47, 727924, tzinfo=datetime.timezone.utc)
 >>> w3.content='Биография Джулии Робертс' 
 >>> w3.save()
 ```
+##### Самый простой вариант (работая с экземплярот класса 
+```sql
+In [9]: Women.objects
+
+Out[9]: <django.db.models.manager.Manager at 0x1ad6e4aefd0>)
+```
+Сам запрос создания
+```sql
+In [8]: Women.objects.create(title='Ума Турман', content='Биография Умы Турман')
+
+INSERT INTO "women_women" ("title", "content", "time_create", "time_update", "is_published")
+VALUES ('Ума Турман', 'Биография Умы Турман', '2025-01-13 20:14:38.319857', '2025-01-13 20:14:38.319877', 1) RETURNING "women_women"."id"
+
+Execution time: 0.000566s [Database: default]
+Out[8]: <Women: Women object (5)>
+```
+Просмотр значений запроса
+```sql
+In [10]: ee = Women.objects.create(title='Кира найтли', content='Биография Киры найтли')
+
+INSERT INTO "women_women" ("title", "content", "time_create", "time_update", "is_published")
+VALUES ('Кира найтли', 'Биография Киры найтли', '2025-01-13 20:18:43.972924', '2025-01-13 20:18:43.972947', 1) RETURNING "women_women"."id"
+
+Execution time: 0.000559s [Database: default]
+
+In [11]: ee.content
+Out[11]: 'Биография Киры найтли'
+
+In [12]: ee.pk
+Out[12]: 6
+```
+#### ipyton и django-extensions
+Для удобства работы с базой, подключим два разширения для командной строки
+ - **ipyton** меняет стандартный шел, давая возможность табом дописывать команды, плюс показывает возможные
+ ```cmd
+ python manage.py shell
+```
+ - **django-extensions** разширения для джанго которое добавляет много полезных субкоманд. Для работы помимо установки, его нужно подключить в приложениях в `settings.py` нашего проекта
+ ```python
+ INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_extensions', # тут
+    'women.apps.WomenConfig'
+]
+```
+ Пример:
+ с ключем --print-sql - будет выводить скль запросы после сохранения обьекта класса нашей таблицы
+ ```sql
+ python manage.py shell_plus --print-sql
+```
+Вывод:
+```sql
+In [1]: a = Women(title="Екатерина Гусева", content="Биография Екатерины Гусевой")
+
+In [2]: a.save
+Out[2]: <bound method Model.save of <Women: Women object (None)>>
+
+In [3]:
+
+In [3]: a.save()
+INSERT INTO "women_women" ("title", "content", "time_create", "time_update", "is_published")
+VALUES ('Екатерина Гусева', 'Биография Екатерины Гусевой', '2025-01-13 19:45:58.633892', '2025-01-13 19:45:58.633920', 1) RETURNING "women_women"."id"
+
+Execution time: 0.001504s [Database: default]
+```
+####
+####
+####
+####
