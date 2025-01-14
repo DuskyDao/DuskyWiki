@@ -11,7 +11,46 @@ DATABASES = {
     }
 }
 ```
-#### Создаем первую таблицу в базе
+### **ipyton** и **django-extensions**
+Для удобства работы с базой, подключим два разширения для командной строки
+ - **ipyton** меняет стандартный шел, давая возможность табом дописывать команды, плюс показывает возможные
+ ```cmd
+ python manage.py shell
+```
+ - **django-extensions** разширения для джанго которое добавляет много полезных субкоманд. Для работы помимо установки, его нужно подключить в приложениях в `settings.py` нашего проекта
+ ```python
+ INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_extensions', # тут
+    'women.apps.WomenConfig'
+]
+```
+ Пример:
+ с ключем --print-sql - будет выводить скль запросы после сохранения обьекта класса нашей таблицы
+ ```sql
+ python manage.py shell_plus --print-sql
+```
+Вывод:
+```sql
+In [1]: a = Women(title="Екатерина Гусева", content="Биография Екатерины Гусевой")
+
+In [2]: a.save
+Out[2]: <bound method Model.save of <Women: Women object (None)>>
+
+In [3]:
+
+In [3]: a.save()
+INSERT INTO "women_women" ("title", "content", "time_create", "time_update", "is_published")
+VALUES ('Екатерина Гусева', 'Биография Екатерины Гусевой', '2025-01-13 19:45:58.633892', '2025-01-13 19:45:58.633920', 1) RETURNING "women_women"."id"
+
+Execution time: 0.001504s [Database: default]
+```
+### Создаем первую таблицу в базе
 Работа с базами в джанго производиться через классы в файлах миграций, в которых мы задаем структуру наших таблиц, обновляем данные и тд.
 
 Каталог и сам файл миграций создается автоматически движком, нам нужно только создать в нем класс таблици. Делается это прописыванием класса таблици в файле `models.py`. 
@@ -111,7 +150,7 @@ Running migrations:
 ```
 Видим все таблице в базе
 ![](files/Pasted%20image%2020250112221143.png)
-#### Добавляем данные в таблицу
+### Добавляем данные в таблицу
 ##### Добавление данных происходит посредством встроенного ORM, c shell оболочки движка джанго
 ```sql
 python manage.py shell
@@ -215,46 +254,483 @@ Out[11]: 'Биография Киры найтли'
 In [12]: ee.pk
 Out[12]: 6
 ```
-#### ipyton и django-extensions
-Для удобства работы с базой, подключим два разширения для командной строки
- - **ipyton** меняет стандартный шел, давая возможность табом дописывать команды, плюс показывает возможные
- ```cmd
- python manage.py shell
-```
- - **django-extensions** разширения для джанго которое добавляет много полезных субкоманд. Для работы помимо установки, его нужно подключить в приложениях в `settings.py` нашего проекта
- ```python
- INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django_extensions', # тут
-    'women.apps.WomenConfig'
-]
-```
- Пример:
- с ключем --print-sql - будет выводить скль запросы после сохранения обьекта класса нашей таблицы
- ```sql
- python manage.py shell_plus --print-sql
-```
-Вывод:
+### Read (**all()**, **filter()**, **get()**, **order_by()**)
+#### Выборка всех данных с таблицы (метод **all()**)
 ```sql
-In [1]: a = Women(title="Екатерина Гусева", content="Биография Екатерины Гусевой")
+In [5]: Women.objects.all()
+Out[5]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ LIMIT 21
 
-In [2]: a.save
-Out[2]: <bound method Model.save of <Women: Women object (None)>>
-
-In [3]:
-
-In [3]: a.save()
-INSERT INTO "women_women" ("title", "content", "time_create", "time_update", "is_published")
-VALUES ('Екатерина Гусева', 'Биография Екатерины Гусевой', '2025-01-13 19:45:58.633892', '2025-01-13 19:45:58.633920', 1) RETURNING "women_women"."id"
-
-Execution time: 0.001504s [Database: default]
+Execution time: 0.000124s [Database: default]
+<QuerySet [<Women: Women object (1)>, <Women: Women object (2)>, <Women: Women object (3)>, <Women: Women object (4)>, <Women: Women object (5)>, <Women: Women object (6)>]>
 ```
-####
-####
-####
-####
+> если применить в `models.py` метод преобразования типа `object` в текст для title, наш запрос будет выглядеть более понят и читабельно
+`sitewomen/women/models.py`
+```python
+from django.db import models
+
+# Create your models here.
+class Women(models.Model):
+    title = models.CharField(max_length=255)  # название статьи
+    content = models.TextField(
+        blank=True
+    )  # текстовое поле, blank=True - можно не заполнять при создании
+    time_create = models.DateTimeField(auto_now_add=True)  # время создания
+    time_update = models.DateTimeField(auto_now=True)  # время обновления
+    is_published = models.BooleanField(default=True)  # по умолчанию - опубликовано
+
+    def __str__(self):
+        return self.title
+```
+
+```sql
+In [1]: Women.objects.all()
+Out[1]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ LIMIT 21
+
+Execution time: 0.000392s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>, <Women: Энн Хэтэуей>, <Women: Джулия Робертс>, <Women: Екатерина Гусева>, <Women: Кира Найтли>, <Women: Ума Турман>]>
+```
+##### Выборка только первой записи
+```sql
+In [2]: Women.objects.all()[0]
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ LIMIT 1
+
+Execution time: 0.000129s [Database: default]
+Out[2]: <Women: Анджелина Джоли>
+```
+##### Первые три записи
+```sql
+In [6]: Women.objects.all()[:3]
+Out[6]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ LIMIT 3
+
+Execution time: 0.000103s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>, <Women: Энн Хэтэуей>, <Women: Джулия Робертс>]>
+```
+##### Ленивый запрос к баззе (выполняется только при обращении к переменной)
+```sql
+In [7]: q = Women.objects.all()[:3]
+
+In [8]: q
+Out[8]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ LIMIT 3
+
+Execution time: 0.000082s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>, <Women: Энн Хэтэуей>, <Women: Джулия Робертс>]>
+```
+Пример с циклом (запрос выполняется только при итерации цикла)
+```sql
+In [13]: q = Women.objects.all()
+
+In [14]: for qq in q:
+    ...:     print (qq)
+    ...:
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+
+Execution time: 0.000222s [Database: default]
+Анджелина Джоли
+Энн Хэтэуей
+Джулия Робертс
+Екатерина Гусева
+Кира Найтли
+Ума Турман
+```
+#### Выборка методом **filter()**
+Выбрать все записи title которые имеют в себе запись "Энн Хэтэуей"
+```sql
+In [15]: Women.objects.filter(title='Энн Хэтэуей')
+Out[15]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."title" = 'Энн Хэтэуей'
+ LIMIT 21
+
+Execution time: 0.000127s [Database: default]
+<QuerySet [<Women: Энн Хэтэуей>]>
+```
+> если указать неправельные данные - получим пустой список (в данном случае запрос должен быть точным)
+```sql
+In [18]: Women.objects.filter(title='Энн Хэвв')
+Out[18]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."title" = 'Энн Хэвв'
+ LIMIT 21
+
+Execution time: 0.000085s [Database: default]
+<QuerySet []>
+```
+#### filter FIeld lookups
+[оф дока](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#field-lookups)
+Вместо стандартных знаков > >= <= и тд. в джанго ORM используются  lookups запросы
+ ![](files/Pasted%20image%2020250114211643.png)
+##### Пример: выберем данные где `id` больше 2
+```sql
+In [19]: Women.objects.filter(pk__gt=2)
+Out[19]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."id" > 2
+ LIMIT 21
+
+Execution time: 0.000138s [Database: default]
+<QuerySet [<Women: Джулия Робертс>, <Women: Екатерина Гусева>, <Women: Кира Найтли>, <Women: Ума Турман>]>
+```
+##### Пример: выберем записи где **title** включаюеn в себя **"ли"**
+```sql
+In [21]: Women.objects.filter(title__contains='ли')
+Out[21]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."title" LIKE '%ли%' ESCAPE '\'
+ LIMIT 21
+
+Execution time: 0.000148s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>, <Women: Джулия Робертс>, <Women: Кира Найтли>]>
+```
+Без учета регистра (в sqlite не работает)
+```sql
+In [23]: Women.objects.filter(title__icontains='ЛИ')
+Out[23]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."title" LIKE '%ЛИ%' ESCAPE '\'
+ LIMIT 21
+
+Execution time: 0.000145s [Database: default]
+<QuerySet []>
+```
+##### Выбрать записи **id** где равен 2, 5, 11, 13
+```sql
+In [24]: Women.objects.filter(pk__in=[2, 5, 11, 13])
+Out[24]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."id" IN (2, 5, 11, 13)
+ LIMIT 21
+
+Execution time: 0.000173s [Database: default]
+<QuerySet [<Women: Энн Хэтэуей>, <Women: Кира Найтли>]>
+```
+Дополнительно, где **is_published=1** (у нас у всех полей = 1)
+```sql
+In [25]: Women.objects.filter(pk__in=[2, 5, 11, 13], is_published=1)     
+Out[25]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE ("women_women"."is_published" AND "women_women"."id" IN (2, 5, 11,
+ 13))
+ LIMIT 21
+
+Execution time: 0.000166s [Database: default]
+<QuerySet [<Women: Энн Хэтэуей>, <Women: Кира Найтли>]>
+```
+#### filter exclude
+#exclude
+Выберает все записи которые не являются критерием запроса
+##### Пример: Выбрать все записи где **id** не рано 2
+```sql
+In [26]: Women.objects.exclude(pk=2)
+Out[26]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE NOT ("women_women"."id" = 2)
+ LIMIT 21
+
+Execution time: 0.000147s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>, <Women: Джулия Робертс>, <Women: Екатерина Гусева>, <Women: Кира Найтли>, <Women: Ума Турман>]>
+```
+#### метод get()
+Возвращает не список, как методы **filter** и **exclude**, а строго одну запись. Применяется когда нужно получить строго одну запись, например - при авторизации пользователя (должні найти одну уникальную запись связанную друг с другом и никакую другую)
+```sql
+In [27]: Women.objects.get(pk=2)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."id" = 2
+ LIMIT 21
+
+Execution time: 0.000205s [Database: default]
+Out[27]: <Women: Энн Хэтэуей>
+```
+> при вызове несуществующей записи или нескольких записей - **возвращает ошибку!**
+```sql
+In [28]: Women.objects.get(pk__gte=2)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."id" >= 2
+ LIMIT 21
+
+Execution time: 0.000230s [Database: default]
+-------------------------------------------------------------------------
+MultipleObjectsReturned                 Traceback (most recent call last)
+Cell In[28], line 1
+----> 1 Women.objects.get(pk__gte=2)
+
+File D:\python\django\djvenv\Lib\site-packages\django\db\models\manager.py:87, in BaseManager._get_queryset_methods.<locals>.create_method.<locals>.manager_method(self, *args, **kwargs)
+     85 @wraps(method)
+     86 def manager_method(self, *args, **kwargs):
+---> 87     return getattr(self.get_queryset(), name)(*args, **kwargs)   
+
+File D:\python\django\djvenv\Lib\site-packages\django\db\models\query.py:652, in QuerySet.get(self, *args, **kwargs)
+    648 if not num:
+    649     raise self.model.DoesNotExist(
+    650         "%s matching query does not exist." % self.model._meta.object_name
+    651     )
+--> 652 raise self.model.MultipleObjectsReturned(
+    653     "get() returned more than one %s -- it returned %s!"
+    654     % (
+    655         self.model._meta.object_name,
+    656         num if not limit or num < limit else "more than %s" % (limit - 1),
+    657     )
+    658 )
+
+MultipleObjectsReturned: get() returned more than one Women -- it returned 5!
+```
+#### метод order_by
+Метод для сортировки выборки
+##### Сортировка по алфавиту по полю **title**
+```sql
+In [29]: Women.objects.all().order_by("title")
+Out[29]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ ORDER BY "women_women"."title" ASC
+ LIMIT 21
+
+Execution time: 0.000160s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>, <Women: Джулия Робертс>, <Women: Екатерина Гусева>, <Women: Кира Найтли>, <Women: Ума Турман>, <Women: Энн Хэтэуей>]>
+```
+##### Выбрать записи где **id** <= 4 отсортировав по title
+```sql
+In [30]: Women.objects.filter(pk__lte=4).order_by("title")
+Out[30]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."id" <= 4
+ ORDER BY "women_women"."title" ASC
+ LIMIT 21
+
+Execution time: 0.000184s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>, <Women: Джулия Робертс>, <Women: Екатерина Гусева>, <Women: Энн Хэтэуей>]>
+```
+Сортировка с конца алфавита
+```sql
+In [31]: Women.objects.filter(pk__lte=4).order_by("-title")
+Out[31]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."id" <= 4
+ ORDER BY "women_women"."title" DESC
+ LIMIT 21
+
+Execution time: 0.000129s [Database: default]
+<QuerySet [<Women: Энн Хэтэуей>, <Women: Екатерина Гусева>, <Women: Джулия Робертс>, <Women: Анджелина Джоли>]>
+```
+##### Так же сортировку можно делать на уровне класса таблици, задав **Meta** класс в `models.py`
+```python
+from django.db import models
+
+# Create your models here.
+class Women(models.Model):
+    title = models.CharField(max_length=255)  # название статьи
+    content = models.TextField(
+        blank=True
+    )  # текстовое поле, blank=True - можно не заполнять при создании
+    time_create = models.DateTimeField(auto_now_add=True)  # время создания
+    time_update = models.DateTimeField(auto_now=True)  # время обновления
+    is_published = models.BooleanField(default=True)  # по умолчанию - опубликовано
+
+    def __str__(self):
+        return self.title  #делаем текстовый тип вывода
+
+    class Meta:
+        ordering = ["-time_create"]  # указываем обратную сортировку по времени создания
+        indexes = [models.Index(fields=["-time_create"])]  #индексируем, так же по обратной сортировке
+```
+Петерь, при выборке, у нас автоматически идет сортировка по обратной дате создания
+```sql
+In [1]: Women.objects.all()
+Out[1]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000577s [Database: default]
+<QuerySet [<Women: Ума Турман>, <Women: Кира Найтли>, <Women: Екатерина Гусева>, <Women: Джулия Робертс>, <Women: Энн Хэтэуей>, <Women: Анджелина Джоли>]>
+```
+### Update()
+Для начала прочитаем запись с id=2
+```sql
+In [2]: Women.objects.get(pk=2)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published"
+  FROM "women_women"
+ WHERE "women_women"."id" = 2
+ LIMIT 21
+
+Execution time: 0.000230s [Database: default]
+Out[2]: <Women: Энн Хэтэуей>
+```
+Меняем заголовок и контент
+```sql
+In [3]: wu = _
+
+In [4]: wu
+Out[4]: <Women: Энн Хэтэуей>
+
+In [5]: wu.title = 'Марго Роби'
+
+In [6]: wu.content = 'Биография Марго Роби'
+
+In [7]: wu
+Out[7]: <Women: Марго Роби>
+
+In [8]: wu.content
+Out[8]: 'Биография Марго Роби'
+
+In [9]: wu.save()
+UPDATE "women_women"
+   SET "title" = 'Марго Роби',
+       "content" = 'Биография Марго Роби',
+       "time_create" = '2025-01-12 21:15:00.829291',
+       "time_update" = '2025-01-14 20:17:55.509451',
+       "is_published" = 1
+ WHERE "women_women"."id" = 2
+
+Execution time: 0.094949s [Database: default]
+```
+#### метод **update**
+##### Меняем все записи **is_published** на 0
+```sql
+In [10]: Women.objects.update(is_published=0)
+UPDATE "women_women"
+   SET "is_published" = 0
+
+Execution time: 0.091059s [Database: default]
+Out[10]: 6
+```
+##### Меняем записи к первым 4, где **id** <= 4
+```sql
+In [12]: Women.objects.filter(pk__lte=4).update(is_published=1)
+UPDATE "women_women"
+   SET "is_published" = 1
+ WHERE "women_women"."id" <= 4
+
+Execution time: 0.091185s [Database: default]
+Out[12]: 4
+```
+> update нельзя применять к методам **all()** и **get()**
+### Delete()
+Удалим записи где **id** больше 5
+```sql
+In [20]: ww = Women.objects.filter(pk__gte=5).delete()
+BEGIN
+
+Execution time: 0.000037s [Database: default]
+DELETE
+  FROM "women_women"
+ WHERE "women_women"."id" >= 5
+
+Execution time: 0.000637s [Database: default]
+```

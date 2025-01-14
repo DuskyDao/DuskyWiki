@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b92987b4252b166b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "projects/python/Django/sql.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "sql"
-            }
-          },
-          {
             "id": "05db6ec9e1fdd0f2",
             "type": "leaf",
             "state": {
@@ -35,8 +21,7 @@
               "title": "sql"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -186,7 +172,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5
+    "width": 388.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,8 +190,9 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "2bcbd288b04661f0",
+  "active": "05db6ec9e1fdd0f2",
   "lastOpenFiles": [
+    "projects/python/Django/files/Pasted image 20250114211643.png",
     "цілі 2024.md",
     "projects/python/Django/sql.md",
     "projects/security/ping attack.md",
@@ -240,7 +228,6 @@
     "projects/windows/rdp tcp only.md",
     "projects/windows/tools/ping.md",
     "projects/linux/bash.md",
-    "projects/devops/ESXI/VLANS.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",
