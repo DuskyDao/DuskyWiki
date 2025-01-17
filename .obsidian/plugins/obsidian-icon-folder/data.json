@@ -58,7 +58,8 @@
     "iconsInLinksEnabled": true,
     "debugMode": false,
     "iconInTitlePosition": "above",
-    "lucideIconPackType": "native"
+    "lucideIconPackType": "native",
+    "useInternalPlugins": false
   },
   "projects": {
     "iconName": "SiNamuwiki",

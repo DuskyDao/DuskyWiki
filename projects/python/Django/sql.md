@@ -270,7 +270,8 @@ Out[5]: SELECT "women_women"."id",
 Execution time: 0.000124s [Database: default]
 <QuerySet [<Women: Women object (1)>, <Women: Women object (2)>, <Women: Women object (3)>, <Women: Women object (4)>, <Women: Women object (5)>, <Women: Women object (6)>]>
 ```
-> если применить в `models.py` метод преобразования типа `object` в текст для title, наш запрос будет выглядеть более понят и читабельно
+> [!info] если применить в `models.py` метод преобразования типа `object` в текст для title, наш запрос будет выглядеть более понят и читабельно
+
 `sitewomen/women/models.py`
 ```python
 from django.db import models
@@ -374,7 +375,7 @@ Execution time: 0.000222s [Database: default]
 Ума Турман
 ```
 #### Выборка методом **filter()**
-Выбрать все записи title которые имеют в себе запись "Энн Хэтэуей"
+##### Выбрать все записи title которые имеют в себе запись "Энн Хэтэуей"
 ```sql
 In [15]: Women.objects.filter(title='Энн Хэтэуей')
 Out[15]: SELECT "women_women"."id",
@@ -390,7 +391,7 @@ Out[15]: SELECT "women_women"."id",
 Execution time: 0.000127s [Database: default]
 <QuerySet [<Women: Энн Хэтэуей>]>
 ```
-> если указать неправельные данные - получим пустой список (в данном случае запрос должен быть точным)
+> [!missing] сли указать неправельные данные - получим пустой список (в данном случае запрос должен быть точным)
 ```sql
 In [18]: Women.objects.filter(title='Энн Хэвв')
 Out[18]: SELECT "women_women"."id",
@@ -720,7 +721,7 @@ UPDATE "women_women"
 Execution time: 0.091185s [Database: default]
 Out[12]: 4
 ```
-> update нельзя применять к методам **all()** и **get()**
+>[!bug] update нельзя применять к методам **all()** и **get()**
 ### Delete()
 Удалим записи где **id** больше 5
 ```sql

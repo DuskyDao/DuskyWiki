@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "62755572d8325e82",
+        "id": "8b03c2b0fc7a974b",
         "type": "tabs",
         "children": [
           {
-            "id": "05db6ec9e1fdd0f2",
+            "id": "86ecede47814235b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -168,12 +167,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 388.5,
-    "collapsed": true
+    "width": 401.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,11 +188,12 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "05db6ec9e1fdd0f2",
+  "active": "86ecede47814235b",
   "lastOpenFiles": [
-    "projects/python/Django/files/Pasted image 20250114211643.png",
-    "цілі 2024.md",
+    "projects/web/css/fonts.md",
     "projects/python/Django/sql.md",
+    "цілі 2024.md",
+    "projects/python/Django/files/Pasted image 20250114211643.png",
     "projects/security/ping attack.md",
     "projects/python/Django/templates.md",
     "projects/python/Streamlit/maine.md",
@@ -216,7 +215,6 @@
     "projects/python/Django/files/customtags.png",
     "projects/python/Django/files/Screenshot 2025-01-11 222601.png",
     "projects/python/Django/Static files.md",
-    "projects/python/Django/files/static3.png",
     "projects/python/Django/django основы.md",
     "projects/web/css/no_js_only_css.md",
     "projects/web/css/Нормализация стилей.md",
