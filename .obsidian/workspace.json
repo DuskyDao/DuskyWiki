@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Django/sql.md",
-                "mode": "preview",
+                "file": "projects/python/Django/hooks.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "sql"
+              "title": "hooks"
             }
           }
         ]
@@ -140,10 +140,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Django/sql.md"
+                "file": "projects/python/Django/hooks.md"
               },
               "icon": "lucide-list",
-              "title": "Структура sql"
+              "title": "Структура hooks"
             }
           },
           {
@@ -190,8 +190,10 @@
   },
   "active": "86ecede47814235b",
   "lastOpenFiles": [
-    "projects/web/css/fonts.md",
+    "projects/python/Django/Static files.md",
+    "projects/python/Django/hooks.md",
     "projects/python/Django/sql.md",
+    "projects/web/css/fonts.md",
     "цілі 2024.md",
     "projects/python/Django/files/Pasted image 20250114211643.png",
     "projects/security/ping attack.md",
@@ -214,7 +216,6 @@
     "projects/python/Django/files/Screenshot 2025-01-11 223719.png",
     "projects/python/Django/files/customtags.png",
     "projects/python/Django/files/Screenshot 2025-01-11 222601.png",
-    "projects/python/Django/Static files.md",
     "projects/python/Django/django основы.md",
     "projects/web/css/no_js_only_css.md",
     "projects/web/css/Нормализация стилей.md",
@@ -225,7 +226,6 @@
     "projects/network/mikrotik/cli_mikrotik.md",
     "projects/windows/rdp tcp only.md",
     "projects/windows/tools/ping.md",
-    "projects/linux/bash.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",

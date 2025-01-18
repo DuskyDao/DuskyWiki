@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiSwatchBook",
       "RiTable3",
       "TiLayoutSidebarRightCollapse",
       "CoFiles",
@@ -29,8 +30,7 @@
       "SiZulip",
       "FabNodeJs",
       "SiSpeedtest",
-      "BoBxlPostgresql",
-      "SiPostgresql"
+      "BoBxlPostgresql"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -329,5 +329,9 @@
   "projects/python/Django/sql.md": {
     "iconName": "RiTable3",
     "iconColor": "#63e0e9"
+  },
+  "projects/python/Django/hooks.md": {
+    "iconName": "LiSwatchBook",
+    "iconColor": "#fb7d74"
   }
 }
