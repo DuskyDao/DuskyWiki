@@ -1,11 +1,11 @@
 [
   "table-editor-obsidian",
   "cm-editor-syntax-highlight-obsidian",
-  "obsidian-link-converter",
   "dataview",
   "waypoint",
   "obsidian-git",
   "obsidian-excalidraw-plugin",
   "obsidian-icon-folder",
-  "obsidian-admonition"
+  "obsidian-admonition",
+  "obsidian-link-converter"
 ]

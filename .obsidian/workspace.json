@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8b03c2b0fc7a974b",
+        "id": "6ac64be2c0f854ed",
         "type": "tabs",
         "children": [
           {
-            "id": "86ecede47814235b",
+            "id": "0f541a664e2fecc4",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 311.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -188,11 +188,19 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "86ecede47814235b",
+  "active": "0f541a664e2fecc4",
   "lastOpenFiles": [
-    "projects/python/Django/Static files.md",
-    "projects/python/Django/hooks.md",
     "projects/python/Django/sql.md",
+    "projects/python/Django/hooks.md",
+    "projects/python/lessons/class/magic_methods.md",
+    "projects/python/lessons/errors/errors.md",
+    "projects/python/lessons/class/Home_Work.md",
+    "projects/python/lessons/class/class.md",
+    "projects/python/lessons/class/abstract_class.md",
+    "projects/python/lessons/class/multiple_inheritance.md",
+    "projects/python/lessons/class/static_methods.md",
+    "projects/python/lessons/class/static_arguments.md",
+    "projects/python/Django/Static files.md",
     "projects/web/css/fonts.md",
     "цілі 2024.md",
     "projects/python/Django/files/Pasted image 20250114211643.png",
@@ -218,14 +226,6 @@
     "projects/python/Django/files/Screenshot 2025-01-11 222601.png",
     "projects/python/Django/django основы.md",
     "projects/web/css/no_js_only_css.md",
-    "projects/web/css/Нормализация стилей.md",
-    "projects/windows/Activation win10.md",
-    "projects/windows/Установка Windows 11 без подключения к Интернету.md",
-    "projects/windows/Лицензии.md",
-    "projects/network/mikrotik/чек лист по настройке.md",
-    "projects/network/mikrotik/cli_mikrotik.md",
-    "projects/windows/rdp tcp only.md",
-    "projects/windows/tools/ping.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",
