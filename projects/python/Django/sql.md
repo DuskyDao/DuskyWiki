@@ -744,6 +744,67 @@ https://github.com/drawdb-io/drawdb
 ### ForeignKey (для связей Many to One (многие к одному))
 ![](files/Pasted%20image%2020250121231436.png)
 > [!info] множество постов имеет одну категорию и одна категория связана с множеством постов
+#### Реализация связи в Many To One
+![](files/Pasted%20image%2020250122204525.png)
+#### Значения параметра on_delete
+[Оф дока](https://docs.djangoproject.com/en/4.2/ref/models/fields/#arguments)
+![](files/Pasted%20image%2020250122204749.png)
+
+>[!]example] Для примера определим таблицу категорий **Category** связанную с **Women**
+```python
+from pyexpat import model
+from django.db import models
+from django.urls import reverse
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=Women.Status.PUBLISHED)
+
+# Create your models here.
+class Women(models.Model):
+    class Status(models.IntegerChoices):
+        DRAFT = 0, "Черновик"
+        PUBLISHED = 1, "Опубликовано"
+
+    title = models.CharField(max_length=255)  # название статьи
+    slug = models.SlugField(
+        max_length=255,
+        unique=True,
+        db_index=True,
+    )
+    content = models.TextField(
+        blank=True
+    )  # текстовое поле, blank=True - можно не заполнять при создании
+    time_create = models.DateTimeField(auto_now_add=True)  # время создания
+    time_update = models.DateTimeField(auto_now=True)  # время обновления
+    is_published = models.BooleanField(
+        choices=Status.choices, default=Status.PUBLISHED
+    )  # по умолчанию - опубликовано
+
+	objects = models.Manager()  # возвращаем менеджер по умолчанию
+    published = PublishedManager()  # наш кастомный менеджер
+
+    cat = models.ForeignKey('Category', on_delete=models.PROTECT) # прописываемкак текст, так как наш Клас Category ещё не определен и про него ничего не знает. Если бы он шёл первый по порядку, то можно было прописать как класс
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ["-time_create"]  # указываем обратную сортировку по времени создания
+        indexes = [models.Index(fields=["-time_create"])]
+
+    def get_absolute_url(self):
+        return reverse("post", kwargs={"post_slug": self.slug})
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=254, unique=True, db_index=True)
+
+    def __str__(self):
+        return self.name
+``` 
+>[!info] on_delete=models.PROTECT защищаем строку от удаления
 ### ManyToManyField для связей Many to Many (многие ко многим)
 ![](files/Pasted%20image%2020250121231512.png)
 > [!info] связи студентов и преподавателей... У каждого студента есть множество преподавателей и у каждого преподавателя есть множество студентов. Реализуется через вспомагательную таблицу (когда в джанго определяем `Many to Many` класс промежуточная таблица формируется автоматически - с такими полями `id`, `table_a_id`, `table_b_id`)
