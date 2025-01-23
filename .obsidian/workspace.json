@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "c3df9431baf53655",
+        "id": "b559f379543a9c6c",
         "type": "tabs",
         "children": [
           {
-            "id": "40d50cfb83f15a5e",
+            "id": "32aa3a55d0bf83df",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "projects/python/Django/sql.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "sql"
+              "title": "Новая вкладка"
             }
           }
         ]
@@ -78,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311.5
+    "width": 311.5,
+    "collapsed": true
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -139,11 +136,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "projects/python/Django/sql.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Структура sql"
+              "title": "Структура"
             }
           },
           {
@@ -171,7 +166,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 401.5
+    "width": 401.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,8 +184,9 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "40d50cfb83f15a5e",
+  "active": "32aa3a55d0bf83df",
   "lastOpenFiles": [
+    "projects/python/Django/sql.md",
     "projects/python/Django/files/Pasted image 20250122204749.png",
     "projects/python/Django/files/Pasted image 20250122204525.png",
     "projects/python/Django/files/Pasted image 20250121232212.png",
@@ -197,7 +194,6 @@
     "projects/python/Django/files/Pasted image 20250121231436.png",
     "projects/python/Django/files/Pasted image 20250121231034.png",
     "projects/python/Django/files/Pasted image 20250121230859.png",
-    "projects/python/Django/sql.md",
     "projects/python/Django/hooks.md",
     "projects/python/lessons/class/magic_methods.md",
     "projects/python/lessons/errors/errors.md",
@@ -222,7 +218,6 @@
     "projects/web/img.md",
     "projects/python/Django/files/Pasted image 20250112221143.png",
     "projects/python/Django/files/table.png",
-    "projects/python/Django/files/Screenshot 2025-01-12 205018.png",
     "projects/linux/system_initialization/systemd/journalctl.md",
     "projects/python/Django/tags.md",
     "projects/python/Django/django основы.md",

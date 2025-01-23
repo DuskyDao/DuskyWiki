@@ -739,6 +739,7 @@ Execution time: 0.000637s [Database: default]
 ## DrawDB
 https://github.com/drawdb-io/drawdb
 ## Связи между таблицами
+### Виды связей
 [Оф сайт](https://docs.djangoproject.com/en/4.2/ref/models/fields/#module-django.db.models.fields.related)
 ![](files/Pasted%20image%2020250121231034.png)
 ### ForeignKey (для связей Many to One (многие к одному))
@@ -805,6 +806,294 @@ class Category(models.Model):
         return self.name
 ``` 
 >[!info] on_delete=models.PROTECT защищаем строку от удаления
+
+#### ORM команды для связи
+##### Подключимся к нашей таблице Women и через нее обращаемся к связанной таблице Category
+```sql
+In [4]: w = Women.objects.get(id=1)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."id" = 1
+ LIMIT 21
+
+Execution time: 0.000149s [Database: default]
+
+In [5]: w
+Out[5]: <Women: Анджелина Джоли>
+```
+Выведем категорию с таблици 'Women' и с связанной таблици 'Category'
+```sql
+In [6]: w.cat_id
+Out[6]: 1
+
+In [7]: w.cat
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ WHERE "women_category"."id" = 1
+ LIMIT 21
+
+Execution time: 0.000544s [Database: default]
+Out[7]: <Category: Актрисы>
+```
+> [!info] На втором запросе видно, как интерпретатор обращается к Category для вывода идентификатора "Актрисы"
+
+Теперь можно вывести другие поля с таблици Category через экземпляр класса Women
+```sql
+In [8]: w.cat.name
+Out[8]: 'Актрисы'
+
+In [9]: w.cat.pk
+Out[9]: 1
+
+In [10]: w.cat.slug
+Out[10]: 'aktrisy'
+```
+##### Теперь наоборот через Category свяжемся с Women
+```sql
+In [11]: ww = Category.objects.get(slug="aktrisy")
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ WHERE "women_category"."slug" = 'aktrisy'
+ LIMIT 21
+
+Execution time: 0.000541s [Database: default]
+
+In [12]: ww
+Out[12]: <Category: Актрисы>
+```
+>[!warning] Подключение производиться через конструкцию `ww.women_set`
+```sql
+In [22]: ww.women_set
+
+Out[22]: <django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.<locals>.RelatedManager at 0x1b8c6e0b380>
+```
+> [!info]  Для удобоности можно прописать псевдоним **posts**
+```python
+cat = models.ForeignKey("Category", on_delete=models.PROTECT, related_name="posts")
+```
+Выберем все записи через всевдоним
+```sql
+In [26]: ww.posts.all()
+Out[26]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 1
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000208s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>, <Women: Анджелина Джоли>]>
+```
+То же самое можно получить через таблицу Категорий
+```sql
+In [27]: w = Category.objects.get(id=1)
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ WHERE "women_category"."id" = 1
+ LIMIT 21
+
+Execution time: 0.000103s [Database: default]
+
+In [28]: w.posts.all()
+Out[28]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 1
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000136s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>, <Women: Анджелина Джоли>]>
+```
+##### Фильтрация по внешнему ключу
+```sql
+In [34]: Women.objects.filter(cat_id=1)
+Out[34]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 1
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000151s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>, <Women: Анджелина Джоли>]>
+```
+C лукапом на проверку постов - категория 1 или 2
+```sql
+Women.objects.filter(cat_id__in=[1, 2])
+
+Out[34]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" IN (1, 2)
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000151s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>, <Women: Анджелина Джоли>]>
+```
+либо так прописать - вывод один и тот же
+```sql
+Women.objects.filter(cat__in=[1, 2])
+```
+Либо через переменную
+```sql
+cats = Category.objects.all()
+Women.objects.filter(cat__in=cats)
+
+Out[37]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" IN (
+        SELECT "women_category"."id"
+          FROM "women_category"
+       )
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000544s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>, <Women: Анджелина Джоли>]>
+```
+Фильтруем по `slug`
+```sql
+
+In [38]: Women.objects.filter(cat__slug='aktrisy')
+Out[38]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ INNER JOIN "women_category"
+    ON ("women_women"."cat_id" = "women_category"."id")
+ WHERE "women_category"."slug" = 'aktrisy'
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000183s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>, <Women: Анджелина Джоли>]>
+```
+По имени
+```sql
+In [39]: Women.objects.filter(cat__name='Певицы')
+Out[39]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ INNER JOIN "women_category"
+    ON ("women_women"."cat_id" = "women_category"."id")
+ WHERE "women_category"."name" = 'Певицы'
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000189s [Database: default]
+<QuerySet [<Women: Джулия Робертс>]>
+```
+
+По имени в котором присутствует "цы"
+```sql
+In [41]: Women.objects.filter(cat__name__contains='цы')
+Out[41]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ INNER JOIN "women_category"
+    ON ("women_women"."cat_id" = "women_category"."id")
+ WHERE "women_category"."name" LIKE '%цы%' ESCAPE '\'
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000160s [Database: default]
+<QuerySet [<Women: Джулия Робертс>]>
+```
+Через таблицу категорий
+```sql
+In [43]: Category.objects.filter(posts__title__contains='ли')
+Out[43]: SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ INNER JOIN "women_women"
+    ON ("women_category"."id" = "women_women"."cat_id")
+ WHERE "women_women"."title" LIKE '%ли%' ESCAPE '\'
+ LIMIT 21
+
+Execution time: 0.000163s [Database: default]
+<QuerySet [<Category: Актрисы>, <Category: Певицы>]>
+```
+> [!note] Фрафмент есть у 1 и 3й записи 
+
+Вібрать ещё и уникальные данные
+```sql
+In [45]: Category.objects.filter(posts__title__contains='л').distinct()
+Out[45]: SELECT DISTINCT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ INNER JOIN "women_women"
+    ON ("women_category"."id" = "women_women"."cat_id")
+ WHERE "women_women"."title" LIKE '%л%' ESCAPE '\'
+ LIMIT 21
+
+Execution time: 0.000155s [Database: default]
+<QuerySet [<Category: Актрисы>, <Category: Певицы>]>
+```
 ### ManyToManyField для связей Many to Many (многие ко многим)
 ![](files/Pasted%20image%2020250121231512.png)
 > [!info] связи студентов и преподавателей... У каждого студента есть множество преподавателей и у каждого преподавателя есть множество студентов. Реализуется через вспомагательную таблицу (когда в джанго определяем `Many to Many` класс промежуточная таблица формируется автоматически - с такими полями `id`, `table_a_id`, `table_b_id`)
