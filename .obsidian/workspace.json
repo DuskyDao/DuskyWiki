@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/network/mikrotik/чек лист по настройке.md",
+                "file": "projects/python/Django/sql.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "чек лист по настройке"
+              "title": "sql"
             }
           }
         ]
@@ -189,6 +189,9 @@
   },
   "active": "32aa3a55d0bf83df",
   "lastOpenFiles": [
+    "projects/python/Django/hooks.md",
+    "projects/python/Django/templates.md",
+    "projects/network/mikrotik/чек лист по настройке.md",
     "projects/python/Django/sql.md",
     "projects/python/Django/files/Pasted image 20250122204749.png",
     "projects/python/Django/files/Pasted image 20250122204525.png",
@@ -197,7 +200,6 @@
     "projects/python/Django/files/Pasted image 20250121231436.png",
     "projects/python/Django/files/Pasted image 20250121231034.png",
     "projects/python/Django/files/Pasted image 20250121230859.png",
-    "projects/python/Django/hooks.md",
     "projects/python/lessons/class/magic_methods.md",
     "projects/python/lessons/errors/errors.md",
     "projects/python/lessons/class/Home_Work.md",
@@ -211,7 +213,6 @@
     "цілі 2024.md",
     "projects/python/Django/files/Pasted image 20250114211643.png",
     "projects/security/ping attack.md",
-    "projects/python/Django/templates.md",
     "projects/python/Streamlit/maine.md",
     "templaits/new_doc.md",
     "projects/network/mikrotik/firewall/файрвол.md",
