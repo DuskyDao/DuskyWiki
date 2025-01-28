@@ -1095,11 +1095,330 @@ Execution time: 0.000155s [Database: default]
 <QuerySet [<Category: Актрисы>, <Category: Певицы>]>
 ```
 ### ManyToManyField для связей Many to Many (многие ко многим)
+
+> [!info]  Описание [**ManyToManyFields**](https://docs.djangoproject.com/en/4.2/ref/models/fields/#manytomanyfield)
+
 ![](files/Pasted%20image%2020250121231512.png)
 > [!info] связи студентов и преподавателей... У каждого студента есть множество преподавателей и у каждого преподавателя есть множество студентов. Реализуется через вспомагательную таблицу (когда в джанго определяем `Many to Many` класс промежуточная таблица формируется автоматически - с такими полями `id`, `table_a_id`, `table_b_id`)
+#### 28. Пример на основе реализации тегов
+> [!info] Тегирование в джанго уже реализовано приложением [**django-taggit**](https://django-taggit.readthedocs.io/en/latest/)
 
+Определим для примера теги: *оскар*, *высокие,* *блондинки*, *брюнетки,* *олимпийская чемпионка* простым способом. Создадим клас для тегов ** TagPost** и соедением его с таблицей **Women** посредством колонки `tags`. 
+##### Создаем класс для таблицы
+```python
+from pyexpat import model
+from django.db import models
+from django.urls import reverse
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=Women.Status.PUBLISHED)
 
+# Create your models here.
+class Women(models.Model):
+
+    class Status(models.IntegerChoices):
+        DRAFT = 0, "Черновик"
+        PUBLISHED = 1, "Опубликовано"
+
+    title = models.CharField(max_length=255)  # название статьи
+    slug = models.SlugField(
+        max_length=255,
+        unique=True,
+        db_index=True,
+    )
+    content = models.TextField(
+        blank=True
+    )  # текстовое поле, blank=True - можно не заполнять при создании
+    time_create = models.DateTimeField(auto_now_add=True)  # время создания
+    time_update = models.DateTimeField(auto_now=True)  # время обновления
+    is_published = models.BooleanField(
+        choices=Status.choices, default=Status.PUBLISHED
+    )  # по умолчанию - опубликовано
+    cat = models.ForeignKey("Category", on_delete=models.PROTECT, related_name="posts")
+    tags = models.ManyToManyField('TagPost', blank=True, related_name='tags')
+  
+    objects = models.Manager()  # возвращаем менеджер по умолчанию
+    published = PublishedManager()  # наш кастомный менеджер
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ["-time_create"]  # указываем обратную сортировку по времени создания
+        indexes = [models.Index(fields=["-time_create"])]
+
+    def get_absolute_url(self):
+        return reverse("post", kwargs={"post_slug": self.slug})
+
+class Category(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=254, unique=True, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+	def get_absolute_url(self):
+        return reverse("category", kwargs={"cat_slug": self.slug})
+
+class TagPost(models.Model):
+    tag = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True, db_index=True)
+
+    def __str__(self):
+        return self.tag
+```
+##### Создаем таблицу методом миграции
+```cmd
+python mange.py makemigrations
+python manage.py migrate
+
+python manage.py shell_plus --print-sql
+```
+##### Заполним таблицу
+```sql
+In [1]: TagPost.objects.create(tag='Блондинки', slug='blonde')
+INSERT INTO "women_tagpost" ("tag", "slug")
+VALUES ('Блондинки', 'blonde') RETURNING "women_tagpost"."id"
+
+Execution time: 0.001124s [Database: default]
+Out[1]: <TagPost: Блондинки>
+
+In [2]: TagPost.objects.create(tag='Брюнетки', slug='brunetky')
+INSERT INTO "women_tagpost" ("tag", "slug")
+VALUES ('Брюнетки', 'brunetky') RETURNING "women_tagpost"."id"
+
+Execution time: 0.000893s [Database: default]
+Out[2]: <TagPost: Брюнетки>
+
+In [3]: TagPost.objects.create(tag='Оскар', slug='oskar')
+INSERT INTO "women_tagpost" ("tag", "slug")
+VALUES ('Оскар', 'oskar') RETURNING "women_tagpost"."id"
+
+Execution time: 0.000788s [Database: default]
+Out[3]: <TagPost: Оскар>
+
+In [4]: TagPost.objects.create(tag='Олимпиада', slug='olimpiada')
+INSERT INTO "women_tagpost" ("tag", "slug")
+VALUES ('Олимпиада', 'olimpiada') RETURNING "women_tagpost"."id"
+
+Execution time: 0.000849s [Database: default]
+Out[4]: <TagPost: Олимпиада>
+
+In [5]: TagPost.objects.create(tag='Высокие', slug='visokie')
+INSERT INTO "women_tagpost" ("tag", "slug")
+VALUES ('Высокие', 'visokie') RETURNING "women_tagpost"."id"
+
+Execution time: 0.000715s [Database: default]
+Out[5]: <TagPost: Высокие>
+
+In [6]: TagPost.objects.create(tag='Средние', slug='srednie')
+INSERT INTO "women_tagpost" ("tag", "slug")
+VALUES ('Средние', 'srednie') RETURNING "women_tagpost"."id"
+
+Execution time: 0.000860s [Database: default]
+Out[6]: <TagPost: Средние>
+
+In [7]: TagPost.objects.create(tag='Низкие', slug='niskie')
+INSERT INTO "women_tagpost" ("tag", "slug")
+VALUES ('Низкие', 'niskie') RETURNING "women_tagpost"."id"
+
+Execution time: 0.000743s [Database: default]
+Out[7]: <TagPost: Низкие>
+```
+##### Назначим наши теги к постам таблици Women
+выберем 1й пост с таблицы Women
+```sql
+In [8]: w = Women.objects.get(pk=1)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."id" = 1
+ LIMIT 21
+
+Execution time: 0.000192s [Database: default]
+
+In [9]: w
+Out[9]: <Women: Анджелина Джоли>
+```
+выберем 2й тег с таблицы TagPost
+```sql
+In [10]: tag_br = TagPost.objects.all()[1]
+SELECT "women_tagpost"."id",
+       "women_tagpost"."tag",
+       "women_tagpost"."slug"
+  FROM "women_tagpost"
+ LIMIT 1
+OFFSET 1
+
+Execution time: 0.000118s [Database: default]
+
+In [11]: tag_br
+Out[11]: <TagPost: Брюнетки>
+```
+выберем ещё теги 3 и 5
+```sql
+In [13]: tag_o, tag_v = TagPost.objects.filter(id__in=[3, 5])
+SELECT "women_tagpost"."id",
+       "women_tagpost"."tag",
+       "women_tagpost"."slug"
+  FROM "women_tagpost"
+ WHERE "women_tagpost"."id" IN (3, 5)
+
+Execution time: 0.000179s [Database: default]
+
+In [14]: tag_o
+Out[14]: <TagPost: Оскар>
+
+In [15]: tag_v
+Out[15]: <TagPost: Высокие>
+```
+Добавим 1му посту Women наши вібранные теги методом `set`
+```sql
+In [17]: w.tags
+Out[17]: <django.db.models.fields.related_descriptors.create_forward_many_to_many_manager.<locals>.ManyRelatedManager at 0x2c0259d6270>
+
+In [18]: w.tags.set([tag_br, tag_o, tag_v])
+BEGIN
+
+Execution time: 0.000038s [Database: default]
+SELECT "women_tagpost"."id"
+  FROM "women_tagpost"
+ INNER JOIN "women_women_tags"
+    ON ("women_tagpost"."id" = "women_women_tags"."tagpost_id")
+ WHERE "women_women_tags"."women_id" = 1
+
+Execution time: 0.000143s [Database: default]
+INSERT
+    OR
+IGNORE INTO "women_women_tags" ("women_id", "tagpost_id")
+VALUES (1, 2), (1, 3), (1, 5)
+
+Execution time: 0.000838s [Database: default]
+```
+Видим что посту 1 (с Анджелиной Джоли) назнечено 3тега (2, 3 и 5)
+![](files/Pasted%20image%2020250128205647.png)
+###### Удалить тег
+```sql
+In [19]: w.tags.remove(tag_o)
+BEGIN
+
+Execution time: 0.000035s [Database: default]
+DELETE
+  FROM "women_women_tags"
+ WHERE ("women_women_tags"."women_id" = 1 AND "women_women_tags"."tagpost_id" IN (3))
+
+Execution time: 0.001165s [Database: default]
+```
+######
+```sql
+In [20]: w.tags.add(tag_br)
+BEGIN
+
+Execution time: 0.000030s [Database: default]
+INSERT
+    OR
+IGNORE INTO "women_women_tags" ("women_id", "tagpost_id")
+VALUES (1, 2)
+
+Execution time: 0.000645s [Database: default]
+```
+> [!info]  ничего не добавит, так как такой тег уже добавлен
+
+##### через тег можно глянуть к какой записи он относится в таблице **Women** через параметр `related_name` который прописан в таблице
+```sql
+In [21]: tag_br.tags.all()
+Out[21]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ INNER JOIN "women_women_tags"
+    ON ("women_women"."id" = "women_women_tags"."women_id")
+ WHERE "women_women_tags"."tagpost_id" = 2
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000186s [Database: default]
+<QuerySet [<Women: Анджелина Джоли>]>
+```
+
+##### через тег добавить его к записи cтатьи
+выберем 2ю запись с  Women
+```sql
+In [22]: b = Women.objects.get(pk=2)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id"
+  FROM "women_women"
+ WHERE "women_women"."id" = 2
+ LIMIT 21
+
+Execution time: 0.000147s [Database: default]
+
+In [23]: b
+Out[23]: <Women: Марго Робби>
+```
+Добавим в неё тег
+```sql
+In [24]: tag_br.tags.add(b)
+BEGIN
+
+Execution time: 0.000029s [Database: default]
+INSERT
+    OR
+IGNORE INTO "women_women_tags" ("women_id", "tagpost_id")
+VALUES (2, 2)
+
+Execution time: 0.000778s [Database: default]
+```
+![](files/Pasted%20image%2020250128211637.png)
+
+##### Добавим запись в *Women* и добавим ей теги
+```sql
+In [25]: Women.objects.create(title='Ариана Гранде', slug='ariana-grande', cat_id=2)
+INSERT INTO "women_women" ("title", "slug", "content", "time_create", "time_update", "is_published", "cat_id")
+VALUES ('Ариана Гранде', 'ariana-grande', '', '2025-01-28 19:20:54.786991', '2025-01-28 19:20:54.787016', 1, 2) RETURNING "women_women"."id"
+
+Execution time: 0.000837s [Database: default]
+Out[25]: <Women: Ариана Гранде>
+
+In [26]: w = _
+
+In [27]: w.tags.set([tag_br, tag_v])
+BEGIN
+
+Execution time: 0.000034s [Database: default]
+SELECT "women_tagpost"."id"
+  FROM "women_tagpost"
+ INNER JOIN "women_women_tags"
+    ON ("women_tagpost"."id" = "women_women_tags"."tagpost_id")
+ WHERE "women_women_tags"."women_id" = 5
+
+Execution time: 0.000078s [Database: default]
+INSERT
+    OR
+IGNORE INTO "women_women_tags" ("women_id", "tagpost_id")
+VALUES (5, 2), (5, 5)
+
+Execution time: 0.000800s [Database: default]
+```
+> [!bug]  За один вызов не добавить, так как для добавления тегов, должна существовать запись к которой они добавляются (**id**)
 ### OneToOneField для связей One to One (один к одному)
 ![](files/Pasted%20image%2020250121232212.png)
 > [!info] хорошо подходит по описанию между гражданином и его персональными данными - инн с каждым человеком, либо паспорт с гражданином
