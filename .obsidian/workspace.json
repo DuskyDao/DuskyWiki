@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Django/lessons.md",
+                "file": "projects/python/Django/sql.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "lessons"
+              "title": "sql"
             }
           }
         ]
@@ -139,9 +139,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "projects/python/Django/sql.md"
+              },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура sql"
             }
           },
           {
@@ -159,8 +161,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 401.5,
-    "collapsed": true
+    "width": 401.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,16 +179,16 @@
   },
   "active": "32aa3a55d0bf83df",
   "lastOpenFiles": [
+    "projects/python/Django/lessons.md",
+    "projects/python/Django/templates.md",
     "projects/python/Django/sql.md",
+    "projects/python/Django/tags.md",
+    "projects/python/Django/hooks.md",
     "projects/python/Django/files/Pasted image 20250128211637.png",
     "projects/python/Django/files/Pasted image 20250128205647.png",
-    "projects/python/Django/hooks.md",
-    "projects/python/Django/lessons.md",
-    "projects/python/Django/tags.md",
     "projects/devops/docker/docker.md",
     "projects/network/mikrotik/чек лист по настройке.md",
     "projects/devops/proxmox/Без названия.md",
-    "projects/python/Django/templates.md",
     "projects/python/Django/files/Pasted image 20250122204749.png",
     "projects/python/Django/files/Pasted image 20250122204525.png",
     "projects/python/Django/files/Pasted image 20250121232212.png",

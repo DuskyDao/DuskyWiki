@@ -1419,6 +1419,225 @@ VALUES (5, 2), (5, 5)
 Execution time: 0.000800s [Database: default]
 ```
 > [!bug]  За один вызов не добавить, так как для добавления тегов, должна существовать запись к которой они добавляются (**id**)
-### OneToOneField для связей One to One (один к одному)
+### 30.OneToOneField для связей One to One (один к одному)
 ![](files/Pasted%20image%2020250121232212.png)
 > [!info] хорошо подходит по описанию между гражданином и его персональными данными - инн с каждым человеком, либо паспорт с гражданином
+#### Добавим таблицу мужей **Husband** для наших девушек (1н муж может иметь 1ну женщину)
+>[!abstract]  `sitewomen/women/manage.py`
+```python
+from pyexpat import model
+from django.db import models
+from django.urls import reverse
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=Women.Status.PUBLISHED)
+
+# Create your models here.
+class Women(models.Model):
+
+	class Status(models.IntegerChoices):
+        DRAFT = 0, "Черновик"
+        PUBLISHED = 1, "Опубликовано"
+
+    title = models.CharField(max_length=255)  # название статьи
+    slug = models.SlugField(
+        max_length=255,
+        unique=True,
+        db_index=True,
+    )
+    content = models.TextField(
+        blank=True
+    )  # текстовое поле, blank=True - можно не заполнять при создании
+    time_create = models.DateTimeField(auto_now_add=True)  # время создания
+    time_update = models.DateTimeField(auto_now=True)  # время обновления
+    is_published = models.BooleanField(
+        choices=Status.choices, default=Status.PUBLISHED
+    )  # по умолчанию - опубликовано
+    cat = models.ForeignKey(
+        "Category", on_delete=models.PROTECT, related_name="posts"
+    )  # связь для категорий
+    tags = models.ManyToManyField(
+        "TagPost", blank=True, related_name="tags"
+    )  # связь для тегов
+    husband = models.OneToOneField(
+        "Husband",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="wuman",
+    )  # связь для мужей
+
+    objects = models.Manager()  # возвращаем менеджер по умолчанию
+    published = PublishedManager()  # наш кастомный менеджер
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ["-time_create"]  # указываем обратную сортировку по времени создания
+        indexes = [models.Index(fields=["-time_create"])]
+
+    def get_absolute_url(self):
+        return reverse("post", kwargs={"post_slug": self.slug})
+
+class Category(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=254, unique=True, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("category", kwargs={"cat_slug": self.slug})
+
+class TagPost(models.Model):
+    tag = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True, db_index=True)
+
+    def __str__(self):
+        return self.tag
+  
+    def get_absolute_url(self):
+        return reverse(
+            "tag", kwargs={"tag_slug": self.slug}
+        )  # "tag" маршрут с urls.py (name='tag') возвращает tag_slug c значением slug в данном случае из таблици TagPost
+
+class Husband(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField(null=True)
+
+    def __str__(self):
+        return self.name
+```
+#### Сделаем миграцию новой таблици и добавим в нее записи
+```sql
+In [1]: h1 = Husband.objects.create(name='Брет Пит', age=59)
+INSERT INTO "women_husband" ("name", "age")
+VALUES ('Брет Пит', 59) RETURNING "women_husband"."id"
+
+Execution time: 0.001298s [Database: default]
+
+In [2]: h2 = Husband.objects.create(name='Том Акерли', age=31)
+INSERT INTO "women_husband" ("name", "age")
+VALUES ('Том Акерли', 31) RETURNING "women_husband"."id"
+
+Execution time: 0.000753s [Database: default]
+
+In [3]: h3 = Husband.objects.create(name='Дэниель Модер')
+INSERT INTO "women_husband" ("name", "age")
+VALUES ('Дэниель Модер', NULL) RETURNING "women_husband"."id"
+
+Execution time: 0.000694s [Database: default]
+
+In [4]: h4 = Husband.objects.create(name='Кук Марони')
+INSERT INTO "women_husband" ("name", "age")
+VALUES ('Кук Марони', NULL) RETURNING "women_husband"."id"
+
+Execution time: 0.000695s [Database: default]
+```
+#### Добавим мужа Анджолине Джоли (первая запись)
+```sql
+In [5]: w1 = Women.objects.get(pk=1)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE "women_women"."id" = 1
+ LIMIT 21
+
+Execution time: 0.000129s [Database: default]
+
+In [6]: w1
+Out[6]: <Women: Анджелина Джоли>
+
+In [9]: w1.husband = h1
+
+In [10]: w1.husband
+Out[10]: <Husband: Брет Пит>
+
+In [11]: w1.save()
+```
+#### То же самое только со стороны таблици мужа
+```sql
+In [17]: w2 = Women.objects.get(pk=2)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE "women_women"."id" = 2
+ LIMIT 21
+
+Execution time: 0.000114s [Database: default]
+
+In [18]: w2
+Out[18]: <Women: Марго Робби>
+
+In [19]: h2.wuman = w2
+
+In [20]: h2.wuman
+Out[20]: <Women: Марго Робби>
+
+In [21]: w2.save()
+```
+>[! error]  Если присвоить занятого мужа к другой девушке то получим ошибку, так как поле **husband** в таблице **Women** уникально!
+```sql
+In [22]: w3 = Women.objects.get(pk=3)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE "women_women"."id" = 3
+ LIMIT 21
+
+Execution time: 0.000108s [Database: default]
+
+In [23]: w3
+Out[23]: <Women: Джулия Робертс>
+
+In [24]: h2.wuman = w3
+
+In [25]: w3.save()
+```
+Нужно убрать мужа у девушки и тогда его можно переназначить))
+```sql
+In [26]: w2.husband = None
+
+In [27]: w2.save()
+Execution time: 0.102292s [Database: default]
+
+In [28]: w3.husband = h2
+
+In [29]: w3.save()
+Execution time: 0.111364s [Database: default]
+```
+> [!info] Через таблицу Woman можно переназначать данные мужей
+```sql
+In [30]: w1.husband.age = 30
+
+In [31]: w1.husband.save()
+UPDATE "women_husband"
+   SET "name" = 'Брет Пит',
+       "age" = 30
+ WHERE "women_husband"."id" = 1
+
+Execution time: 0.109241s [Database: default]
+```
