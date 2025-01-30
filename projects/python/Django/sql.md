@@ -174,7 +174,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```sql
 >>> w1 = _
 ```
-> _ последняя введенная команда
+> [!note] _ последняя введенная команда
 ##### Сохраним в баззу
 ```sql
 >>> w1.save()
@@ -1641,3 +1641,760 @@ UPDATE "women_husband"
 
 Execution time: 0.109241s [Database: default]
 ```
+## 31. **ORM** команды с классом *Q* (QuerySet)
+[Оф. дока](https://docs.djangoproject.com/en/4.2/ref/models/querysets/)
+> [!info]  Импортируется с `from django.db.models import Q`
+
+> [!info]  В `shell_plus` уже есть
+Позволяет применять в запросах к базе данных логические операторы типа **OR**
+
+**Приоритет**
+![](files/Pasted%20image%2020250130194400.png)
+> [!example] По стандартным запросам в орм джанго выполняется оператор **AND**, то есть выборка идет по ключу и по опубликованным статьям
+```sql
+In [6]: Women.objects.filter(pk__in=[2,5,7,10], is_published=True)
+Out[6]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE ("women_women"."is_published" AND "women_women"."id" IN (2, 5, 7, 10))
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000174s [Database: default]
+<QuerySet [<Women: Ариана Гранде>, <Women: Марго Робби>]>
+```
+> [!example]  или так
+```sql
+In [7]:  Women.objects.filter(pk__lt=5, cat_id=2)
+Out[7]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE ("women_women"."cat_id" = 2 AND "women_women"."id" < 5)
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000153s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>]>
+```
+### С классом **Q** и оператором **OR**
+```sql
+In [1]: Women.objects.filter(Q(pk__lt=5) | Q(cat_id=2))
+Out[1]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE ("women_women"."id" < 5 OR "women_women"."cat_id" = 2)
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000751s [Database: default]
+<QuerySet [<Women: Ариана Гранде>, <Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>, <Women: Анджелина Джоли>]>
+```
+### С классом **Q** и оператором **AND**
+```sql
+In [2]: Women.objects.filter(Q(pk__lt=5) & Q(cat_id=2))
+Out[2]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE ("women_women"."id" < 5 AND "women_women"."cat_id" = 2)
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000187s [Database: default]
+<QuerySet [<Women: Дженнифер Лоуренс>]>
+```
+###С классом **Q** и оператором **AND** и **NOT**
+```sql
+In [3]: Women.objects.filter(~Q(pk__lt=5) | Q(cat_id=2))
+Out[3]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE (NOT ("women_women"."id" < 5) OR "women_women"."cat_id" = 2)
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000144s [Database: default]
+<QuerySet [<Women: Ариана Гранде>, <Women: Дженнифер Лоуренс>]>
+```
+ ### Комбинируем запрос
+```sql
+ In [5]: Women.objects.filter(~Q(pk__in=[1,2,5]) | Q(cat_id=2), title__icontains="ра")
+Out[5]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE ((NOT ("women_women"."id" IN (1, 2, 5)) OR "women_women"."cat_id" = 2) AND "women_women"."title" LIKE '%ра%' ESCAPE '\')
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000185s [Database: default]
+<QuerySet [<Women: Ариана Гранде>]>
+```
+>[!warning] Если нужно перед *Q* поставить какие параметры, то нужно их оборачивать в *Q* 
+
+## 32. **ORM** first, last, earliest, latest, get_previous_by, get_next_by, exist, count
+### метод **first()** - первая запись
+```sql
+In [9]: Women.objects.first()
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 1
+
+Execution time: 0.000214s [Database: default]
+Out[9]: <Women: Ариана Гранде>
+```
+####  Сортируем по pk + 1я запись
+```sql
+In [10]: Women.objects.order_by("pk").first()
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ ORDER BY "women_women"."id" ASC
+ LIMIT 1
+
+Execution time: 0.000209s [Database: default]
+Out[10]: <Women: Анджелина Джоли>
+```
+### метод **last()**
+```sql
+In [11]: Women.objects.order_by("pk").last()
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ ORDER BY "women_women"."id" DESC
+ LIMIT 1
+
+Execution time: 0.000167s [Database: default]
+Out[11]: <Women: Ариана Гранде>
+```
+### earliest ранняя запись по дате (в скобках указываем по какому полю отбирать)
+```sql
+In [13]: Women.objects.all().earliest("time_update")
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ ORDER BY "women_women"."time_update" ASC
+ LIMIT 1
+
+Execution time: 0.000237s [Database: default]
+Out[13]: <Women: Дженнифер Лоуренс>
+```
+```sql
+In [14]: Women.objects.all().earliest("time_create")
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ ORDER BY "women_women"."time_create" ASC
+ LIMIT 1
+
+Execution time: 0.000216s [Database: default]
+Out[14]: <Women: Анджелина Джоли>
+```
+### latest самая поздняя
+```sql
+In [15]: Women.objects.all().latest("time_create")
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 1
+
+Execution time: 0.000154s [Database: default]
+Out[15]: <Women: Ариана Гранде>
+```
+можно без all()
+```sql
+In [16]: Women.objects.latest("time_create")
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 1
+
+Execution time: 0.000111s [Database: default]
+Out[16]: <Women: Ариана Гранде>
+```
+### get_previous_by предыдущая запись
+ Конструкция **get_previous_by_time_update** - `time_update` поле по которому будет отбираться предыдущая запись
+```sql
+In [17]: w=Women.objects.get(pk=2)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE "women_women"."id" = 2
+ LIMIT 21
+
+Execution time: 0.000208s [Database: default]
+
+In [18]: w
+Out[18]: <Women: Марго Робби>
+
+In [19]: w.get_previous_by_time_update()
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE (("women_women"."time_update" = '2025-01-29 19:41:08.820024' AND "women_women"."id" < 2) OR "women_women"."time_update" < '2025-01-29 19:41:08.820024')
+ ORDER BY "women_women"."time_update" DESC,
+          "women_women"."id" DESC
+ LIMIT 1
+
+Execution time: 0.000211s [Database: default]
+Out[19]: <Women: Анджелина Джоли>
+```
+### get_next_by следущая запись
+```sql
+In [20]: w.get_next_by_time_update()
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE (("women_women"."time_update" = '2025-01-29 19:41:08.820024' AND "women_women"."id" > 2) OR "women_women"."time_update" > '2025-01-29 19:41:08.820024')
+ ORDER BY "women_women"."time_update" ASC,
+          "women_women"."id" ASC
+ LIMIT 1
+
+Execution time: 0.000211s [Database: default]
+Out[20]: <Women: Джулия Робертс>
+```
+![](files/Pasted%20image%2020250130200916.png)
+#### можно в скобках указывать параметры
+```sql
+In [22]: w.get_next_by_time_update(pk__gt=2)
+SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE ("women_women"."id" > 2 AND (("women_women"."time_update" = '2025-01-29 19:41:08.820024' AND "women_women"."id" > 2) OR "women_women"."time_update" > '2025-01-29 19:41:08.820024'))
+ ORDER BY "women_women"."time_update" ASC,
+          "women_women"."id" ASC
+ LIMIT 1
+
+Execution time: 0.000216s [Database: default]
+Out[22]: <Women: Джулия Робертс>
+```
+### exists() - существование выборки
+СОздадим новую категорию и при выборке её с методом exists - видим, что к этой категории не принадлежить ни один posts
+```sql
+In [23]: Category.objects.create(name="Спортсменки", slug="sportsmenki")
+INSERT INTO "women_category" ("name", "slug")
+VALUES ('Спортсменки', 'sportsmenki') RETURNING "women_category"."id"
+
+Execution time: 0.014754s [Database: default]
+Out[23]: <Category: Спортсменки>
+
+In [24]: c3 = Category.objects.get(pk=3)
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ WHERE "women_category"."id" = 3
+ LIMIT 21
+
+Execution time: 0.000172s [Database: default]
+
+In [25]: c3
+Out[25]: <Category: Спортсменки>
+
+In [26]: c3.posts.exists()
+SELECT 1 AS "a"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 3
+ LIMIT 1
+
+Execution time: 0.000234s [Database: default]
+Out[26]: False
+```
+Проверим выбрав все записи - видим пустой список
+```sql
+In [27]: c3.posts.all()
+Out[27]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 3
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000149s [Database: default]
+<QuerySet []>
+```
+Пример с существующими данными
+```sql
+In [28]: c2 = Category.objects.get(pk=2)
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ WHERE "women_category"."id" = 2
+ LIMIT 21
+
+Execution time: 0.000120s [Database: default]
+
+In [29]: c2.posts.exists()
+SELECT 1 AS "a"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 2
+ LIMIT 1
+
+Execution time: 0.000141s [Database: default]
+Out[29]: True
+
+In [30]: c2.posts.all()
+Out[30]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 2
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000097s [Database: default]
+<QuerySet [<Women: Ариана Гранде>, <Women: Дженнифер Лоуренс>]>
+```
+### count() - количество записей
+```sql
+In [28]: c2 = Category.objects.get(pk=2)
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug"
+  FROM "women_category"
+ WHERE "women_category"."id" = 2
+ LIMIT 21
+
+Execution time: 0.000120s [Database: default]
+
+In [31]: c2.posts.count()
+SELECT COUNT(*) AS "__count"
+  FROM "women_women"
+ WHERE "women_women"."cat_id" = 2
+
+Execution time: 0.000209s [Database: default]
+Out[31]: 2
+```
+## 33. **ORM** команды с классом *F* и *annotate*
+*F* позволяет внутри запросов сравнивать значения с данными полей
+Например сравнения *pk* с *cat_id* (выводит записи у которых ид больше cat_id )
+```sql
+In [32]: Women.objects.filter(pk__gt=F("cat_id"))
+Out[32]: SELECT "women_women"."id",
+       "women_women"."title",
+       "women_women"."slug",
+       "women_women"."content",
+       "women_women"."time_create",
+       "women_women"."time_update",
+       "women_women"."is_published",
+       "women_women"."cat_id",
+       "women_women"."husband_id"
+  FROM "women_women"
+ WHERE "women_women"."id" > ("women_women"."cat_id")
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000156s [Database: default]
+<QuerySet [<Women: Ариана Гранде>, <Women: Дженнифер Лоуренс>, <Women: Джулия Робертс>, <Women: Марго Робби>]>
+```
+### Как пример -добавим в нашу таблицу мужей поле количества женитьб **m_count**
+> [!abstract] sitewomen/women/models.py
+```python
+############ данные
+class Husband(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField(null=True)
+    m_count = models.IntegerField(blank=True, default=0)
+
+    def __str__(self):
+        return self.name
+```
+Увеличим количество женитьб всем на +1
+```sql
+In [1]: Husband.objects.update(m_count=F("m_count")+1)
+UPDATE "women_husband"
+   SET "m_count" = ("women_husband"."m_count" + 1)
+
+Execution time: 0.085400s [Database: default]
+Out[1]: 4
+```
+или только одной записи
+```sql
+In [4]: Husband.objects.get(pk=1)
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count"
+  FROM "women_husband"
+ WHERE "women_husband"."id" = 1
+ LIMIT 21
+
+Execution time: 0.000150s [Database: default]
+Out[4]: <Husband: Брет Пит>
+
+In [5]: h = _
+
+In [6]: h.m_count = F("m_count")+1
+
+In [9]: h.save()
+UPDATE "women_husband"
+   SET "name" = 'Брет Пит',
+       "age" = 30,
+       "m_count" = ("women_husband"."m_count" + 1)
+ WHERE "women_husband"."id" = 1
+
+Execution time: 0.082881s [Database: default]
+```
+### метод annotate
+дает возможность добавлять поля к таблице
+нужно импортировать `from django.db.models import Value`
+
+Добавим к всем строкам поля `is_married=True`
+```sql
+In [21]: lst = Husband.objects.all().annotate(is_married=Value(True))
+
+In [22]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count",
+       1 AS "is_married"
+  FROM "women_husband"
+
+Execution time: 0.000181s [Database: default]
+['id', 'name', 'age', 'm_count', 'is_married']
+[1, 'Брет Пит', 30, 2, True]
+[2, 'Том Акерли', 31, 1, True]
+[3, 'Дэниель Модер', None, 1, True]
+[4, 'Кук Марони', None, 1, True]
+```
+Также внутри можно проводить операции
+```sql
+In [23]: lst = Husband.objects.all().annotate(is_married=Value(2+5))
+
+In [24]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count",
+       7 AS "is_married"
+  FROM "women_husband"
+
+Execution time: 0.000167s [Database: default]
+['id', 'name', 'age', 'm_count', 'is_married']
+[1, 'Брет Пит', 30, 2, 7]
+[2, 'Том Акерли', 31, 1, 7]
+[3, 'Дэниель Модер', None, 1, 7]
+[4, 'Кук Марони', None, 1, 7]
+```
+Прописать строку
+```sql
+In [26]: lst = Husband.objects.all().annotate(is_married=Value("hi"*5))
+
+In [27]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count",
+       'hihihihihi' AS "is_married"
+  FROM "women_husband"
+
+Execution time: 0.000158s [Database: default]
+['id', 'name', 'age', 'm_count', 'is_married']
+[1, 'Брет Пит', 30, 2, 'hihihihihi']
+[2, 'Том Акерли', 31, 1, 'hihihihihi']
+[3, 'Дэниель Модер', None, 1, 'hihihihihi']
+[4, 'Кук Марони', None, 1, 'hihihihihi']
+```
+Либо использовать другие поля таблици (Value не нужно если используем F класс)
+```sql
+In [30]: lst = Husband.objects.all().annotate(is_married=F("m_count")*5)
+
+In [31]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count",
+       ("women_husband"."m_count" * 5) AS "is_married"
+  FROM "women_husband"
+
+Execution time: 0.000135s [Database: default]
+['id', 'name', 'age', 'm_count', 'is_married']
+[1, 'Брет Пит', 30, 2, 10]
+[2, 'Том Акерли', 31, 1, 5]
+[3, 'Дэниель Модер', None, 1, 5]
+[4, 'Кук Марони', None, 1, 5]
+```
+Вычислим стаж работы
+```sql
+In [32]: lst = Husband.objects.all().annotate(work_age=F("age")-20)
+
+In [33]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count",
+       ("women_husband"."age" - 20) AS "work_age"
+  FROM "women_husband"
+
+Execution time: 0.000192s [Database: default]
+['id', 'name', 'age', 'm_count', 'work_age']
+[1, 'Брет Пит', 30, 2, 10]
+[2, 'Том Акерли', 31, 1, 11]
+[3, 'Дэниель Модер', None, 1, None]
+[4, 'Кук Марони', None, 1, None]
+```
+Добавим вычисление зарплаты
+```sql
+In [35]: lst = Husband.objects.all().annotate(work_age=F("age")-20, salary=F("age")*1.1)
+
+In [36]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count",
+       ("women_husband"."age" - 20) AS "work_age",
+       ("women_husband"."age" * 1.1) AS "salary"
+  FROM "women_husband"
+
+Execution time: 0.000190s [Database: default]
+['id', 'name', 'age', 'm_count', 'work_age', 'salary']
+[1, 'Брет Пит', 30, 2, 10, 33.0]
+[2, 'Том Акерли', 31, 1, 11, 34.1]
+[3, 'Дэниель Модер', None, 1, None, None]
+[4, 'Кук Марони', None, 1, None, None]
+```
+## 34. **ORM** counts, Sum, Avg, Max, Min, values
+нужно импортировать `from django.db.models import Count, Sum, Avg, Max, Min`
+
+для примера возмем таблицу
+![](files/Pasted%20image%2020250130220737.png)
+### Min
+минимальное значение
+```sql
+In [39]: Husband.objects.aggregate(Min("age"))
+SELECT MIN("women_husband"."age") AS "age__min"
+  FROM "women_husband"
+
+Execution time: 0.000143s [Database: default]
+Out[39]: {'age__min': 25}
+```
+### Max
+максимальное
+```sql
+
+In [40]: Husband.objects.aggregate(Min("age"), Max("age"))
+SELECT MIN("women_husband"."age") AS "age__min",
+       MAX("women_husband"."age") AS "age__max"
+  FROM "women_husband"
+
+Execution time: 0.000203s [Database: default]
+Out[40]: {'age__min': 25, 'age__max': 40}
+```
+Можно присваивать вывод переменным
+```sql
+In [41]: Husband.objects.aggregate(young=Min("age"), old=Max("age"))
+SELECT MIN("women_husband"."age") AS "young",
+       MAX("women_husband"."age") AS "old"
+  FROM "women_husband"
+
+Execution time: 0.000212s [Database: default]
+Out[41]: {'young': 25, 'old': 40}
+```
+Выполнять логические функции
+```sql
+In [44]: Husband.objects.aggregate(res=Max("age") - Min("age"))
+SELECT (MAX("women_husband"."age") - MIN("women_husband"."age")) AS "res"
+  FROM "women_husband"
+
+Execution time: 0.000207s [Database: default]
+Out[44]: {'res': 15}
+```
+### Avg 
+среднее значение
+```sql
+In [45]: Husband.objects.aggregate(res=Max("age") - Avg("age"))
+SELECT (MAX("women_husband"."age") - AVG("women_husband"."age")) AS "res"
+  FROM "women_husband"
+
+Execution time: 0.000179s [Database: default]
+Out[45]: {'res': 8.5}
+```
+### values
+Можно выборочно выбирать поля с таблицы
+```sql
+In [46]: Women.objects.values("title", "cat_id")
+Out[46]: SELECT "women_women"."title",
+       "women_women"."cat_id"
+  FROM "women_women"
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.000125s [Database: default]
+<QuerySet [{'title': 'Ариана Гранде', 'cat_id': 2}, {'title': 'Дженнифер Лоуренс', 'cat_id': 2}, {'title': 'Джулия Робертс', 'cat_id': 1}, {'title': 'Марго Робби', 'cat_id': 1}, {'title': 'Анджелина Джоли', 'cat_id': 1}]>
+```
+Выбрать титле и имя категории с связанной таблицы
+```sql
+In [47]: Women.objects.values("title", "cat__name").get(pk=1)
+SELECT "women_women"."title",
+       "women_category"."name"
+  FROM "women_women"
+ INNER JOIN "women_category"
+    ON ("women_women"."cat_id" = "women_category"."id")
+ WHERE "women_women"."id" = 1
+ LIMIT 21
+
+Execution time: 0.000198s [Database: default]
+Out[47]: {'title': 'Анджелина Джоли', 'cat__name': 'Актрисы'}
+```
+##
+##
