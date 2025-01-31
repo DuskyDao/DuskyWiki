@@ -1772,7 +1772,7 @@ Execution time: 0.000185s [Database: default]
 ```
 >[!warning] Если нужно перед *Q* поставить какие параметры, то нужно их оборачивать в *Q* 
 
-## 32. **ORM** first, last, earliest, latest, get_previous_by, get_next_by, exist, count
+## 32. **ORM** *first*, *last*, *earliest*, *latest*, *get_previous_by*, *get_next_by*, *exist, count*
 ### метод **first()** - первая запись
 ```sql
 In [9]: Women.objects.first()
@@ -2313,7 +2313,7 @@ Execution time: 0.000190s [Database: default]
 [3, 'Дэниель Модер', None, 1, None, None]
 [4, 'Кук Марони', None, 1, None, None]
 ```
-## 34. **ORM** counts, Sum, Avg, Max, Min, values
+## 34. **ORM** *counts*, *Sum*, *Avg*, *Max*, *Min*, *values*
 нужно импортировать `from django.db.models import Count, Sum, Avg, Max, Min`
 
 для примера возмем таблицу
@@ -2396,5 +2396,40 @@ SELECT "women_women"."title",
 Execution time: 0.000198s [Database: default]
 Out[47]: {'title': 'Анджелина Джоли', 'cat__name': 'Актрисы'}
 ```
-##
+## 35. **ORM** *values+count*
+Если выбрать данные с таблици по values, то получим просто список с категориями
+```sql
+In [2]: Women.objects.values("cat_id")
+Out[2]: SELECT "women_women"."cat_id"
+  FROM "women_women"
+ ORDER BY "women_women"."time_create" DESC
+ LIMIT 21
+
+Execution time: 0.003917s [Database: default]
+<QuerySet [{'cat_id': 2}, {'cat_id': 2}, {'cat_id': 1}, {'cat_id': 1}, {'cat_id': 1}]>
+```
+Если добавить annotate(Count("id")), то получим групировку по cat_id и количество статей с таким айди
+```sql
+In [3]: Women.objects.values("cat_id").annotate(Count("id"))
+Out[3]: SELECT "women_women"."cat_id",
+       COUNT("women_women"."id") AS "id__count"
+  FROM "women_women"
+ GROUP BY "women_women"."cat_id"
+ LIMIT 21
+
+Execution time: 0.000577s [Database: default]
+<QuerySet [{'cat_id': 1, 'id__count': 3}, {'cat_id': 2, 'id__count': 2}]>
+```
+Либо с своим значением имени
+```sql
+In [4]: Women.objects.values("cat_id").annotate(total=Count("id"))
+Out[4]: SELECT "women_women"."cat_id",
+       COUNT("women_women"."id") AS "total"
+  FROM "women_women"
+ GROUP BY "women_women"."cat_id"
+ LIMIT 21
+
+Execution time: 0.000105s [Database: default]
+<QuerySet [{'cat_id': 1, 'total': 3}, {'cat_id': 2, 'total': 2}]>
+```
 ##

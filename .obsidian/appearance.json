@@ -8,5 +8,6 @@
   "showViewHeader": true,
   "nativeMenus": false,
   "interfaceFontFamily": "Alef",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "showRibbon": true
 }

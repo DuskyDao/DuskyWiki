@@ -12,7 +12,6 @@
   "useMarkdownLinks": true,
   "newFileFolderPath": "projects",
   "foldIndent": false,
-  "showRibbon": true,
   "readableLineLength": true,
   "strictLineBreaks": false,
   "pdfExportSettings": {
