@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBug",
       "LiSwatchBook",
       "RiTable3",
       "TiLayoutSidebarRightCollapse",
@@ -29,8 +30,7 @@
       "FasNetworkWired",
       "SiZulip",
       "FabNodeJs",
-      "SiSpeedtest",
-      "BoBxlPostgresql"
+      "SiSpeedtest"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -333,5 +333,9 @@
   "projects/python/Django/hooks.md": {
     "iconName": "LiSwatchBook",
     "iconColor": "#fb7d74"
+  },
+  "projects/python/Django/debug toolbar.md": {
+    "iconName": "LiBug",
+    "iconColor": "#03c200"
   }
 }

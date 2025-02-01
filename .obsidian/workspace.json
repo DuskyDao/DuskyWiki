@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Django/sql.md",
+                "file": "projects/python/Django/debug toolbar.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "sql"
+              "title": "debug toolbar"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Django/sql.md",
+                "file": "projects/python/Django/debug toolbar.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура sql"
+              "title": "Структура debug toolbar"
             }
           },
           {
@@ -183,14 +183,15 @@
   },
   "active": "32aa3a55d0bf83df",
   "lastOpenFiles": [
+    "projects/python/Django/sql.md",
+    "projects/python/Django/hooks.md",
+    "projects/python/Django/debug toolbar.md",
     "projects/python/Django/files/Pasted image 20250130220737.png",
     "projects/python/Django/files/Pasted image 20250130200916.png",
     "projects/python/Django/files/Pasted image 20250130194400.png",
     "projects/python/Django/lessons.md",
     "projects/python/Django/templates.md",
-    "projects/python/Django/sql.md",
     "projects/python/Django/tags.md",
-    "projects/python/Django/hooks.md",
     "projects/python/Django/files/Pasted image 20250128211637.png",
     "projects/python/Django/files/Pasted image 20250128205647.png",
     "projects/devops/docker/docker.md",
@@ -201,7 +202,6 @@
     "projects/python/Django/files/Pasted image 20250121232212.png",
     "projects/python/Django/files/Pasted image 20250121231512.png",
     "projects/python/Django/files/Pasted image 20250121231436.png",
-    "projects/python/Django/files/Pasted image 20250121231034.png",
     "projects/python/lessons/class/magic_methods.md",
     "projects/python/lessons/errors/errors.md",
     "projects/python/lessons/class/Home_Work.md",

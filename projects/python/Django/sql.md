@@ -14,7 +14,10 @@ DATABASES = {
 ```
 ### **ipyton** и **django-extensions**
 Для удобства работы с базой, подключим два разширения для командной строки
- - **ipyton** меняет стандартный шел, давая возможность табом дописывать команды, плюс показывает возможные
+```cmd
+pip install ipython django-extensions
+```
+ - **ipython** меняет стандартный шел, давая возможность табом дописывать команды, плюс показывает возможные
  ```cmd
  python manage.py shell
 ```
@@ -2432,4 +2435,127 @@ Out[4]: SELECT "women_women"."cat_id",
 Execution time: 0.000105s [Database: default]
 <QuerySet [{'cat_id': 1, 'total': 3}, {'cat_id': 2, 'total': 2}]>
 ```
-##
+### Групировка записей
+С помощью метода *annotate* мы можем получать количество связанных записей с категориями
+`Count("posts")` related_name указанный для связывания таблиц *Women* и *Category* в `models.py`
+```sql
+In [1]: Category.objects.annotate(total=Count("posts"))
+Out[1]: SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug",
+       COUNT("women_women"."id") AS "total"
+  FROM "women_category"
+  LEFT OUTER JOIN "women_women"
+    ON ("women_category"."id" = "women_women"."cat_id")
+ GROUP BY "women_category"."id",
+          "women_category"."name",
+          "women_category"."slug"
+ LIMIT 21
+
+Execution time: 0.000537s [Database: default]
+<QuerySet [<Category: Актрисы>, <Category: Певицы>, <Category: Спортсменки>]>
+
+In [2]: lst = _
+
+In [3]: for i, x in enumerate(lst):
+   ...:     if i == 0:
+   ...:         print (list(x.__dict__)[1:])
+   ...:     print(list(x.__dict__.values())[1:])
+   ...:
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug",
+       COUNT("women_women"."id") AS "total"
+  FROM "women_category"
+  LEFT OUTER JOIN "women_women"
+    ON ("women_category"."id" = "women_women"."cat_id")
+ GROUP BY "women_category"."id",
+          "women_category"."name",
+          "women_category"."slug"
+
+Execution time: 0.000195s [Database: default]
+['id', 'name', 'slug', 'total']
+[1, 'Актрисы', 'aktrisy', 3]
+[2, 'Певицы', 'pevicy', 2]
+[3, 'Спортсменки', 'sportsmenki', 0]
+```
+> [!note] можно фильтровать запросы по созданным полям
+```sql
+In [7]: lst = Category.objects.annotate(total=Count("posts")).filter(total__gt=0)
+
+In [8]: for i, x in enumerate(lst):
+   ...:     if i == 0:
+   ...:         print (list(x.__dict__)[1:])
+   ...:     print(list(x.__dict__.values())[1:])
+   ...:
+SELECT "women_category"."id",
+       "women_category"."name",
+       "women_category"."slug",
+       COUNT("women_women"."id") AS "total"
+  FROM "women_category"
+  LEFT OUTER JOIN "women_women"
+    ON ("women_category"."id" = "women_women"."cat_id")
+ GROUP BY "women_category"."id",
+          "women_category"."name",
+          "women_category"."slug"
+HAVING COUNT("women_women"."id") > 0
+
+Execution time: 0.000177s [Database: default]
+['id', 'name', 'slug', 'total']
+[1, 'Актрисы', 'aktrisy', 3]
+[2, 'Певицы', 'pevicy', 2]
+```
+для тегов
+```sql
+In [10]: lst = TagPost.objects.annotate(total=Count("tags")).filter(total__gt=0)
+
+In [11]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_tagpost"."id",
+       "women_tagpost"."tag",
+       "women_tagpost"."slug",
+       COUNT("women_women_tags"."women_id") AS "total"
+  FROM "women_tagpost"
+  LEFT OUTER JOIN "women_women_tags"
+    ON ("women_tagpost"."id" = "women_women_tags"."tagpost_id")
+ GROUP BY "women_tagpost"."id",
+          "women_tagpost"."tag",
+          "women_tagpost"."slug"
+HAVING COUNT("women_women_tags"."women_id") > 0
+
+Execution time: 0.014256s [Database: default]
+['id', 'tag', 'slug', 'total']
+[2, 'Брюнетки', 'brunetky', 3]
+[5, 'Высокие', 'visokie', 2]
+```
+### функция **length**
+**Вычисляет длину поля**
+> [!info] Нужно импортировать `from django.db.models.functions import Length`
+
+[агрегирующие функции](https://docs.djangoproject.com/en/4.2/ref/models/database-functions/) на уровне базы данных
+Вычислим длину поля `name`
+```sql
+In [15]: lst = Husband.objects.all().annotate(len_mane=Length("name"))
+
+In [16]: for i, x in enumerate(lst):
+    ...:     if i == 0:
+    ...:         print (list(x.__dict__)[1:])
+    ...:     print(list(x.__dict__.values())[1:])
+    ...:
+SELECT "women_husband"."id",
+       "women_husband"."name",
+       "women_husband"."age",
+       "women_husband"."m_count",
+       LENGTH("women_husband"."name") AS "len_mane"
+  FROM "women_husband"
+
+Execution time: 0.000535s [Database: default]
+['id', 'name', 'age', 'm_count', 'len_mane']
+[1, 'Брет Пит', 30, 2, 8]
+[2, 'Том Акерли', 31, 1, 10]
+[3, 'Дэниель Модер', 25, 1, 13]
+[4, 'Кук Марони', 40, 1, 10]
+```
