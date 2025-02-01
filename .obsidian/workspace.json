@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Django/debug toolbar.md",
+                "file": "projects/python/Django/admin panel.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "debug toolbar"
+              "title": "admin panel"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Django/debug toolbar.md",
+                "file": "projects/python/Django/admin panel.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура debug toolbar"
+              "title": "Структура admin panel"
             }
           },
           {
@@ -161,7 +161,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -181,11 +181,15 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "32aa3a55d0bf83df",
+  "active": "2bcbd288b04661f0",
   "lastOpenFiles": [
+    "projects/python/Django/debug toolbar.md",
+    "projects/python/Django/admin panel.md",
+    "projects/python/Django/files/Pasted image 20250202002407.png",
+    "projects/python/Django/files/Pasted image 20250202000901.png",
+    "projects/python/Django/files/Pasted image 20250202000715.png",
     "projects/python/Django/sql.md",
     "projects/python/Django/hooks.md",
-    "projects/python/Django/debug toolbar.md",
     "projects/python/Django/files/Pasted image 20250130220737.png",
     "projects/python/Django/files/Pasted image 20250130200916.png",
     "projects/python/Django/files/Pasted image 20250130194400.png",
@@ -199,9 +203,6 @@
     "projects/devops/proxmox/Без названия.md",
     "projects/python/Django/files/Pasted image 20250122204749.png",
     "projects/python/Django/files/Pasted image 20250122204525.png",
-    "projects/python/Django/files/Pasted image 20250121232212.png",
-    "projects/python/Django/files/Pasted image 20250121231512.png",
-    "projects/python/Django/files/Pasted image 20250121231436.png",
     "projects/python/lessons/class/magic_methods.md",
     "projects/python/lessons/errors/errors.md",
     "projects/python/lessons/class/Home_Work.md",
@@ -218,7 +219,6 @@
     "templaits/new_doc.md",
     "projects/network/mikrotik/firewall/файрвол.md",
     "projects/python/exe_file.md",
-    "projects/sequrity/ping attack.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",

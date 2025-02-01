@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "RiAdminFill",
       "LiBug",
       "LiSwatchBook",
       "RiTable3",
@@ -29,8 +30,7 @@
       "RiLinkedinFill",
       "FasNetworkWired",
       "SiZulip",
-      "FabNodeJs",
-      "SiSpeedtest"
+      "FabNodeJs"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -337,5 +337,9 @@
   "projects/python/Django/debug toolbar.md": {
     "iconName": "LiBug",
     "iconColor": "#03c200"
+  },
+  "projects/python/Django/admin panel.md": {
+    "iconName": "RiAdminFill",
+    "iconColor": "#ff0505"
   }
 }
