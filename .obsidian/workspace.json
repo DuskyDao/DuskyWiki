@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b559f379543a9c6c",
+        "id": "0b20bf7111447fec",
         "type": "tabs",
         "children": [
           {
-            "id": "32aa3a55d0bf83df",
+            "id": "ed70711fae914848",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "projects/python/Django/admin panel.md",
-                "mode": "source",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "admin panel"
+              "title": "Новая вкладка"
             }
           }
         ]
@@ -95,7 +91,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/windows/Activation win10.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -105,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для Activation win10"
+              "title": "Обратные ссылки"
             }
           },
           {
@@ -114,12 +109,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/windows/Activation win10.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из Activation win10"
+              "title": "Исходящие ссылки"
             }
           },
           {
@@ -129,7 +123,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "alphabetical",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Теги"
@@ -141,13 +137,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Django/admin panel.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура admin panel"
+              "title": "Структура"
             }
           },
           {
@@ -161,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -181,28 +176,28 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "2bcbd288b04661f0",
+  "active": "ed70711fae914848",
   "lastOpenFiles": [
-    "projects/python/Django/debug toolbar.md",
     "projects/python/Django/admin panel.md",
+    "projects/python/Django/files/Pasted image 20250202211055.png",
+    "projects/python/Django/files/Pasted image 20250202202411.png",
+    "projects/python/Django/files/Pasted image 20250202183742.png",
+    "projects/python/Django/files/Pasted image 20250202173428.png",
+    "projects/python/Django/files/Pasted image 20250202173317.png",
+    "projects/python/Django/files/Pasted image 20250202173253.png",
+    "projects/python/Django/files/Pasted image 20250202173209.png",
+    "projects/python/Django/files/Pasted image 20250202170323.png",
+    "projects/python/Django/debug toolbar.md",
     "projects/python/Django/files/Pasted image 20250202002407.png",
     "projects/python/Django/files/Pasted image 20250202000901.png",
-    "projects/python/Django/files/Pasted image 20250202000715.png",
     "projects/python/Django/sql.md",
     "projects/python/Django/hooks.md",
-    "projects/python/Django/files/Pasted image 20250130220737.png",
-    "projects/python/Django/files/Pasted image 20250130200916.png",
-    "projects/python/Django/files/Pasted image 20250130194400.png",
     "projects/python/Django/lessons.md",
     "projects/python/Django/templates.md",
     "projects/python/Django/tags.md",
-    "projects/python/Django/files/Pasted image 20250128211637.png",
-    "projects/python/Django/files/Pasted image 20250128205647.png",
     "projects/devops/docker/docker.md",
     "projects/network/mikrotik/чек лист по настройке.md",
     "projects/devops/proxmox/Без названия.md",
-    "projects/python/Django/files/Pasted image 20250122204749.png",
-    "projects/python/Django/files/Pasted image 20250122204525.png",
     "projects/python/lessons/class/magic_methods.md",
     "projects/python/lessons/errors/errors.md",
     "projects/python/lessons/class/Home_Work.md",
@@ -218,7 +213,6 @@
     "projects/python/Streamlit/maine.md",
     "templaits/new_doc.md",
     "projects/network/mikrotik/firewall/файрвол.md",
-    "projects/python/exe_file.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",
