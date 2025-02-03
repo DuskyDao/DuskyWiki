@@ -166,7 +166,8 @@ def show_category(request, cat_id):
 def page_not_found(request, exception):
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")
 ```
-####
+### pytils
+Кто не хочет писать словарь для слагов, есть такая утилита: pytils можно ее найти в pypi. Установка: pip install pytils Далее, в любом месте, где она нужна (например в models) импортируете from pytils.translit import slugify Этот slugify нормально справляется с кириллицей.
 ### Пользовательские модели (например обращение к базе)
 Опишем в `models.py` новый менеджер для нашей модели `Women`. Создадим новый клас **PublishedManager**(название может быть любое), который будет наследоваться от **models.Manager**.
 Определим в нем специальный метод `get_queryset` (то что вернет этот метод и будет возращать нам класс `PublishedManager`).

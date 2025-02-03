@@ -1,3 +1,4 @@
+## Установка
 [Оф дока](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/)
 ### Установим нужную локаль
 > [!abstract] sitewomen>manage.py
@@ -273,10 +274,120 @@ class MariedFilter(admin.SimpleListFilter):  # SimpleListFilter класс дл�
         return [("married", "Замужем"), ("single", "Не замужем")]  # значения для переменной и имена для отображения в окне фильтра
 
     def queryset(self, request, queryset):
+	    # return queryset  # для теста без значений фильтрования
         if self.value() == "married":  # возвращает значение параметра "status"
             return queryset.filter(husband__isnull=False)  #все записи поля husband которые не =0
         elif self.value() == "single":
             return queryset.filter(husband__isnull=True)   #все записи поля husband которые =0
 ```
-lookups возращает
-###
+### Формы
+Действия в окне с формой данных таблици
+> [!abstract] sitewomen>women>admin.py
+```python
+@admin.register(Women)
+class WomenAdmin(admin.ModelAdmin):
+    # fields = ["title", "content"]  # отображать только выбранные поля
+    # exclude = ["title", "content"]  # поля которые исключаются
+    # readonly_fields = ["title", "slug", "content"]  # поля которые нельзя редактировать
+    # filter_horizontal = ["tags"]  # добавляет горизонтальный выбор для поля (работает для полей ManyToMany)
+    # filter_vertical = ["tags"]  # добавляет вертикальный выбор для поля (работает для полей ManyToMany)
+```
+#### Автоматический **slug**
+#django #slug
+##### 1й способ
+Добавим функцию save и перевод ру букв в англ функцию translit_to_eng
+> [!abstract] sitewomen>women>models.py
+
+```python
+from django.db import models
+from django.urls import reverse
+from django.utils.text import slugify
+
+# fmt: off
+def translit_to_eng(s: str) -> str:
+    d = {'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd',
+         'е': 'e', 'ё': 'yo', 'ж': 'zh', 'з': 'z', 'и': 'i', 'к': 'k',
+         'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r',
+         'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch',
+         'ш': 'sh', 'щ': 'shch', 'ь': '', 'ы': 'y', 'ъ': '', 'э': 'r', 'ю': 'yu', 'я': 'ya'}
+
+    return "".join(map(lambda x: d[x] if d.get(x, False) else x, s.lower()))
+# fmt: on
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=Women.Status.PUBLISHED)
+
+class Women(models.Model):
+    class Status(models.IntegerChoices):
+        DRAFT = 0, "Черновик"
+        PUBLISHED = 1, "Опубликовано"
+    title = models.CharField(
+        max_length=255, verbose_name="Заголовок"
+    )  # название статьи
+    slug = models.SlugField(
+        max_length=255, unique=True, db_index=True, verbose_name="slug"
+    )
+    content = models.TextField(
+        blank=True, verbose_name="Текст статьи"
+    )  # текстовое поле, blank=True - можно не заполнять при создании
+    time_create = models.DateTimeField(
+        auto_now_add=True, verbose_name="Время создания"
+    )  # время создания
+    time_update = models.DateTimeField(
+        auto_now=True, verbose_name="Время изменения"
+    )  # время обновления
+    is_published = models.BooleanField(
+        choices=tuple(map(lambda x: (bool(x[0]), x[1]), Status.choices)),
+        default=Status.DRAFT,
+        verbose_name="Статус",
+    )
+
+    cat = models.ForeignKey(
+        "Category",
+        on_delete=models.PROTECT,
+        related_name="posts",
+        verbose_name="Ктегории",
+    )  # связь для категорий
+    tags = models.ManyToManyField(
+        "TagPost", blank=True, related_name="tags", verbose_name="Теги"
+    )  # связь для тегов
+    husband = models.OneToOneField(
+        "Husband",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="wuman",
+        verbose_name="Муж",
+    )  # связь для мужей
+  
+    objects = models.Manager()  # возвращаем менеджер по умолчанию
+    published = PublishedManager()  # наш кастомный менеджер
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Известные женщины"  # в единственном числе
+        verbose_name_plural = "Известные женщины"  # в множественном
+
+        ordering = ["-time_create"]  # указываем обратную сортировку по времени создания
+        indexes = [models.Index(fields=["-time_create"])]
+
+    def get_absolute_url(self):
+        return reverse("post", kwargs={"post_slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(translit_to_eng(self.title))
+        super().save(*args, **kwargs)
+```
+##### 2й способ
+```python
+@admin.register(Women)
+class WomenAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+    # readonly_fields = ["slug"]
+    
+```
+> [!warning] поле slug должно быть редактируемым. Баг при редактировании заголовка - слаг автоматом не меняется (нужно удалить заголовок статьи и сохранить, и по новой ввести новый заголовок)
+### 

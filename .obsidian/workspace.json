@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0b20bf7111447fec",
+        "id": "0b8d3c9090a366a4",
         "type": "tabs",
         "children": [
           {
-            "id": "ed70711fae914848",
+            "id": "6b39c0573487133c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -36,7 +36,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#slug",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -124,8 +124,8 @@
               "state": {
                 "sortOrder": "alphabetical",
                 "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
+                "showSearch": true,
+                "searchQuery": "slu"
               },
               "icon": "lucide-tags",
               "title": "Теги"
@@ -156,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -176,9 +176,11 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "ed70711fae914848",
+  "active": "6b39c0573487133c",
   "lastOpenFiles": [
     "projects/python/Django/admin panel.md",
+    "pentest.md",
+    "projects/python/Django/hooks.md",
     "projects/python/Django/files/Pasted image 20250202211055.png",
     "projects/python/Django/files/Pasted image 20250202202411.png",
     "projects/python/Django/files/Pasted image 20250202183742.png",
@@ -191,7 +193,6 @@
     "projects/python/Django/files/Pasted image 20250202002407.png",
     "projects/python/Django/files/Pasted image 20250202000901.png",
     "projects/python/Django/sql.md",
-    "projects/python/Django/hooks.md",
     "projects/python/Django/lessons.md",
     "projects/python/Django/templates.md",
     "projects/python/Django/tags.md",
