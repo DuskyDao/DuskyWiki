@@ -11,10 +11,14 @@
             "id": "6b39c0573487133c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "projects/python/Django/forms.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "forms"
             }
           }
         ]
@@ -75,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311.5
+    "width": 311.5,
+    "collapsed": true
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -160,7 +165,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 401.5
+    "width": 401.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,6 +185,7 @@
   "active": "6b39c0573487133c",
   "lastOpenFiles": [
     "projects/python/Django/admin panel.md",
+    "projects/python/Django/forms.md",
     "pentest.md",
     "projects/python/Django/hooks.md",
     "projects/python/Django/files/Pasted image 20250202211055.png",
@@ -213,7 +220,6 @@
     "projects/security/ping attack.md",
     "projects/python/Streamlit/maine.md",
     "templaits/new_doc.md",
-    "projects/network/mikrotik/firewall/файрвол.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",

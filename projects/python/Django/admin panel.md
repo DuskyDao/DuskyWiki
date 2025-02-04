@@ -51,6 +51,56 @@ class WomenAdmin(admin.ModelAdmin):
 ```
 
 ## Визуал
+### Кастомное шаблоны и стили css
+По умолчанию все шаблоны и стили админ панели лежат в (менять их там не нужно)
+> [!abstract] `djvenv/Lib/site-packages/django/contrib/admin/templates/admin` 
+
+Скопируем там файл `base_site.html`  и вставим в `sitewomen/templates/admin/`, теперь движек джанги будет брать оформление главной страници админ панели от сюда.
+> [!abstract]`sitewomen/templates/admin/base_site.html`
+```django
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></div>
+{% if user.is_anonymous %}
+  {% include "admin/color_theme_toggle.html" %}
+{% endif %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin/admin.css' %}">
+{% endblock %}
+```
+Подгрузим в него `block extrastyle` из 
+`djvenv/Lib/site-packages/django/contrib/admin/templates/admin/base.html`, так же подгрузим его выше в файле `{% load static %}`. Внутри тега подключим css из `sitewomen/static/css/admin/admin.css`(создадим его)
+Так же нужно подключить нестандартные пути в `settings.py` иначе admin.css не будет подгружаться
+```python
+# ...
+STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "sitewomen/static"]
+```
+Теперь мы можем переопределять любые стили в admin.css
+```css
+:root {
+    --header-bg: rgb(45, 24, 65);
+    --secondary: var(--header-bg);
+    --default-button-bg: var(--header-bg);
+}
+
+/* #header,
+.module caption {
+    background-color: blueviolet;
+}*/
+```
+`base.html`
+
 ### Поменяем текст кнопок в админ панели
 * admin.site.site_header - шапку админ панели
 * admin.site.index_title - заголовок главной страницы панели

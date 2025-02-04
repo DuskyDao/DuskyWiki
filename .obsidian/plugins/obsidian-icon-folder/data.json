@@ -6,6 +6,8 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiGoogleforms",
+      "TiForms",
       "RiAdminFill",
       "LiBug",
       "LiSwatchBook",
@@ -28,9 +30,7 @@
       "FabCreativeCommonsShare",
       "SiVmware",
       "RiLinkedinFill",
-      "FasNetworkWired",
-      "SiZulip",
-      "FabNodeJs"
+      "FasNetworkWired"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -341,5 +341,9 @@
   "projects/python/Django/admin panel.md": {
     "iconName": "RiAdminFill",
     "iconColor": "#ff0505"
+  },
+  "projects/python/Django/forms.md": {
+    "iconName": "SiGoogleforms",
+    "iconColor": "#7ee5e7"
   }
 }
