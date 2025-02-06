@@ -11,10 +11,14 @@
             "id": "87cfcbae282a2cfb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "projects/python/Django/forms.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "forms"
             }
           }
         ]
@@ -75,8 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311.5,
-    "collapsed": true
+    "width": 261.5
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -138,12 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "projects/python/Django/forms.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура forms"
             }
           },
           {
@@ -157,12 +161,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 401.5,
-    "collapsed": true
+    "width": 401.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,7 +181,7 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "87cfcbae282a2cfb",
+  "active": "638124ce113818d5",
   "lastOpenFiles": [
     "projects/python/Django/forms.md",
     "projects/python/Django/admin panel.md",
