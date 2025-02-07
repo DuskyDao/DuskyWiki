@@ -429,4 +429,38 @@ def addpage(request):
     data = {"menu": menu, "title": "Добавление статьи", "form": form}
     return render(request, "women/addpage.html", data)
 ```
-### 
+## Загрузка файлов 
+Загрузка файлов на сервер обрабатывается та же формами. Самый базовый пример
+>[!abstract] sitewomen/women/templates/women/about.html
+```django
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p><input type="file" name="file_upload"></p>
+    <p><button type="submit">Отправить</button></p>
+</form>
+{% endblock %}
+```
+Где **`<form>`**:
+- **`action=""`**: Указывает URL, на который будет отправлена форма. Если оставить пустым, форма отправится на текущий URL.
+- **`method="post"`**: Указывает, что данные формы будут отправлены методом POST.
+- **`enctype="multipart/form-data"`**: Этот атрибут обязателен для форм, которые загружают файлы. Без него файлы не будут переданы на сервер.
+
+Функция представления
+>[!abstract] sitewomen/women/templates/women/views.html
+```python
+def handle_uploaded_file(f):
+    with open(f"sitewomen/uploads/{f.name}", "wb+") as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+def about(request):
+    if request.method == "POST":
+        handle_uploaded_file(request.FILES["file_upload"])
+    return render(request, "women/about.html", {"title": "О сайте", "menu": menu})
+```
+###
+###
