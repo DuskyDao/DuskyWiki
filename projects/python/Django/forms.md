@@ -430,7 +430,8 @@ def addpage(request):
     return render(request, "women/addpage.html", data)
 ```
 ## Загрузка файлов 
-Загрузка файлов на сервер обрабатывается та же формами. Самый базовый пример
+### Самый базовый пример
+Загрузка файлов на сервер обрабатывается так же формами. 
 >[!abstract] sitewomen/women/templates/women/about.html
 ```django
 {% extends 'base.html' %}
@@ -462,5 +463,69 @@ def about(request):
         handle_uploaded_file(request.FILES["file_upload"])
     return render(request, "women/about.html", {"title": "О сайте", "menu": menu})
 ```
-###
+> [!info] Используем метод `chunk` (есть ещё `read()`) так как он загружает файлы частями не нагружая сервер. Для этого сделаем отдельную функцию ([дока](https://docs.djangoproject.com/en/4.2/topics/http/file-uploads/))
+### Как нужно
+Создадим класс UploadFileForm. Вместо FileField(label="Файл") для изображений лучше использовать ImageField(label="Файл"), но нужно установить библиотеку через pip - pillow
+>[!abstract] sitewomen>women>forms.py 
+```python
+from django import forms
+from django.forms import ValidationError, widgets
+from .models import Category, Husband, Women
+
+class AddPostForm(forms.ModelForm):
+    # fmt: off
+    cat = forms.ModelChoiceField(queryset=Category.objects.all(), label="Категории", empty_label="Категория не выбрана",)
+    husband = forms.ModelChoiceField(queryset=Husband.objects.all(), required=False, label="Муж", empty_label="Не замужем",)
+
+    class Meta:
+        model = Women
+        fields = ['title', 'slug', 'content', 'is_published', 'cat', 'husband', 'tags']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-input'}),
+            'content': forms.Textarea(attrs={'cols':50, 'rows': 5}),
+        }
+        labels = {'slug': 'URL'}
+
+    def clean_title(self):
+        title = self.cleaned_data["title"]
+        if len(title) > 50:
+            raise ValidationError("Длина превышает 50 символов!")
+        return title
+
+class UploadFileForm(forms.Form):
+    file = forms.FileField(label="Файл")
+```
+Теперь мы можем выводить поля класса автоматически
+>[!abstract] sitewomen/women/templates/women/about.html
+```django
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><button type="submit">Отправить</button></p>
+</form>
+{% endblock %}
+```
+Сама функция представления с проверкой на пустой файл
+>[!abstract] sitewomen>women>views.py 
+```python
+def handle_uploaded_file(f):
+    with open(f"sitewomen/uploads/{f.name}", "wb+") as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+def about(request):
+    if request.method == "POST":
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            handle_uploaded_file(form.cleaned_data["file"])
+    else:
+        form = UploadFileForm()
+    return render(
+        request, "women/about.html", {"title": "О сайте", "menu": menu, "form": form}
+    )
+```
 ###
