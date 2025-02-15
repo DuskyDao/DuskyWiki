@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiSquareAsterisk",
       "SiGoogleforms",
       "TiForms",
       "RiAdminFill",
@@ -29,8 +30,7 @@
       "SiGnubash",
       "FabCreativeCommonsShare",
       "SiVmware",
-      "RiLinkedinFill",
-      "FasNetworkWired"
+      "RiLinkedinFill"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -345,5 +345,9 @@
   "projects/python/Django/forms.md": {
     "iconName": "SiGoogleforms",
     "iconColor": "#7ee5e7"
+  },
+  "projects/devops/asterisk": {
+    "iconName": "LiSquareAsterisk",
+    "iconColor": "#f57247"
   }
 }

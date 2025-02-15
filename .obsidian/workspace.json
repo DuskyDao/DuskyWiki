@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d8a5a470b86edf67",
+        "id": "b31be26425ff9f91",
         "type": "tabs",
         "children": [
           {
-            "id": "87cfcbae282a2cfb",
+            "id": "33b419d445bf393b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/python/Django/forms.md",
+                "file": "projects/devops/asterisk/install.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "forms"
+              "title": "install"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/python/Django/forms.md",
+                "file": "projects/devops/asterisk/install.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура forms"
+              "title": "Структура install"
             }
           },
           {
@@ -181,9 +181,11 @@
       "obsidian-excalidraw-plugin:Создать новый чертеж": false
     }
   },
-  "active": "87cfcbae282a2cfb",
+  "active": "33b419d445bf393b",
   "lastOpenFiles": [
     "projects/python/Django/forms.md",
+    "projects/devops/asterisk/install.md",
+    "projects/devops/asterisk",
     "projects/python/Django/admin panel.md",
     "pentest.md",
     "projects/python/Django/hooks.md",
@@ -218,7 +220,6 @@
     "цілі 2024.md",
     "projects/security/ping attack.md",
     "projects/python/Streamlit/maine.md",
-    "templaits/new_doc.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",
@@ -228,7 +229,6 @@
     "plans/life",
     "plans/fesukr",
     "plans",
-    "projects/python/Django/file",
     "Без названия.canvas",
     "Без названия 1.canvas",
     "devops/Без названия.canvas"
