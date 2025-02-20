@@ -6,6 +6,8 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiMails",
+      "🐮",
       "LiSquareAsterisk",
       "SiGoogleforms",
       "TiForms",
@@ -28,9 +30,7 @@
       "FasRightFromBracket",
       "SiSimpleanalytics",
       "SiGnubash",
-      "FabCreativeCommonsShare",
-      "SiVmware",
-      "RiLinkedinFill"
+      "FabCreativeCommonsShare"
     ],
     "recentlyUsedIconsSize": 25,
     "rules": [
@@ -278,21 +278,9 @@
     "iconName": "FabCreativeCommonsShare",
     "iconColor": "#245feb"
   },
-  "projects/devops/zabbix": {
-    "iconName": "SiZazzle",
-    "iconColor": "#f70808"
-  },
-  "projects/devops/zabbix/esxi.md": {
-    "iconName": "FiCodesandbox",
-    "iconColor": "#33ddff"
-  },
   "projects/python/Django/django основы.md": {
     "iconName": "FasHatCowboy",
     "iconColor": "#87480d"
-  },
-  "projects/devops/zabbix/Templates": {
-    "iconName": "OcRepoTemplate24",
-    "iconColor": "#d0c43e"
   },
   "projects/python/Django/templates.md": {
     "iconName": "IbStackHorizontal",
@@ -349,5 +337,22 @@
   "projects/devops/asterisk": {
     "iconName": "LiSquareAsterisk",
     "iconColor": "#f57247"
+  },
+  "projects/network/zabbix": {
+    "iconName": "SiZazzle",
+    "iconColor": "#f70808"
+  },
+  "projects/network/zabbix/Templates": {
+    "iconName": "OcRepoTemplate24",
+    "iconColor": "#d0c43e"
+  },
+  "projects/network/zabbix/esxi.md": {
+    "iconName": "FiCodesandbox",
+    "iconColor": "#33ddff"
+  },
+  "projects/devops/emails/mailcow.md": "🐮",
+  "projects/devops/emails": {
+    "iconName": "LiMails",
+    "iconColor": "#405ef2"
   }
 }

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/devops/asterisk/install.md",
-                "mode": "source",
+                "file": "projects/devops/emails/mailcow.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "install"
+              "title": "mailcow"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/devops/asterisk/install.md",
+                "file": "projects/devops/emails/mailcow.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура install"
+              "title": "Структура mailcow"
             }
           },
           {
@@ -183,8 +183,15 @@
   },
   "active": "33b419d445bf393b",
   "lastOpenFiles": [
-    "projects/python/Django/forms.md",
     "projects/devops/asterisk/install.md",
+    "projects/devops/emails/mailcow.md",
+    "projects/devops/emails",
+    "projects/devops/lxc/LXC.md",
+    "projects/devops/proxmox/mikrotik vm.md",
+    "projects/devops/proxmox/install.md",
+    "projects/devops/proxmox/Без названия.md",
+    "projects/linux/ssh/ssh.md",
+    "projects/python/Django/forms.md",
     "projects/devops/asterisk",
     "projects/python/Django/admin panel.md",
     "pentest.md",
@@ -206,7 +213,6 @@
     "projects/python/Django/tags.md",
     "projects/devops/docker/docker.md",
     "projects/network/mikrotik/чек лист по настройке.md",
-    "projects/devops/proxmox/Без названия.md",
     "projects/python/lessons/class/magic_methods.md",
     "projects/python/lessons/errors/errors.md",
     "projects/python/lessons/class/Home_Work.md",
@@ -215,20 +221,14 @@
     "projects/python/lessons/class/multiple_inheritance.md",
     "projects/python/lessons/class/static_methods.md",
     "projects/python/lessons/class/static_arguments.md",
-    "projects/python/Django/Static files.md",
-    "projects/web/css/fonts.md",
-    "цілі 2024.md",
-    "projects/security/ping attack.md",
-    "projects/python/Streamlit/maine.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",
-    "projects/devops/zabbix/Templates",
+    "projects/network/zabbix/Templates",
     "Excalidraw/files",
     "Excalidraw",
     "plans/life",
     "plans/fesukr",
-    "plans",
     "Без названия.canvas",
     "Без названия 1.canvas",
     "devops/Без названия.canvas"
