@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/devops/emails/mailcow.md",
+                "file": "projects/linux/Без названия.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "mailcow"
+              "title": "Без названия"
             }
           }
         ]
@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5
+    "width": 261.5,
+    "collapsed": true
   },
   "right": {
     "id": "accc9149a39693cc",
@@ -141,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/devops/emails/mailcow.md",
+                "file": "projects/linux/Без названия.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура mailcow"
+              "title": "Структура Без названия"
             }
           },
           {
@@ -165,7 +166,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 401.5
+    "width": 401.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,14 +185,17 @@
   },
   "active": "33b419d445bf393b",
   "lastOpenFiles": [
-    "projects/devops/asterisk/install.md",
+    "projects/linux/ssh/ssh.md",
+    "projects/linux/Без названия.md",
     "projects/devops/emails/mailcow.md",
+    "Excalidraw/Drawing 2024-09-06 16.41.42.excalidraw.md",
+    "projects/devops/emails/Без названия.canvas",
+    "projects/devops/asterisk/install.md",
     "projects/devops/emails",
     "projects/devops/lxc/LXC.md",
     "projects/devops/proxmox/mikrotik vm.md",
     "projects/devops/proxmox/install.md",
     "projects/devops/proxmox/Без названия.md",
-    "projects/linux/ssh/ssh.md",
     "projects/python/Django/forms.md",
     "projects/devops/asterisk",
     "projects/python/Django/admin panel.md",
@@ -219,8 +224,6 @@
     "projects/python/lessons/class/class.md",
     "projects/python/lessons/class/abstract_class.md",
     "projects/python/lessons/class/multiple_inheritance.md",
-    "projects/python/lessons/class/static_methods.md",
-    "projects/python/lessons/class/static_arguments.md",
     "projects/windows/tools",
     "projects/windows/files",
     "projects/Без названия",
